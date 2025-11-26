@@ -303,6 +303,9 @@ export default function ContestPage() {
                           ))}
                         </div>
                       </div>
+                      <Link href={p.problem.hyperlink} target="_blank">
+                        <Button size="sm">Check</Button>
+                      </Link>
                       {!isCompleted && (
                         <Button
                           size="sm"
