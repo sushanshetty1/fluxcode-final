@@ -1,20 +1,42 @@
-import { redirect } from "next/navigation";
-import { auth } from "~/server/auth";
-import { api } from "~/trpc/server";
+"use client";
+
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { createClient } from "~/lib/supabase/client";
+import { api } from "~/trpc/react";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
 
-export default async function ProfilePage() {
-  const session = await auth();
+export default function ProfilePage() {
+  const router = useRouter();
+  const [user, setUser] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!session) {
-    redirect("/auth/signin");
+  useEffect(() => {
+    const checkAuth = async () => {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        router.push("/auth/signin");
+      } else {
+        setUser(user);
+        setLoading(false);
+      }
+    };
+    checkAuth();
+  }, [router]);
+
+  const { data: stats } = api.progress.getStats.useQuery(undefined, { enabled: !!user });
+  const { data: recentActivity } = api.progress.getRecentActivity.useQuery({ limit: 10 }, { enabled: !!user });
+  const { data: achievements } = api.user.getAchievements.useQuery(undefined, { enabled: !!user });
+  const { data: streak } = api.user.getStreak.useQuery(undefined, { enabled: !!user });
+
+  if (loading || !user || !stats || !recentActivity || !achievements) {
+    return <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="text-white">Loading...</div>
+    </div>;
   }
-
-  const stats = await api.progress.getStats();
-  const recentActivity = await api.progress.getRecentActivity({ limit: 10 });
-  const achievements = await api.user.getAchievements();
-  const streak = await api.user.getStreak();
 
   return (
     <div className="min-h-screen bg-gray-900">
@@ -33,27 +55,17 @@ export default async function ProfilePage() {
 
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-center gap-4">
-          {session.user.image && (
+          {user.user_metadata?.avatar_url && (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              src={session.user.image}
-              alt={session.user.name ?? "User"}
+              src={user.user_metadata.avatar_url}
+              alt={user.user_metadata?.name ?? "User"}
               className="h-24 w-24 rounded-full"
             />
           )}
           <div>
-            <h2 className="text-3xl font-bold text-white">{session.user.name}</h2>
-            <p className="text-gray-400">{session.user.email}</p>
-            {session.user.linkedinUsername && (
-              <a
-                href={`https://linkedin.com/in/${session.user.linkedinUsername}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-indigo-400 hover:underline"
-              >
-                LinkedIn Profile
-              </a>
-            )}
+            <h2 className="text-3xl font-bold text-white">{user.user_metadata?.name ?? user.email}</h2>
+            <p className="text-gray-400">{user.email}</p>
           </div>
         </div>
 

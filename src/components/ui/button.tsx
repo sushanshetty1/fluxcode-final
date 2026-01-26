@@ -1,8 +1,8 @@
 import { cn } from "~/lib/utils";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "outline" | "ghost" | "destructive";
-  size?: "default" | "sm" | "lg";
+  variant?: "default" | "outline" | "ghost" | "destructive" | "primary" | "secondary";
+  size?: "default" | "sm" | "lg" | "icon";
 }
 
 export function Button({
@@ -14,17 +14,20 @@ export function Button({
   return (
     <button
       className={cn(
-        "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+        "inline-flex items-center justify-center rounded-xl font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 uppercase tracking-wide text-sm",
         {
-          "bg-indigo-600 text-white hover:bg-indigo-700": variant === "default",
-          "border border-gray-600 bg-gray-700 text-gray-200 hover:bg-gray-600": variant === "outline",
-          "text-gray-300 hover:bg-gray-700 hover:text-white": variant === "ghost",
-          "bg-red-600 text-white hover:bg-red-700": variant === "destructive",
+          "bg-primary text-black hover:bg-primary/90 hover:scale-105 shadow-lg shadow-primary/20": variant === "default",
+          "bg-primary text-black hover:bg-primary/90 hover:scale-105 shadow-lg shadow-primary/20": variant === "primary",
+          "bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-primary/30": variant === "outline",
+          "bg-white/10 text-white border border-white/10 hover:bg-white/20": variant === "secondary",
+          "text-white/60 hover:bg-white/5 hover:text-white": variant === "ghost",
+          "bg-red-500/10 text-red-400 border border-red-500/20 hover:bg-red-500/20": variant === "destructive",
         },
         {
-          "h-10 px-4 py-2": size === "default",
-          "h-8 px-3 text-sm": size === "sm",
-          "h-12 px-8": size === "lg",
+          "h-11 px-6 py-3": size === "default",
+          "h-9 px-4 text-xs": size === "sm",
+          "h-14 px-10 text-base": size === "lg",
+          "h-10 w-10": size === "icon",
         },
         className
       )}

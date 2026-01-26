@@ -7,7 +7,6 @@ generator client {
 
 datasource db {
     provider = "postgresql"
-    url = env("DATABASE_URL")
 }
 
 model Account {
@@ -38,14 +37,14 @@ model Session {
 }
 
 model User {
-    id                  String                @id @default(cuid())
+    id                  String               @id @default(cuid())
     name                String?
-    email               String?               @unique
+    email               String?              @unique
     emailVerified       DateTime?
     image               String?
     linkedinUsername    String?
     leetcodeUsername    String?
-    onboardingCompleted Boolean               @default(false)
+    onboardingCompleted Boolean              @default(false)
     accounts            Account[]
     sessions            Session[]
     createdContests     Contest[]
@@ -54,7 +53,7 @@ model User {
     streaks             Streak[]
     achievements        UserAchievement[]
     notifications       Notification[]
-    createdAt           DateTime              @default(now())
+    createdAt           DateTime             @default(now())
 }
 
 model VerificationToken {
@@ -66,80 +65,80 @@ model VerificationToken {
 }
 
 model Contest {
-    id                     String               @id @default(cuid())
-    name                   String
-    description            String?
-    creatorId              String
-    creator                User                 @relation(fields: [creatorId], references: [id], onDelete: Cascade)
-    startDate              DateTime
-    endDate                DateTime?
-    isActive               Boolean              @default(true)
-    password               String?
-    easyProblemsPerDay     Int                  @default(2)
-    mediumProblemsPerDay   Int                  @default(1)
-    hardDaysPerProblem     Int                  @default(2)
-    topics                 Topic[]
-    participants           ContestParticipant[]
-    suggestions            DailySuggestion[]
-    announcements       Announcement[]
-    createdAt           DateTime             @default(now())
-    updatedAt           DateTime             @updatedAt
+    id                   String               @id @default(cuid())
+    name                 String
+    description          String?
+    creatorId            String
+    creator              User                 @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+    startDate            DateTime
+    endDate              DateTime?
+    isActive             Boolean              @default(true)
+    password             String?
+    easyProblemsPerDay   Int                  @default(2)
+    mediumProblemsPerDay Int                  @default(1)
+    hardDaysPerProblem   Int                  @default(2)
+    topics               Topic[]
+    participants         ContestParticipant[]
+    suggestions          DailySuggestion[]
+    announcements        Announcement[]
+    createdAt            DateTime             @default(now())
+    updatedAt            DateTime             @updatedAt
 
     @@index([creatorId])
     @@index([isActive])
 }
 
 model Topic {
-    id                  String         @id @default(cuid())
-    contestId           String
-    contest             Contest        @relation(fields: [contestId], references: [id], onDelete: Cascade)
-    name                String
-    description         String?
-    subcategories       String[]
-    questionsPerTopic   Int            @default(10)
-    allowedLanguages    String[]
-    difficulty          String?
-    orderIndex          Int
-    isActive            Boolean        @default(false)
-    hasStarted          Boolean        @default(false)
-    topicStartedAt      DateTime?
-    topicCompletedAt    DateTime?
-    problems            Problem[]
-    progress            UserProgress[]
-    createdAt           DateTime       @default(now())
-    updatedAt           DateTime       @updatedAt
+    id                String         @id @default(cuid())
+    contestId         String
+    contest           Contest        @relation(fields: [contestId], references: [id], onDelete: Cascade)
+    name              String
+    description       String?
+    subcategories     String[]
+    questionsPerTopic Int            @default(10)
+    allowedLanguages  String[]
+    difficulty        String?
+    orderIndex        Int
+    isActive          Boolean        @default(false)
+    hasStarted        Boolean        @default(false)
+    topicStartedAt    DateTime?
+    topicCompletedAt  DateTime?
+    problems          Problem[]
+    progress          UserProgress[]
+    createdAt         DateTime       @default(now())
+    updatedAt         DateTime       @updatedAt
 
     @@index([contestId])
     @@index([isActive])
 }
 
 model Problem {
-    id               String         @id @default(cuid())
-    topicId          String
-    topic            Topic          @relation(fields: [topicId], references: [id], onDelete: Cascade)
-    leetcodeId       String
-    title            String
-    difficulty       String
-    hyperlink        String
-    tags             String[]
-    orderIndex       Int
-    progress         UserProgress[]
-    createdAt        DateTime       @default(now())
-    updatedAt        DateTime       @updatedAt
+    id         String         @id @default(cuid())
+    topicId    String
+    topic      Topic          @relation(fields: [topicId], references: [id], onDelete: Cascade)
+    leetcodeId String
+    title      String
+    difficulty String
+    hyperlink  String
+    tags       String[]
+    orderIndex Int
+    progress   UserProgress[]
+    createdAt  DateTime       @default(now())
+    updatedAt  DateTime       @updatedAt
 
     @@unique([topicId, leetcodeId])
     @@index([topicId])
 }
 
 model ContestParticipant {
-    id          String   @id @default(cuid())
-    contestId   String
-    contest     Contest  @relation(fields: [contestId], references: [id], onDelete: Cascade)
-    userId      String
-    user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-    joinedAt    DateTime @default(now())
-    role        String   @default("participant")
-    isVisible   Boolean  @default(false)
+    id        String   @id @default(cuid())
+    contestId String
+    contest   Contest  @relation(fields: [contestId], references: [id], onDelete: Cascade)
+    userId    String
+    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    joinedAt  DateTime @default(now())
+    role      String   @default("participant")
+    isVisible Boolean  @default(false)
 
     @@unique([contestId, userId])
     @@index([contestId])
@@ -147,20 +146,20 @@ model ContestParticipant {
 }
 
 model UserProgress {
-    id              String   @id @default(cuid())
-    userId          String
-    user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-    topicId         String
-    isMissed        Boolean  @default(false)
-    topic           Topic    @relation(fields: [topicId], references: [id], onDelete: Cascade)
-    problemId       String
-    problem         Problem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
-    completed       Boolean  @default(false)
-    completedAt     DateTime?
-    verifiedAt      DateTime?
-    solvingTime     Int?
-    createdAt       DateTime @default(now())
-    updatedAt       DateTime @updatedAt
+    id          String    @id @default(cuid())
+    userId      String
+    user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+    topicId     String
+    isMissed    Boolean   @default(false)
+    topic       Topic     @relation(fields: [topicId], references: [id], onDelete: Cascade)
+    problemId   String
+    problem     Problem   @relation(fields: [problemId], references: [id], onDelete: Cascade)
+    completed   Boolean   @default(false)
+    completedAt DateTime?
+    verifiedAt  DateTime?
+    solvingTime Int?
+    createdAt   DateTime  @default(now())
+    updatedAt   DateTime  @updatedAt
 
     @@unique([userId, problemId])
     @@index([userId])
@@ -210,12 +209,12 @@ model Badge {
 }
 
 model UserAchievement {
-    id        String   @id @default(cuid())
-    userId    String
-    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-    badgeId   String
-    badge     Badge    @relation(fields: [badgeId], references: [id], onDelete: Cascade)
-    earnedAt  DateTime @default(now())
+    id       String   @id @default(cuid())
+    userId   String
+    user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    badgeId  String
+    badge    Badge    @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+    earnedAt DateTime @default(now())
 
     @@unique([userId, badgeId])
     @@index([userId])

@@ -1,26 +1,27 @@
-import { redirect } from "next/navigation";
-import { auth } from "~/server/auth";
-import { api } from "~/trpc/server";
+"use client";
 
-export default async function Dashboard() {
-  const session = await auth();
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { createClient } from "~/lib/supabase/client";
 
-  if (!session) {
-    redirect("/auth/signin");
-  }
+export default function Dashboard() {
+  const router = useRouter();
 
-  if (!session.user.onboardingCompleted) {
-    redirect(`/onboarding?userId=${session.user.id}`);
-  }
+  useEffect(() => {
+    const checkAuth = async () => {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
 
-  const contest = await api.contest.getUserContest();
+      if (!user) {
+        router.push("/auth/signin");
+      } else {
+        router.push("/contests");
+      }
+    };
 
-  // If user is in a contest, redirect to the contest page
-  if (contest) {
-    redirect(`/contest/${contest.id}`);
-  }
+    checkAuth();
+  }, [router]);
 
-  // If not in a contest, redirect to contests listing
-  redirect("/contests");
+  return null;
 }
 

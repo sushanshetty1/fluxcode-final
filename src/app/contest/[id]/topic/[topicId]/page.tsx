@@ -1,17 +1,25 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
 import { api } from "~/trpc/react";
-import { useSession } from "next-auth/react";
+import { createClient } from "~/lib/supabase/client";
+import type { User } from "@supabase/supabase-js";
 
 export default function TopicPage() {
   const params = useParams();
   const contestId = params.id as string;
   const topicId = params.topicId as string;
-  const { data: session } = useSession();
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setUser(user);
+    });
+  }, []);
 
   const [verifying, setVerifying] = useState<string | null>(null);
 
@@ -28,14 +36,14 @@ export default function TopicPage() {
   });
 
   const handleVerify = (problemId: string) => {
-    if (!session?.user.leetcodeUsername) {
-      alert("Please add your LeetCode username in your profile");
+    if (!user) {
+      alert("Please sign in to verify problems");
       return;
     }
     setVerifying(problemId);
     verifyMutation.mutate({
       problemId,
-      leetcodeUsername: session.user.leetcodeUsername,
+      leetcodeUsername: user.email || "",
     });
   };
 

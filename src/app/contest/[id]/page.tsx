@@ -5,8 +5,9 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
 import { api } from "~/trpc/react";
-import { useState } from "react";
-import { useSession } from "next-auth/react";
+import { useState, useEffect } from "react";
+import { createClient } from "~/lib/supabase/client";
+import type { User } from "@supabase/supabase-js";
 
 export default function ContestPage() {
   const params = useParams();
@@ -14,7 +15,14 @@ export default function ContestPage() {
   const [password, setPassword] = useState("");
   const [showPasswordInput, setShowPasswordInput] = useState(false);
   const [verifying, setVerifying] = useState<string | null>(null);
-  const { data: session } = useSession();
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setUser(user);
+    });
+  }, []);
 
   const { data: contest, isLoading, refetch } = api.contest.getById.useQuery({ id: contestId });
   const { data: suggestions } = api.admin.getDailySuggestions.useQuery({ contestId });
@@ -43,14 +51,14 @@ export default function ContestPage() {
   });
 
   const handleVerify = (problemId: string) => {
-    if (!session?.user.leetcodeUsername) {
-      alert("Please add your LeetCode username in your profile");
+    if (!user) {
+      alert("Please sign in to verify problems");
       return;
     }
     setVerifying(problemId);
     verifyMutation.mutate({
       problemId,
-      leetcodeUsername: session.user.leetcodeUsername,
+      leetcodeUsername: user.email || "",
     });
   };
 
@@ -62,7 +70,7 @@ export default function ContestPage() {
     return <div className="flex min-h-screen items-center justify-center bg-gray-900 text-white">Contest not found</div>;
   }
 
-  const currentUserId = session?.user?.id;
+  const currentUserId = user?.id;
   const isParticipant = contest.participants.some((p) => p.userId === currentUserId);
   const isCreator = contest.creatorId === currentUserId;
 

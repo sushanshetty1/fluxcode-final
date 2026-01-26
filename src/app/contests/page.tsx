@@ -1,69 +1,144 @@
-import { api } from "~/trpc/server";
+"use client";
+
+import { api } from "~/trpc/react";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
-import { auth } from "~/server/auth";
+import { NavBar } from "~/components/ui/navbar";
+import { BentoGrid, BentoGridItem } from "~/components/ui/bento-grid";
+import { useRouter } from "next/navigation";
+import { Trophy, Users, Calendar, Plus, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
+import { createClient } from "~/lib/supabase/client";
+import { useEffect, useState } from "react";
+import type { User } from "@supabase/supabase-js";
 
-export default async function Contests() {
-  const contests = await api.contest.getAll();
-  const session = await auth();
+export default function Contests() {
+  const { data: contests, isLoading } = api.contest.getAll.useQuery();
+  const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setUser(user);
+    });
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      <nav className="border-b border-gray-800 bg-gray-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <Link href="/">
-              <h1 className="text-2xl font-bold text-indigo-400">FluxCode</h1>
-            </Link>
-            <div className="flex items-center gap-4">
-              {session ? (
-                <Link href="/dashboard">
-                  <Button>Dashboard</Button>
-                </Link>
-              ) : (
-                <Link href="/auth/signin">
-                  <Button>Sign In</Button>
-                </Link>
-              )}
-            </div>
+    <div className="min-h-screen bg-background">
+      <NavBar />
+
+      <main className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 text-center"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6">
+            <Sparkles className="h-4 w-4 text-primary" />
+            <span className="text-sm font-medium text-primary">Active Competitions</span>
           </div>
-        </div>
-      </nav>
+          
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
+            Live <span className="text-primary">Contests</span>
+          </h1>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto mb-8">
+            Join competitive coding contests and track your progress on the leaderboards
+          </p>
 
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-3xl font-bold text-white">Active Contests</h2>
-          {session && (
+          {user && (
             <Link href="/contests/create">
-              <Button>Create Contest</Button>
+              <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-6 py-6 rounded-full">
+                <Plus className="h-5 w-5 mr-2 group-hover:rotate-90 transition-transform duration-300" />
+                Create New Contest
+              </Button>
             </Link>
           )}
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {contests.map((contest) => (
-            <div key={contest.id} className="rounded-lg bg-gray-800 p-6 shadow hover:shadow-lg transition-shadow">
-              <h3 className="mb-2 text-xl font-bold text-white">{contest.name}</h3>
-              <p className="mb-4 text-sm text-gray-400">
-                {contest.description ?? "No description"}
-              </p>
-              <div className="mb-4 flex items-center gap-2 text-sm text-gray-400">
-                <span>By {contest.creator.name}</span>
-                <span>•</span>
-                <span>{contest._count.participants} participants</span>
-              </div>
-              <Link href={`/contest/${contest.id}`}>
-                <Button className="w-full">View Contest</Button>
+        {/* Loading State */}
+        {isLoading && (
+          <div className="flex items-center justify-center py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+          </div>
+        )}
+
+        {/* Contests Grid */}
+        {!isLoading && contests && contests.length > 0 && (
+          <BentoGrid className="mb-12">
+            {contests.map((contest, idx) => (
+              <BentoGridItem
+                key={contest.id}
+                className={idx % 5 === 0 ? "md:col-span-2" : ""}
+                title={contest.name}
+                description={contest.description ?? "No description available"}
+                category="Coding Contest"
+                icon={<Trophy className="h-5 w-5 text-primary" />}
+                header={
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-purple-500/10 to-transparent" />
+                }
+                onClick={() => router.push(`/contest/${contest.id}`)}
+              />
+            ))}
+          </BentoGrid>
+        )}
+
+        {/* Empty State */}
+        {!isLoading && contests && contests.length === 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center py-20"
+          >
+            <div className="inline-flex p-6 rounded-3xl bg-white/5 border border-white/10 mb-6">
+              <Trophy className="h-16 w-16 text-primary/50" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-3">No Active Contests</h3>
+            <p className="text-white/60 mb-8 max-w-md mx-auto">
+              Be the first to create a contest and challenge the community
+            </p>
+            {user && (
+              <Link href="/contests/create">
+                <Button className="bg-primary hover:bg-primary/90 text-black font-semibold px-8 py-6 rounded-full">
+                  <Plus className="h-5 w-5 mr-2" />
+                  Create Contest
+                </Button>
               </Link>
-            </div>
-          ))}
+            )}
+          </motion.div>
+        )}
 
-          {contests.length === 0 && (
-            <div className="col-span-full text-center py-12">
-              <p className="text-gray-400">No active contests found</p>
+        {/* Stats Section */}
+        {!isLoading && contests && contests.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12"
+          >
+            <div className="rounded-3xl p-8 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300 group">
+              <Trophy className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-3xl font-bold text-white mb-2">{contests.length}</h3>
+              <p className="text-white/60">Active Contests</p>
             </div>
-          )}
-        </div>
+            
+            <div className="rounded-3xl p-8 bg-white/5 border border-white/10 hover:border-accent/30 transition-all duration-300 group">
+              <Users className="h-10 w-10 text-accent mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-3xl font-bold text-white mb-2">
+                {contests.reduce((sum, c) => sum + c._count.participants, 0)}
+              </h3>
+              <p className="text-white/60">Total Participants</p>
+            </div>
+            
+            <div className="rounded-3xl p-8 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300 group">
+              <Calendar className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-3xl font-bold text-white mb-2">24/7</h3>
+              <p className="text-white/60">Always Active</p>
+            </div>
+          </motion.div>
+        )}
       </main>
     </div>
   );
