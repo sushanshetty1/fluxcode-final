@@ -7,12 +7,17 @@ import { Code2, Trophy, LayoutDashboard, LogOut, User } from "lucide-react";
 import { createClient } from "~/lib/supabase/client";
 import { useEffect, useState } from "react";
 import type { User as SupabaseUser } from "@supabase/supabase-js";
+import { api } from "~/trpc/react";
 
 export function NavBar() {
   const pathname = usePathname();
   const router = useRouter();
   const [user, setUser] = useState<SupabaseUser | null>(null);
   const [, setLoading] = useState(true);
+  const { data: userProfile } = api.user.getProfile.useQuery(
+    { userId: user?.id ?? "" },
+    { enabled: !!user?.id }
+  );
 
   useEffect(() => {
     const supabase = createClient();
@@ -41,11 +46,13 @@ export function NavBar() {
     router.push("/");
   };
 
-  const navItems = [
+  const baseNavItems = [
     { href: "/contests", label: "Contests", icon: Trophy },
-    { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+    { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard, adminOnly: true },
     { href: "/profile", label: "Profile", icon: User },
   ];
+
+  const navItems = baseNavItems.filter(item => !item.adminOnly || userProfile?.isAdmin);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
