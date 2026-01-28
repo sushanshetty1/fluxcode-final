@@ -62,6 +62,12 @@ export default function ContestDashboard() {
     },
   });
 
+  const markProblemCompleted = api.progress.markContestProblemCompleted.useMutation({
+    onSuccess: () => {
+      void refetchContest();
+    },
+  });
+
   useEffect(() => {
     const supabase = createClient();
     const fetchUser = async () => {
@@ -134,8 +140,9 @@ export default function ContestDashboard() {
 
   const getWeekData = (week: SyllabusWeek) => {
     // Get actual solved data from userProgress
+    // Map by leetcodeId (from syllabus) instead of database problemId
     const userProgressMap = new Map(
-      contest?.userProgress?.map((p) => [p.problemId, p.completed]) ?? []
+      contest?.userProgress?.map((p) => [p.problem.leetcodeId, p.completed]) ?? []
     );
 
     const weekdayProblems = week.weekdayHomework.map((p) => ({
@@ -298,12 +305,14 @@ export default function ContestDashboard() {
                   key={week.weekNumber}
                   week={getWeekData(week)}
                   isWeekend={isWeekend()}
-                  onVerify={async (problemId: string) => {
+                  onVerify={async (problemId: string, problemTitle: string) => {
                     if (!userId) return;
-                    // TODO: Call verify API to check LeetCode submission
-                    console.log('Verify problem:', problemId);
-                    // After verification, refetch contest data
-                    await refetchContest();
+                    await markProblemCompleted.mutateAsync({
+                      userId,
+                      contestId: contest.id,
+                      problemId,
+                      problemTitle,
+                    });
                   }}
                 />
               ))}

@@ -172,6 +172,11 @@ export const contestRouter = createTRPCRouter({
             problemId: true,
             completed: true,
             completedAt: true,
+            problem: {
+              select: {
+                leetcodeId: true,
+              },
+            },
           },
         });
       }

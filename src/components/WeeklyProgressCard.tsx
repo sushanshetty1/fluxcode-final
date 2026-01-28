@@ -42,7 +42,7 @@ interface WeekData {
 interface WeeklyProgressCardProps {
   week: WeekData;
   isWeekend: boolean;
-  onVerify?: (problemId: string) => Promise<void>;
+  onVerify?: (problemId: string, problemTitle: string) => Promise<void>;
 }
 
 export function WeeklyProgressCard({ week, isWeekend, onVerify }: WeeklyProgressCardProps) {
@@ -52,7 +52,7 @@ export function WeeklyProgressCard({ week, isWeekend, onVerify }: WeeklyProgress
     if (!onVerify) return;
     
     try {
-      await onVerify(problemId);
+      await onVerify(problemId, problemTitle);
       toast.success(`${problemTitle} verified successfully!`, {
         description: "Your progress has been updated.",
       });
@@ -151,7 +151,7 @@ export function WeeklyProgressCard({ week, isWeekend, onVerify }: WeeklyProgress
       <div className="relative">
         {/* Blur overlay when not weekend */}
         {!isWeekendToday && (
-          <div className="absolute inset-0 z-10 flex items-center justify-center rounded-lg bg-black/60 backdrop-blur-sm">
+          <div className="absolute inset-0 z-10 flex items-center justify-center rounded-lg bg-black/80 backdrop-blur-md">
             <div className="flex flex-col items-center gap-2 text-white">
               <Lock className="h-8 w-8" />
               <p className="text-sm font-semibold">Available on Weekends</p>
@@ -183,8 +183,8 @@ export function WeeklyProgressCard({ week, isWeekend, onVerify }: WeeklyProgress
               key={problem.id}
               className={`flex items-center justify-between rounded-lg border px-3 py-2 ${getWeekendColor()}`}
             >
-              <span className="text-sm text-white">{problem.title}</span>
-              <div className="flex items-center gap-2">
+              <span className={`text-sm ${!isWeekendToday ? 'invisible' : 'text-white'}`}>{problem.title}</span>
+              <div className={`flex items-center gap-2 ${!isWeekendToday ? 'invisible' : ''}`}>
                 <Badge
                   className={
                     problem.difficulty === "Easy"
