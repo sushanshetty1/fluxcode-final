@@ -221,6 +221,77 @@ export const contestRouter = createTRPCRouter({
       return participation?.contest;
     }),
 
+  getLeaderboard: publicProcedure
+    .input(z.object({ contestId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const participants = await ctx.db.contestParticipant.findMany({
+        where: { contestId: input.contestId },
+        include: {
+          user: {
+            select: {
+              id: true,
+              name: true,
+              image: true,
+              leetcodeUsername: true,
+            },
+          },
+        },
+      });
+
+      // Get today's date range (midnight to midnight)
+      const now = new Date();
+      const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const todayEnd = new Date(todayStart.getTime() + 24 * 60 * 60 * 1000);
+
+      const leaderboardData = await Promise.all(
+        participants.map(async (participant) => {
+          // Get user's streak
+          const streak = await ctx.db.streak.findUnique({
+            where: { userId: participant.userId },
+          });
+
+          // Get today's solved problems
+          const todayProgress = await ctx.db.userProgress.findMany({
+            where: {
+              userId: participant.userId,
+              completedAt: {
+                gte: todayStart,
+                lt: todayEnd,
+              },
+              completed: true,
+              problem: {
+                topic: {
+                  contestId: input.contestId,
+                },
+              },
+            },
+            include: {
+              problem: {
+                select: {
+                  leetcodeId: true,
+                },
+              },
+            },
+          });
+
+          const problemsSolvedToday = todayProgress.map(p => p.problem.leetcodeId);
+
+          return {
+            userId: participant.userId,
+            name: participant.user.name,
+            image: participant.user.image,
+            leetcodeUsername: participant.user.leetcodeUsername,
+            currentStreak: streak?.currentStreak ?? 0,
+            problemsSolvedToday,
+            needsPayment: participant.needsPayment,
+            hasPaid: participant.hasPaid,
+          };
+        })
+      );
+
+      return leaderboardData;
+    }),
+
   update: protectedProcedure
     .input(z.object({
       userId: z.string(),

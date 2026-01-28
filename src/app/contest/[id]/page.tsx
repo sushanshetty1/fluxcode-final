@@ -10,6 +10,7 @@ import { WeeklyProgressCard } from "~/components/WeeklyProgressCard";
 import { PaymentModal } from "~/components/PaymentModal";
 import { api } from "~/trpc/react";
 import { createClient } from "~/lib/supabase/client";
+import { Trophy, LayoutDashboard } from "lucide-react";
 
 interface SyllabusWeek {
   weekNumber: number;
@@ -49,10 +50,16 @@ export default function ContestDashboard() {
   const [currentWeek, setCurrentWeek] = useState(1);
   const [userId, setUserId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [view, setView] = useState<"dashboard" | "leaderboard">("dashboard");
 
   const { data: contest, refetch: refetchContest } = api.contest.getById.useQuery(
     { id: contestId, userId: userId ?? undefined },
     { enabled: !!contestId }
+  );
+
+  const { data: leaderboard } = api.contest.getLeaderboard.useQuery(
+    { contestId },
+    { enabled: !!contestId && view === "leaderboard" }
   );
 
   const joinContest = api.contest.join.useMutation({
@@ -136,6 +143,26 @@ export default function ContestDashboard() {
       contestId: contest.id,
       password: contest.password ?? undefined,
     });
+  };
+
+  const categorizeProblemsSolvedToday = (problemIds: string[], currentWeek: number) => {
+    if (!syllabus) return { homework: 0, weekend: 0 };
+    
+    const weekData = syllabus.weeks[currentWeek - 1];
+    if (!weekData) return { homework: 0, weekend: 0 };
+    
+    const homeworkIds = new Set(weekData.weekdayHomework.map(p => p.id));
+    const weekendIds = new Set(weekData.weekendTest.problems.map(p => p.id));
+    
+    let homework = 0;
+    let weekend = 0;
+    
+    problemIds.forEach(id => {
+      if (homeworkIds.has(id)) homework++;
+      if (weekendIds.has(id)) weekend++;
+    });
+    
+    return { homework, weekend };
   };
 
   const getWeekData = (week: SyllabusWeek) => {
@@ -235,6 +262,26 @@ export default function ContestDashboard() {
             </Card>
           </div>
 
+          {/* View Toggle */}
+          <div className="mt-6 flex gap-2">
+            <Button
+              onClick={() => setView("dashboard")}
+              variant={view === "dashboard" ? "default" : "outline"}
+              className={view === "dashboard" ? "bg-primary text-black" : "border-white/20 text-white"}
+            >
+              <LayoutDashboard className="mr-2 h-4 w-4" />
+              Dashboard
+            </Button>
+            <Button
+              onClick={() => setView("leaderboard")}
+              variant={view === "leaderboard" ? "default" : "outline"}
+              className={view === "leaderboard" ? "bg-primary text-black" : "border-white/20 text-white"}
+            >
+              <Trophy className="mr-2 h-4 w-4" />
+              Leaderboard
+            </Button>
+          </div>
+
           {/* Payment Status Warning */}
           {isParticipant && needsPayment && !hasPaid && (
             <motion.div
@@ -289,8 +336,8 @@ export default function ContestDashboard() {
           )}
         </motion.div>
 
-        {/* Weekly Progress */}
-        {isParticipant && syllabus && (
+        {/* Dashboard View */}
+        {isParticipant && view === "dashboard" && syllabus && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -332,6 +379,99 @@ export default function ContestDashboard() {
                 </div>
               </Card>
             )}
+          </motion.div>
+        )}
+
+        {/* Leaderboard View */}
+        {view === "leaderboard" && leaderboard && syllabus && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <h2 className="mb-6 text-2xl font-bold text-white">
+              Leaderboard
+            </h2>
+            <Card className="border-purple-500/20 bg-black/50 backdrop-blur-xl overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="border-b border-white/10">
+                    <tr>
+                      <th className="px-6 py-4 text-left text-base font-semibold text-gray-400">Rank</th>
+                      <th className="px-6 py-4 text-left text-base font-semibold text-gray-400">Participant</th>
+                      <th className="px-6 py-4 text-center text-base font-semibold text-gray-400">Streak</th>
+                      <th className="px-6 py-4 text-center text-base font-semibold text-gray-400">Homework This Week</th>
+                      <th className="px-6 py-4 text-center text-base font-semibold text-gray-400">Weekend Contest</th>
+                      <th className="px-6 py-4 text-center text-base font-semibold text-gray-400">Payment</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {leaderboard
+                      .sort((a, b) => b.currentStreak - a.currentStreak)
+                      .map((participant, index) => {
+                        const { homework, weekend } = categorizeProblemsSolvedToday(
+                          participant.problemsSolvedToday,
+                          currentWeek
+                        );
+                        const paymentStatus = participant.needsPayment && !participant.hasPaid ? "Pending" : "Paid";
+                        
+                        return (
+                          <tr key={participant.userId} className="border-b border-white/5 hover:bg-white/5">
+                            <td className="px-6 py-4 text-white font-semibold text-base">#{index + 1}</td>
+                            <td className="px-6 py-4">
+                              <div className="flex items-center gap-3">
+                                {participant.image && (
+                                  <img
+                                    src={participant.image}
+                                    alt={participant.name ?? "User"}
+                                    className="h-10 w-10 rounded-full"
+                                  />
+                                )}
+                                <div>
+                                  <div className="text-white font-medium text-base">{participant.name}</div>
+                                  {participant.leetcodeUsername && (
+                                    <div className="text-sm text-gray-400">@{participant.leetcodeUsername}</div>
+                                  )}
+                                </div>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 text-center">
+                              <Badge className="bg-purple-500/20 text-purple-400 text-base">
+                                {participant.currentStreak} 🔥
+                              </Badge>
+                            </td>
+                            <td className="px-6 py-4 text-center">
+                              <span className="text-white font-semibold text-lg">{homework}</span>
+                            </td>
+                            <td className="px-6 py-4 text-center">
+                              <Badge
+                                className={
+                                  weekend < 2
+                                    ? "bg-red-500/20 text-red-400 text-base"
+                                    : "bg-green-500/20 text-green-400 text-base"
+                                }
+                              >
+                                {weekend}
+                              </Badge>
+                            </td>
+                            <td className="px-6 py-4 text-center">
+                              <Badge
+                                className={
+                                  paymentStatus === "Paid"
+                                    ? "bg-green-500/20 text-green-400 text-base"
+                                    : "bg-yellow-500/20 text-yellow-400 text-base"
+                                }
+                              >
+                                {paymentStatus}
+                              </Badge>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
           </motion.div>
         )}
 
