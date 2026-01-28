@@ -326,4 +326,123 @@ export const contestRouter = createTRPCRouter({
         },
       });
     }),
+
+  createWithDifficulty: protectedProcedure
+    .input(z.object({
+      userId: z.string(),
+      name: z.string(),
+      description: z.string().optional(),
+      difficulty: z.string(),
+      startDate: z.date(),
+      penaltyAmount: z.number(),
+      invitedUserIds: z.array(z.string()).optional(),
+    }))
+    .mutation(async ({ ctx, input }) => {
+      // Create contest
+      const contest = await ctx.db.contest.create({
+        data: {
+          name: input.name,
+          description: input.description,
+          difficulty: input.difficulty,
+          startDate: input.startDate,
+          penaltyAmount: input.penaltyAmount,
+          creatorId: input.userId,
+          isActive: true,
+        },
+      });
+
+      // Add creator as participant
+      await ctx.db.contestParticipant.create({
+        data: {
+          contestId: contest.id,
+          userId: input.userId,
+          role: "creator",
+          isVisible: true,
+        },
+      });
+
+      // Invite users if provided
+      if (input.invitedUserIds && input.invitedUserIds.length > 0) {
+        await ctx.db.contestParticipant.createMany({
+          data: input.invitedUserIds.map((userId) => ({
+            contestId: contest.id,
+            userId,
+            role: "participant",
+            isVisible: false,
+          })),
+        });
+      }
+
+      return contest;
+    }),
+
+  checkWeekendPenalties: protectedProcedure
+    .input(z.object({ contestId: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      // Check if it's Monday
+      const today = new Date();
+      const dayOfWeek = today.getDay();
+      
+      if (dayOfWeek !== 1) {
+        throw new Error("Penalty checks only run on Mondays");
+      }
+
+      // Get contest
+      const contest = await ctx.db.contest.findUnique({
+        where: { id: input.contestId },
+        include: {
+          participants: {
+            include: {
+              user: true,
+            },
+          },
+        },
+      });
+
+      if (!contest) {
+        throw new Error("Contest not found");
+      }
+
+      // Check each participant's weekend test completion
+      for (const participant of contest.participants) {
+        // Skip if already paid this week
+        const lastPaymentDate = participant.lastPaymentDate;
+        if (lastPaymentDate) {
+          const daysSincePayment = Math.floor(
+            (today.getTime() - lastPaymentDate.getTime()) / (1000 * 60 * 60 * 24)
+          );
+          if (daysSincePayment < 7) {
+            continue;
+          }
+        }
+
+        // Check weekend problems completion (requires 2/3 solved)
+        const lastWeekendAttempt = participant.lastWeekendAttempt;
+        const lastWeekendSuccess = participant.lastWeekendSuccess;
+
+        if (!lastWeekendSuccess && lastWeekendAttempt) {
+          // Failed weekend test (0-1 solved) - mark for penalty payment
+          await ctx.db.contestParticipant.update({
+            where: { id: participant.id },
+            data: {
+              needsPayment: true,
+              currentStreak: 0,
+              hasPaid: false,
+            },
+          });
+        } else if (lastWeekendSuccess) {
+          // Passed weekend test (2-3 solved) - money carries over, no payment needed
+          await ctx.db.contestParticipant.update({
+            where: { id: participant.id },
+            data: {
+              currentStreak: { increment: 1 },
+              needsPayment: false,
+              hasPaid: true,
+            },
+          });
+        }
+      }
+
+      return { message: "Penalty check completed" };
+    }),
 });
