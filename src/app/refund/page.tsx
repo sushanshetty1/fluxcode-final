@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 import { RefreshCw, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { Footer } from "~/components/Footer";
-
 export default function RefundPolicy() {
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -23,13 +21,13 @@ export default function RefundPolicy() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center gap-3 mb-6">
-            <RefreshCw className="h-8 w-8 text-primary" />
-            <h1 className="text-4xl md:text-5xl font-bold text-white">Refund Policy</h1>
+          <div className="inline-flex items-center justify-center gap-3 mb-6">
+            <RefreshCw className="h-10 w-10 text-primary" />
+            <h1 className="text-4xl md:text-6xl font-bold text-white">Refund Policy</h1>
           </div>
-          <p className="text-gray-400 text-lg">Last updated: {new Date().toLocaleDateString()}</p>
+          <p className="text-gray-400 text-lg md:text-xl">Last updated: {new Date().toLocaleDateString()}</p>
         </motion.div>
 
         {/* Content */}
@@ -37,9 +35,9 @@ export default function RefundPolicy() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="prose prose-invert max-w-4xl"
+          className="prose prose-invert max-w-4xl mx-auto"
         >
-          <div className="space-y-8 text-gray-300">
+          <div className="space-y-12 text-gray-300 leading-relaxed">
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">1. Contest Entry Fees</h2>
               <h3 className="text-xl font-semibold text-white mb-3">Non-Refundable</h3>
@@ -73,7 +71,7 @@ export default function RefundPolicy() {
               <h2 className="text-2xl font-semibold text-white mb-4">3. Technical Issues</h2>
               <p>If you experience technical issues that prevent you from participating:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Contact support immediately at <span className="text-primary">support@fluxcode.dev</span></li>
+                <li>Contact support immediately at <span className="text-primary">sushanshetty1470@gmail.com</span></li>
                 <li>Provide detailed information about the issue</li>
                 <li>We will investigate and determine eligibility for refund on a case-by-case basis</li>
               </ul>
@@ -94,7 +92,7 @@ export default function RefundPolicy() {
               <h2 className="text-2xl font-semibold text-white mb-4">5. Refund Process</h2>
               <h3 className="text-xl font-semibold text-white mb-3">How to Request</h3>
               <ol className="list-decimal pl-6 space-y-2">
-                <li>Email <span className="text-primary">support@fluxcode.dev</span> with subject &quot;Refund Request&quot;</li>
+                <li>Email <span className="text-primary">sushanshetty1470@gmail.com</span> with subject &quot;Refund Request&quot;</li>
                 <li>Include your transaction ID and reason for refund</li>
                 <li>Provide any supporting documentation</li>
               </ol>
@@ -140,14 +138,13 @@ export default function RefundPolicy() {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">9. Contact</h2>
               <p>For refund inquiries or disputes, contact us at:</p>
-              <p className="text-primary">support@fluxcode.dev</p>
+              <p className="text-primary">sushanshetty1470@gmail.com</p>
               <p className="mt-2">We typically respond within 24-48 hours.</p>
             </section>
           </div>
         </motion.div>
       </div>
 
-      <Footer />
     </main>
   );
 }

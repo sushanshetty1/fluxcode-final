@@ -9,7 +9,8 @@ import { Footer } from "~/components/Footer";
 
 export const metadata: Metadata = {
   title: "FluxCode - Master DSA Through Competition",
-  description: "Join long-term coding contests, track your progress with AI-powered suggestions, compete on real-time leaderboards, and master data structures & algorithms",
+  description:
+    "Join long-term coding contests, track your progress with AI-powered suggestions, compete on real-time leaderboards, and master data structures & algorithms",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
@@ -34,8 +35,8 @@ export default function RootLayout({
         <TRPCReactProvider>
           {children}
           <Toaster />
-          <Footer />
         </TRPCReactProvider>
+        <Footer />
       </body>
     </html>
   );

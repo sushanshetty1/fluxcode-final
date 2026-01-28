@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { Code2, Trophy, TrendingUp, Sparkles, ArrowRight, Zap, Target, Brain } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { createClient } from "~/lib/supabase/client";
-import { Footer } from "~/components/Footer";
 
 export default function Home() {
   const router = useRouter();
@@ -224,7 +223,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

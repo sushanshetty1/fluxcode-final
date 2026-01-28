@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Shield, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { Footer } from "~/components/Footer";
 
 export default function PrivacyPolicy() {
   return (
@@ -23,13 +22,13 @@ export default function PrivacyPolicy() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center gap-3 mb-6">
-            <Shield className="h-8 w-8 text-primary" />
-            <h1 className="text-4xl md:text-5xl font-bold text-white">Privacy Policy</h1>
+          <div className="inline-flex items-center justify-center gap-3 mb-6">
+            <Shield className="h-10 w-10 text-primary" />
+            <h1 className="text-4xl md:text-6xl font-bold text-white">Privacy Policy</h1>
           </div>
-          <p className="text-gray-400 text-lg">Last updated: {new Date().toLocaleDateString()}</p>
+          <p className="text-gray-400 text-lg md:text-xl">Last updated: {new Date().toLocaleDateString()}</p>
         </motion.div>
 
         {/* Content */}
@@ -37,9 +36,9 @@ export default function PrivacyPolicy() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="prose prose-invert max-w-4xl"
+          className="prose prose-invert max-w-4xl mx-auto"
         >
-          <div className="space-y-8 text-gray-300">
+          <div className="space-y-12 text-gray-300 leading-relaxed">
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">1. Information We Collect</h2>
               <p>We collect information you provide directly to us when you:</p>
@@ -104,13 +103,12 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">8. Contact Us</h2>
               <p>If you have questions about this Privacy Policy, please contact us at:</p>
-              <p className="text-primary">support@fluxcode.dev</p>
+              <p className="text-primary">sushanshetty1470@gmail.com</p>
             </section>
           </div>
         </motion.div>
       </div>
 
-      <Footer />
     </main>
   );
 }

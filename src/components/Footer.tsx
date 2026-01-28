@@ -58,6 +58,11 @@ export function Footer() {
                   Refund Policy
                 </Link>
               </li>
+              <li>
+                <Link href="/contact" className="text-sm text-gray-400 hover:text-primary transition-colors">
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -66,9 +71,9 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider">Connect</h3>
             <ul className="space-y-2">
               <li>
-                <a href="mailto:support@fluxcode.dev" className="text-sm text-gray-400 hover:text-primary transition-colors flex items-center gap-2">
+                <a href="mailto:sushanshetty1470@gmail.com" className="text-sm text-gray-400 hover:text-primary transition-colors flex items-center gap-2">
                   <Mail className="h-4 w-4" />
-                  support@fluxcode.dev
+                  sushanshetty1470@gmail.com
                 </a>
               </li>
               <li>
