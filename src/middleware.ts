@@ -11,7 +11,11 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith("/api") ||
     pathname.startsWith("/auth") ||
     pathname.startsWith("/public") ||
-    pathname === "/"
+    pathname === "/" ||
+    pathname === "/privacy" ||
+    pathname === "/terms" ||
+    pathname === "/refund" ||
+    pathname === "/contact"
   ) {
     return NextResponse.next();
   }
