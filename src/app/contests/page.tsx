@@ -82,7 +82,7 @@ export default function Contests() {
         {/* Contests Grid */}
         {!isLoading && contests && contests.length > 0 && (
           <BentoGrid className="mb-12">
-            {contests.map((contest, idx) => (
+            {contests.map((contest) => (
               <BentoGridItem
                 key={contest.id}
                 className=""

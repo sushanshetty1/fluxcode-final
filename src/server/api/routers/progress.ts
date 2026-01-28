@@ -245,8 +245,7 @@ export const progressRouter = createTRPCRouter({
 
       // Get or create a default topic for this contest
       let topic = contest.topics[0];
-      if (!topic) {
-        topic = await ctx.db.topic.create({
+      topic ??= await ctx.db.topic.create({
           data: {
             contestId: input.contestId,
             name: "Contest Problems",
@@ -254,7 +253,6 @@ export const progressRouter = createTRPCRouter({
             allowedLanguages: ["javascript", "python", "java", "cpp"],
           },
         });
-      }
 
       // Find or create problem record
       let problem = await ctx.db.problem.findFirst({
