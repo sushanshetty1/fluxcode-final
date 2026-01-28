@@ -28,10 +28,14 @@ export async function POST(request: Request) {
       key_secret: process.env.RAZORPAY_KEY_SECRET!,
     });
 
+    // Generate receipt - max 40 characters
+    const timestamp = Date.now().toString().slice(-8);
+    const receipt = `${timestamp}_${weekNumber ?? "entry"}`.slice(0, 40);
+
     const order = await razorpay.orders.create({
       amount,
       currency: "INR",
-      receipt: `${contestId}_${user.id}_${weekNumber ?? "entry"}`,
+      receipt,
     });
 
     // Create payment record

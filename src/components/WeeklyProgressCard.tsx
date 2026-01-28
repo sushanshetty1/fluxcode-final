@@ -48,16 +48,40 @@ interface WeeklyProgressCardProps {
 export function WeeklyProgressCard({ week, isWeekend, onVerify }: WeeklyProgressCardProps) {
   const isWeekendToday = isWeekendDay();
 
+  const successMessages = [
+    "Wow, you actually did it! 🎉",
+    "Look at you go, showing off! 💪",
+    "Congratulations! Your streak is still alive... for now 😏",
+    "Nice! Now do 10 more 😈",
+    "Verified! Mom would be proud 🥺",
+    "Achievement unlocked: Actually Coding 🏆",
+    "LeetCode: ✅ | Grass: ❌",
+    "Grinded! Now take a break... JK, NEXT PROBLEM! 🔥",
+  ];
+
+  const errorMessages = [
+    "Bruh... did you even solve it? 💀",
+    "LeetCode says no lol 😂",
+    "Nice try, but that's a no from LeetCode 🙅",
+    "Error 404: Solution not found 🤡",
+    "LeetCode rejected you faster than your ex 💔",
+    "Oops! Time to actually solve the problem 😬",
+    "Did you copy-paste from ChatGPT? LeetCode knows 🤖",
+    "Task failed successfully ❌",
+  ];
+
   const handleVerify = async (problemId: string, problemTitle: string) => {
     if (!onVerify) return;
     
     try {
       await onVerify(problemId, problemTitle);
-      toast.success(`${problemTitle} verified successfully!`, {
-        description: "Your progress has been updated.",
+      const randomSuccess = successMessages[Math.floor(Math.random() * successMessages.length)];
+      toast.success(randomSuccess, {
+        description: `${problemTitle} verified! Your progress has been updated.`,
       });
     } catch (error) {
-      toast.error("Verification failed", {
+      const randomError = errorMessages[Math.floor(Math.random() * errorMessages.length)];
+      toast.error(randomError, {
         description: error instanceof Error ? error.message : "Unable to verify the problem. Please try again.",
       });
     }

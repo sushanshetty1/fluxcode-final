@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { Footer } from "~/components/Footer";
 
 export const metadata: Metadata = {
   title: "FluxCode - Master DSA Through Competition",
