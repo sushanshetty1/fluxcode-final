@@ -87,9 +87,14 @@ export default function CreateContest() {
     });
   };
 
-  const addUser = (user: { id: string; name: string; email: string; leetcodeUsername: string }) => {
-    if (!selectedUsers.find(u => u.id === user.id)) {
-      setSelectedUsers([...selectedUsers, user]);
+  const addUser = (user: { id: string; name: string | null; email: string | null; leetcodeUsername: string | null }) => {
+    if (!selectedUsers.find(u => u.id === user.id) && user.name && user.email && user.leetcodeUsername) {
+      setSelectedUsers([...selectedUsers, {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        leetcodeUsername: user.leetcodeUsername,
+      }]);
     }
     setSearchQuery("");
   };
