@@ -108,9 +108,8 @@ model ContestParticipant {
   joinedAt              DateTime  @default(now())
   role                  String    @default("participant")
   isVisible             Boolean   @default(false)
-  hasPaid               Boolean   @default(false)
+  paymentStatus         String    @default("pending") // "pending", "paid", "failed"
   currentStreak         Int       @default(0)
-  needsPayment          Boolean   @default(true)
   lastPaymentDate       DateTime?
   lastWeekendAttempt    DateTime?
   lastWeekendSuccess    Boolean   @default(false)
