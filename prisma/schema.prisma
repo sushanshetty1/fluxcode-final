@@ -117,6 +117,8 @@ model ContestParticipant {
   @@unique([contestId, userId])
   @@index([contestId])
   @@index([userId])
+  @@index([contestId, isVisible])
+  @@index([contestId, paymentStatus])
 }
 
 model UserProgress {
@@ -139,6 +141,9 @@ model UserProgress {
   @@index([userId])
   @@index([topicId])
   @@index([problemId])
+  @@index([userId, completed])
+  @@index([userId, topicId, completed])
+  @@index([completedAt])
 }
 
 model DailySuggestion {

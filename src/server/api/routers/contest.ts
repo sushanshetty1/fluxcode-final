@@ -123,21 +123,93 @@ export const contestRouter = createTRPCRouter({
   getById: publicProcedure
     .input(z.object({ userId: z.string().optional(),  id: z.string() }))
     .query(async ({ ctx, input }) => {
+      // Single optimized query with all necessary includes
       const contest = await ctx.db.contest.findUnique({
         where: { id: input.id },
-        include: {
-          creator: true,
+        select: {
+          id: true,
+          name: true,
+          description: true,
+          creatorId: true,
+          startDate: true,
+          endDate: true,
+          isActive: true,
+          password: true,
+          easyProblemsPerDay: true,
+          mediumProblemsPerDay: true,
+          hardDaysPerProblem: true,
+          penaltyAmount: true,
+          difficulty: true,
+          createdAt: true,
+          updatedAt: true,
+          creator: {
+            select: {
+              id: true,
+              name: true,
+              email: true,
+              image: true,
+            },
+          },
           topics: {
             orderBy: { orderIndex: "asc" },
-            include: {
+            select: {
+              id: true,
+              name: true,
+              description: true,
+              subcategories: true,
+              questionsPerTopic: true,
+              allowedLanguages: true,
+              difficulty: true,
+              orderIndex: true,
+              isActive: true,
+              hasStarted: true,
+              topicStartedAt: true,
+              topicCompletedAt: true,
               problems: {
                 orderBy: { orderIndex: "asc" },
+                select: {
+                  id: true,
+                  leetcodeId: true,
+                  title: true,
+                  difficulty: true,
+                  hyperlink: true,
+                  tags: true,
+                  orderIndex: true,
+                  progress: input.userId ? {
+                    where: { userId: input.userId },
+                    select: {
+                      id: true,
+                      userId: true,
+                      problemId: true,
+                      completed: true,
+                      completedAt: true,
+                    },
+                  } : false,
+                },
               },
             },
           },
           participants: {
-            include: {
-              user: true,
+            select: {
+              id: true,
+              userId: true,
+              joinedAt: true,
+              role: true,
+              isVisible: true,
+              paymentStatus: true,
+              currentStreak: true,
+              lastPaymentDate: true,
+              lastWeekendAttempt: true,
+              lastWeekendSuccess: true,
+              user: {
+                select: {
+                  id: true,
+                  name: true,
+                  email: true,
+                  image: true,
+                  leetcodeUsername: true,
+                },
+              },
             },
           },
         },
@@ -145,45 +217,32 @@ export const contestRouter = createTRPCRouter({
 
       if (!contest) return null;
 
-      // Get all user progress for the contest
-      const allUserProgress = await ctx.db.userProgress.findMany({
-        where: {
-          problem: {
-            topic: {
-              contestId: input.id,
-            },
-          },
-        },
-      });
+      // Transform nested progress data to flat structure for easier consumption
+      const userProgress = input.userId 
+        ? contest.topics.flatMap(topic => 
+            topic.problems.flatMap(problem => 
+              problem.progress?.map(p => ({
+                problemId: p.problemId,
+                completed: p.completed,
+                completedAt: p.completedAt,
+                problem: {
+                  leetcodeId: problem.leetcodeId,
+                },
+              })) ?? []
+            )
+          )
+        : [];
 
-      // Get user progress if authenticated
-      let userProgress = null;
-      if (input.userId) {
-        userProgress = await ctx.db.userProgress.findMany({
-          where: {
-            userId: input.userId,
-            problem: {
-              topic: {
-                contestId: input.id,
-              },
-            },
-          },
-          select: {
-            problemId: true,
-            completed: true,
-            completedAt: true,
-            problem: {
-              select: {
-                leetcodeId: true,
-              },
-            },
-          },
-        });
-      }
+      // Get all user progress (flattened from nested structure)
+      const allUserProgress = contest.topics.flatMap(topic =>
+        topic.problems.flatMap(problem =>
+          problem.progress ?? []
+        )
+      );
 
       return {
         ...contest,
-        userProgress: userProgress ?? [],
+        userProgress,
         allUserProgress,
       };
     }),
@@ -224,9 +283,12 @@ export const contestRouter = createTRPCRouter({
   getLeaderboard: publicProcedure
     .input(z.object({ contestId: z.string() }))
     .query(async ({ ctx, input }) => {
+      // Batch fetch all participants
       const participants = await ctx.db.contestParticipant.findMany({
         where: { contestId: input.contestId },
-        include: {
+        select: {
+          userId: true,
+          paymentStatus: true,
           user: {
             select: {
               id: true,
@@ -238,55 +300,71 @@ export const contestRouter = createTRPCRouter({
         },
       });
 
+      if (participants.length === 0) {
+        return [];
+      }
+
+      const userIds = participants.map(p => p.userId);
+
       // Get today's date range (midnight to midnight)
       const now = new Date();
       const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
       const todayEnd = new Date(todayStart.getTime() + 24 * 60 * 60 * 1000);
 
-      const leaderboardData = await Promise.all(
-        participants.map(async (participant) => {
-          // Get user's streak
-          const streak = await ctx.db.streak.findUnique({
-            where: { userId: participant.userId },
-          });
+      // Batch fetch all streaks for these users
+      const streaks = await ctx.db.streak.findMany({
+        where: { userId: { in: userIds } },
+        select: {
+          userId: true,
+          currentStreak: true,
+        },
+      });
 
-          // Get today's solved problems
-          const todayProgress = await ctx.db.userProgress.findMany({
-            where: {
-              userId: participant.userId,
-              completedAt: {
-                gte: todayStart,
-                lt: todayEnd,
-              },
-              completed: true,
-              problem: {
-                topic: {
-                  contestId: input.contestId,
-                },
-              },
+      // Batch fetch today's progress for all users
+      const todayProgress = await ctx.db.userProgress.findMany({
+        where: {
+          userId: { in: userIds },
+          completedAt: {
+            gte: todayStart,
+            lt: todayEnd,
+          },
+          completed: true,
+          problem: {
+            topic: {
+              contestId: input.contestId,
             },
-            include: {
-              problem: {
-                select: {
-                  leetcodeId: true,
-                },
-              },
+          },
+        },
+        select: {
+          userId: true,
+          problem: {
+            select: {
+              leetcodeId: true,
             },
-          });
+          },
+        },
+      });
 
-          const problemsSolvedToday = todayProgress.map(p => p.problem.leetcodeId);
+      // Build maps for O(1) lookups
+      const streakMap = new Map(streaks.map(s => [s.userId, s.currentStreak]));
+      const progressMap = new Map<string, string[]>();
+      
+      for (const progress of todayProgress) {
+        const existing = progressMap.get(progress.userId) ?? [];
+        existing.push(progress.problem.leetcodeId);
+        progressMap.set(progress.userId, existing);
+      }
 
-          return {
-            userId: participant.userId,
-            name: participant.user.name,
-            image: participant.user.image,
-            leetcodeUsername: participant.user.leetcodeUsername,
-            currentStreak: streak?.currentStreak ?? 0,
-            problemsSolvedToday,
-            paymentStatus: participant.paymentStatus,
-          };
-        })
-      );
+      // Build leaderboard data
+      const leaderboardData = participants.map(participant => ({
+        userId: participant.userId,
+        name: participant.user.name,
+        image: participant.user.image,
+        leetcodeUsername: participant.user.leetcodeUsername,
+        currentStreak: streakMap.get(participant.userId) ?? 0,
+        problemsSolvedToday: progressMap.get(participant.userId) ?? [],
+        paymentStatus: participant.paymentStatus,
+      }));
 
       return leaderboardData;
     }),
@@ -460,14 +538,19 @@ export const contestRouter = createTRPCRouter({
     .input(z.object({ contestId: z.string(), userId: z.string().optional() }))
     .mutation(async ({ ctx, input }) => {
       
-      // Get contest
+      // Optimized query with select to limit fields
       const contest = await ctx.db.contest.findUnique({
         where: { id: input.contestId },
-        include: {
+        select: {
+          id: true,
           participants: {
             where: input.userId ? { userId: input.userId } : undefined,
-            include: {
-              user: true,
+            select: {
+              id: true,
+              userId: true,
+              lastWeekendSuccess: true,
+              lastPaymentDate: true,
+              paymentStatus: true,
             },
           },
         },
@@ -479,6 +562,8 @@ export const contestRouter = createTRPCRouter({
 
       // Check each participant's weekend test completion
       const today = new Date();
+      const updates = [];
+
       for (const participant of contest.participants) {
         // Check if they've already paid the penalty this week
         const lastPaymentDate = participant.lastPaymentDate;
@@ -488,18 +573,25 @@ export const contestRouter = createTRPCRouter({
         // Only mark as pending if:
         // 1. They didn't pass the weekend test AND
         // 2. They haven't paid the penalty in the last 7 days
-        if (!participant.lastWeekendSuccess && !hasRecentPayment) {
-          await ctx.db.contestParticipant.update({
-            where: { id: participant.id },
-            data: {
-              paymentStatus: "pending",
-              currentStreak: 0,
-            },
-          });
+        if (!participant.lastWeekendSuccess && !hasRecentPayment && participant.paymentStatus !== "pending") {
+          updates.push(
+            ctx.db.contestParticipant.update({
+              where: { id: participant.id },
+              data: {
+                paymentStatus: "pending",
+                currentStreak: 0,
+              },
+            })
+          );
         }
       }
 
-      return { message: "Penalty check completed" };
+      // Batch execute all updates
+      if (updates.length > 0) {
+        await Promise.all(updates);
+      }
+
+      return { message: "Penalty check completed", updated: updates.length };
     }),
 
   getTotalRevenue: protectedProcedure

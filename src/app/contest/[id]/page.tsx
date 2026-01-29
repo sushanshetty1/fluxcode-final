@@ -148,7 +148,8 @@ export default function ContestDashboard() {
         }
       }
     }
-  }, [contest?.startDate, contest?.userProgress, contest?.participants, syllabus, userId, contestId, refetchContest]);
+    // Removed refetchContest from dependencies to prevent infinite loop
+  }, [contest?.startDate, contest?.userProgress, contest?.participants, syllabus, userId, contestId, checkPenalties]);
 
   if (isLoading || !contest) {
     return (
