@@ -100,19 +100,19 @@ model Problem {
 }
 
 model ContestParticipant {
-  id                    String    @id @default(cuid())
-  contestId             String
-  contest               Contest   @relation(fields: [contestId], references: [id], onDelete: Cascade)
-  userId                String
-  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  joinedAt              DateTime  @default(now())
-  role                  String    @default("participant")
-  isVisible             Boolean   @default(false)
-  paymentStatus         String    @default("pending") // "pending", "paid", "failed"
-  currentStreak         Int       @default(0)
-  lastPaymentDate       DateTime?
-  lastWeekendAttempt    DateTime?
-  lastWeekendSuccess    Boolean   @default(false)
+  id                 String    @id @default(cuid())
+  contestId          String
+  contest            Contest   @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  userId             String
+  user               User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  joinedAt           DateTime  @default(now())
+  role               String    @default("participant")
+  isVisible          Boolean   @default(false)
+  paymentStatus      String    @default("pending") // "pending", "paid", "failed"
+  currentStreak      Int       @default(0)
+  lastPaymentDate    DateTime?
+  lastWeekendAttempt DateTime?
+  lastWeekendSuccess Boolean   @default(false)
 
   @@unique([contestId, userId])
   @@index([contestId])
@@ -227,21 +227,21 @@ model Announcement {
 }
 
 model Payment {
-  id                  String   @id @default(cuid())
-  contestId           String
-  contest             Contest  @relation(fields: [contestId], references: [id], onDelete: Cascade)
-  userId              String
-  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  razorpayOrderId     String?
-  razorpayPaymentId   String?
-  razorpaySignature   String?
-  amount              Int
-  currency            String   @default("INR")
-  status              String   @default("pending")
-  isRefunded          Boolean  @default(false)
-  weekNumber          Int?
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
+  id                String   @id @default(cuid())
+  contestId         String
+  contest           Contest  @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  razorpayOrderId   String?
+  razorpayPaymentId String?
+  razorpaySignature String?
+  amount            Int
+  currency          String   @default("INR")
+  status            String   @default("pending")
+  isRefunded        Boolean  @default(false)
+  weekNumber        Int?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 
   @@index([contestId])
   @@index([userId])
