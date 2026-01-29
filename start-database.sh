@@ -69,6 +69,7 @@ if [ "$DB_PASSWORD" = "password" ]; then
     echo "Please change the default password in the .env file and try again"
     exit 1
   fi
+  
   # Generate a random URL-safe password
   DB_PASSWORD=$(openssl rand -base64 12 | tr '+/' '-_')
   if [[ "$(uname)" == "Darwin" ]]; then
