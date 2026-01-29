@@ -109,6 +109,15 @@ export default function ContestDashboard() {
 
   const checkPenalties = api.contest.checkWeekendPenalties.useMutation();
 
+  const handleJoinContest = () => {
+    if (!userId || !contest) return;
+    joinContest.mutate({
+      userId: userId,
+      contestId: contest.id,
+      password: contest.password ?? undefined,
+    });
+  };
+
   useEffect(() => {
     const supabase = createClient();
     const fetchUser = async () => {
@@ -213,6 +222,12 @@ export default function ContestDashboard() {
   const contestStart = new Date(contest.startDate);
   const hasNotStarted = today < contestStart;
 
+  const participant = contest.participants.find(
+    (p) => p.userId === userId
+  );
+  const isParticipant = !!participant;
+  const paymentStatus = participant?.paymentStatus ?? "pending";
+
   if (hasNotStarted) {
     return (
       <div className="min-h-screen bg-linear-to-b from-black via-purple-950/10 to-black">
@@ -238,33 +253,42 @@ export default function ContestDashboard() {
                 </span>
               </p>
               <p className="text-gray-400">Get ready to start your coding journey!</p>
-              <Button
-                onClick={() => router.push("/contests")}
-                className="mt-8 bg-purple-500 hover:bg-purple-600"
-              >
-                Back to Contests
-              </Button>
+
+              {/* Show payment button if not paid or join button if not participant */}
+              <div className="mt-8 flex flex-col items-center gap-4">
+                {isParticipant && paymentStatus === "pending" && (
+                  <Button
+                    onClick={() => setShowPaymentModal(true)}
+                    className="bg-red-500 hover:bg-red-600"
+                  >
+                    Pay Now (₹{contest.penaltyAmount})
+                  </Button>
+                )}
+                
+                {!isParticipant && (
+                  <Button
+                    onClick={handleJoinContest}
+                    disabled={joinContest.isPending}
+                    className="bg-linear-to-r from-purple-500 to-pink-500 px-8 py-3"
+                  >
+                    {joinContest.isPending ? "Joining..." : `Join Contest (₹${contest.penaltyAmount})`}
+                  </Button>
+                )}
+                
+                <Button
+                  onClick={() => router.push("/contests")}
+                  variant="outline"
+                  className="border-white/20 text-white hover:bg-white/10"
+                >
+                  Back to Contests
+                </Button>
+              </div>
             </motion.div>
           </Card>
         </div>
       </div>
     );
   }
-
-  const participant = contest.participants.find(
-    (p) => p.userId === userId
-  );
-  const isParticipant = !!participant;
-  const paymentStatus = participant?.paymentStatus ?? "pending";
-
-  const handleJoinContest = () => {
-    if (!userId) return;
-    joinContest.mutate({
-      userId: userId,
-      contestId: contest.id,
-      password: contest.password ?? undefined,
-    });
-  };
 
   const categorizeProblemsSolvedToday = (problemIds: string[], currentWeek: number) => {
     if (!syllabus) return { homework: 0, weekend: 0 };
