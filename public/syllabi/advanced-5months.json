@@ -4,25 +4,1951 @@
   "totalWeeks": 20,
   "description": "Advanced DSA for competitive programming and complex interviews",
   "weeks": [
-    {"weekNumber": 1, "topic": "Advanced Graph - Network Flow", "concepts": ["Max flow", "Min cut", "Ford-Fulkerson"], "resources": ["https://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/"], "weekdayHomework": [{"id": "2045", "title": "Second Minimum Time", "difficulty": "Medium"}, {"id": "1615", "title": "Maximal Network Rank", "difficulty": "Medium"}, {"id": "2493", "title": "Divide Nodes into Max Groups", "difficulty": "Medium"}, {"id": "1334", "title": "Find City With Smallest Number of Neighbors at Threshold", "difficulty": "Medium"}, {"id": "2556", "title": "Disconnect Path in Binary Matrix", "difficulty": "Medium"}], "weekendTest": {"problems": [{"id": "1971", "title": "Find if Path Exists", "difficulty": "Easy"}, {"id": "1319", "title": "Operations Network Connected", "difficulty": "Medium"}, {"id": "839", "title": "Similar String Groups", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 2, "topic": "Advanced Tree - Fenwick/Segment Advanced", "concepts": ["2D Fenwick", "Persistent segment tree"], "resources": ["https://www.geeksforgeeks.org/two-dimensional-binary-indexed-tree-or-fenwick-tree/"], "weekdayHomework": [{"id": "308", "title": "Range Sum 2D Mutable", "difficulty": "Medium"}, {"id": "315", "title": "Count Smaller After Self", "difficulty": "Medium"}, {"id": "493", "title": "Reverse Pairs", "difficulty": "Medium"}, {"id": "1649", "title": "Create Sorted Array through Instructions", "difficulty": "Hard"}, {"id": "2158", "title": "Amount of New Area Painted Each Day", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "304", "title": "Range Sum 2D Immutable", "difficulty": "Easy"}, {"id": "327", "title": "Count Range Sum", "difficulty": "Medium"}, {"id": "699", "title": "Falling Squares", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 3, "topic": "Advanced DP - Probability DP", "concepts": ["Expected value DP", "Probability calculations"], "resources": ["https://leetcode.com/tag/dynamic-programming/"], "weekdayHomework": [{"id": "808", "title": "Soup Servings", "difficulty": "Medium"}, {"id": "837", "title": "New 21 Game", "difficulty": "Medium"}, {"id": "1467", "title": "Probability of a Two Boxes", "difficulty": "Medium"}, {"id": "1227", "title": "Airplane Seat Assignment Probability", "difficulty": "Medium"}, {"id": "1377", "title": "Frog Position After T Seconds", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "688", "title": "Knight Probability", "difficulty": "Easy"}, {"id": "576", "title": "Out of Boundary Paths", "difficulty": "Medium"}, {"id": "1230", "title": "Toss Strange Coins", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 4, "topic": "Advanced DP - Game Theory", "concepts": ["Minimax", "Nim game", "SG function"], "resources": ["https://leetcode.com/tag/game-theory/"], "weekdayHomework": [{"id": "486", "title": "Predict the Winner", "difficulty": "Medium"}, {"id": "877", "title": "Stone Game", "difficulty": "Medium"}, {"id": "1140", "title": "Stone Game II", "difficulty": "Medium"}, {"id": "1406", "title": "Stone Game III", "difficulty": "Hard"}, {"id": "1510", "title": "Stone Game IV", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "292", "title": "Nim Game", "difficulty": "Easy"}, {"id": "464", "title": "Can I Win", "difficulty": "Medium"}, {"id": "1025", "title": "Divisor Game", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 5, "topic": "Suffix Array and LCP", "concepts": ["Suffix array construction", "Longest common prefix"], "resources": ["https://www.geeksforgeeks.org/suffix-array-set-1-introduction/"], "weekdayHomework": [{"id": "1044", "title": "Longest Duplicate Substring", "difficulty": "Medium"}, {"id": "1062", "title": "Longest Repeating Substring", "difficulty": "Medium"}, {"id": "1698", "title": "Distinct Substrings", "difficulty": "Medium"}, {"id": "1933", "title": "Check if String is Decomposable Into Value-Equal Substrings", "difficulty": "Medium"}, {"id": "1668", "title": "Maximum Repeating Substring", "difficulty": "Easy"}], "weekendTest": {"problems": [{"id": "14", "title": "Longest Common Prefix", "difficulty": "Easy"}, {"id": "718", "title": "Longest Repeated Subarray", "difficulty": "Medium"}, {"id": "1923", "title": "Longest Common Subpath", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 6, "topic": "Aho-Corasick Algorithm", "concepts": ["Multiple pattern matching", "Failure links"], "resources": ["https://www.geeksforgeeks.org/aho-corasick-algorithm-pattern-searching/"], "weekdayHomework": [{"id": "1268", "title": "Search Suggestions", "difficulty": "Medium"}, {"id": "336", "title": "Palindrome Pairs", "difficulty": "Medium"}, {"id": "472", "title": "Concatenated Words", "difficulty": "Medium"}, {"id": "1032", "title": "Stream of Characters", "difficulty": "Hard"}, {"id": "676", "title": "Implement Magic Dictionary", "difficulty": "Medium"}], "weekendTest": {"problems": [{"id": "720", "title": "Longest Word", "difficulty": "Easy"}, {"id": "212", "title": "Word Search II", "difficulty": "Medium"}, {"id": "745", "title": "Prefix and Suffix Search", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 7, "topic": "Convex Hull", "concepts": ["Graham scan", "Jarvis march"], "resources": ["https://www.geeksforgeeks.org/convex-hull-set-1-jarviss-algorithm-or-wrapping/"], "weekdayHomework": [{"id": "587", "title": "Erect the Fence", "difficulty": "Medium"}, {"id": "812", "title": "Largest Triangle Area", "difficulty": "Medium"}, {"id": "469", "title": "Convex Polygon", "difficulty": "Medium"}, {"id": "963", "title": "Minimum Area Rectangle II", "difficulty": "Medium"}, {"id": "1924", "title": "Erect the Fence II", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "883", "title": "Projection Area", "difficulty": "Easy"}, {"id": "223", "title": "Rectangle Area", "difficulty": "Medium"}, {"id": "892", "title": "Surface Area 3D Shapes", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 8, "topic": "Heavy-Light Decomposition", "concepts": ["Tree decomposition", "Path queries"], "resources": ["https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/"], "weekdayHomework": [{"id": "1483", "title": "Kth Ancestor", "difficulty": "Medium"}, {"id": "2509", "title": "Cycle Length Queries", "difficulty": "Medium"}, {"id": "2846", "title": "Min Edge Reversals", "difficulty": "Medium"}, {"id": "1938", "title": "Maximum Genetic Difference Query", "difficulty": "Hard"}, {"id": "2277", "title": "Closest Node to Path in Tree", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "1123", "title": "LCA of Deepest Leaves", "difficulty": "Easy"}, {"id": "865", "title": "Smallest Subtree Deepest", "difficulty": "Medium"}, {"id": "2322", "title": "Minimum Score Tree", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 9, "topic": "Square Root Decomposition", "concepts": ["Block decomposition", "MO's algorithm"], "resources": ["https://www.geeksforgeeks.org/square-root-sqrt-decomposition-technique-set-1-introduction/"], "weekdayHomework": [{"id": "307", "title": "Range Sum Query Mutable", "difficulty": "Medium"}, {"id": "327", "title": "Count Range Sum", "difficulty": "Medium"}, {"id": "315", "title": "Count Smaller", "difficulty": "Medium"}, {"id": "1521", "title": "Find a Value of a Mysterious Function Closest to Target", "difficulty": "Hard"}, {"id": "1707", "title": "Maximum XOR With an Element From Array", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "303", "title": "Range Sum", "difficulty": "Easy"}, {"id": "713", "title": "Subarray Product Less K", "difficulty": "Medium"}, {"id": "1498", "title": "Subsequences Satisfy Sum", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 10, "topic": "Centroid Decomposition", "concepts": ["Tree centroid", "Divide and conquer on trees"], "resources": ["https://www.geeksforgeeks.org/centroid-decomposition-of-tree/"], "weekdayHomework": [{"id": "2458", "title": "Height After Queries", "difficulty": "Medium"}, {"id": "2846", "title": "Min Edge Reversals", "difficulty": "Medium"}, {"id": "2003", "title": "Smallest Missing Genetic", "difficulty": "Medium"}, {"id": "1617", "title": "Count Subtrees With Max Distance Between Cities", "difficulty": "Hard"}, {"id": "742", "title": "Closest Leaf in a Binary Tree", "difficulty": "Medium"}], "weekendTest": {"problems": [{"id": "1123", "title": "LCA Deepest", "difficulty": "Easy"}, {"id": "310", "title": "Min Height Trees", "difficulty": "Medium"}, {"id": "979", "title": "Distribute Coins", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 11, "topic": "Manacher's Algorithm", "concepts": ["Linear palindrome detection", "Longest palindromic substring"], "resources": ["https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/"], "weekdayHomework": [{"id": "5", "title": "Longest Palindromic Substring", "difficulty": "Medium"}, {"id": "647", "title": "Palindromic Substrings", "difficulty": "Medium"}, {"id": "214", "title": "Shortest Palindrome", "difficulty": "Medium"}, {"id": "1745", "title": "Palindrome Partitioning IV", "difficulty": "Hard"}, {"id": "2472", "title": "Maximum Number of Non-overlapping Palindrome Substrings", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "9", "title": "Palindrome Number", "difficulty": "Easy"}, {"id": "516", "title": "Longest Palindromic Subsequence", "difficulty": "Medium"}, {"id": "1312", "title": "Min Insertion Palindrome", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 12, "topic": "FFT and Polynomial", "concepts": ["Fast Fourier Transform", "Polynomial multiplication"], "resources": ["https://www.geeksforgeeks.org/fast-fourier-transformation-poynomial-multiplication/"], "weekdayHomework": [{"id": "43", "title": "Multiply Strings", "difficulty": "Medium"}, {"id": "1235", "title": "Max Profit Job Scheduling", "difficulty": "Medium"}, {"id": "1622", "title": "Fancy Sequence", "difficulty": "Medium"}, {"id": "2338", "title": "Count the Number of Ideal Arrays", "difficulty": "Hard"}, {"id": "1866", "title": "Number of Ways to Rearrange Sticks", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "415", "title": "Add Strings", "difficulty": "Easy"}, {"id": "66", "title": "Plus One", "difficulty": "Medium"}, {"id": "2013", "title": "Detect Squares", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 13, "topic": "Matrix Exponentiation", "concepts": ["Fast matrix exponentiation", "Linear recurrence"], "resources": ["https://www.geeksforgeeks.org/matrix-exponentiation/"], "weekdayHomework": [{"id": "509", "title": "Fibonacci", "difficulty": "Medium"}, {"id": "1137", "title": "Tribonacci", "difficulty": "Medium"}, {"id": "1220", "title": "Count Vowels Permutation", "difficulty": "Medium"}, {"id": "1969", "title": "Minimum Non-Zero Product of Array Elements", "difficulty": "Medium"}, {"id": "2851", "title": "String Transformation", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "70", "title": "Climbing Stairs", "difficulty": "Easy"}, {"id": "552", "title": "Student Attendance II", "difficulty": "Medium"}, {"id": "790", "title": "Domino Tromino", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 14, "topic": "Advanced Combinatorics", "concepts": ["Lucas theorem", "Catalan numbers", "Stirling numbers"], "resources": ["https://www.geeksforgeeks.org/combinatorics-gq/"], "weekdayHomework": [{"id": "62", "title": "Unique Paths", "difficulty": "Medium"}, {"id": "96", "title": "Unique BSTs", "difficulty": "Medium"}, {"id": "1569", "title": "Ways Reorder Array", "difficulty": "Medium"}, {"id": "1916", "title": "Count Ways to Build Rooms in Ant Colony", "difficulty": "Hard"}, {"id": "1830", "title": "Minimum Number of Operations to Make String Sorted", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "119", "title": "Pascal Triangle II", "difficulty": "Easy"}, {"id": "1863", "title": "Sum XOR Subsets", "difficulty": "Medium"}, {"id": "1830", "title": "Min Operations Target", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 15, "topic": "Persistent Data Structures", "concepts": ["Persistent segment tree", "Persistent array"], "resources": ["https://www.geeksforgeeks.org/persistent-data-structures/"], "weekdayHomework": [{"id": "1146", "title": "Snapshot Array", "difficulty": "Medium"}, {"id": "307", "title": "Range Sum Mutable", "difficulty": "Medium"}, {"id": "315", "title": "Count Smaller", "difficulty": "Medium"}, {"id": "1756", "title": "Design Most Recently Used Queue", "difficulty": "Medium"}, {"id": "715", "title": "Range Module", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "303", "title": "Range Sum Immutable", "difficulty": "Easy"}, {"id": "327", "title": "Count Range Sum", "difficulty": "Medium"}, {"id": "493", "title": "Reverse Pairs", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 16, "topic": "Advanced Geometry", "concepts": ["Line sweep", "Closest pair", "Voronoi diagram"], "resources": ["https://www.geeksforgeeks.org/computational-geometry/"], "weekdayHomework": [{"id": "218", "title": "Skyline Problem", "difficulty": "Medium"}, {"id": "391", "title": "Perfect Rectangle", "difficulty": "Medium"}, {"id": "850", "title": "Rectangle Area II", "difficulty": "Medium"}, {"id": "1458", "title": "Max Dot Product of Two Subsequences", "difficulty": "Hard"}, {"id": "939", "title": "Minimum Area Rectangle", "difficulty": "Medium"}], "weekendTest": {"problems": [{"id": "836", "title": "Rectangle Overlap", "difficulty": "Easy"}, {"id": "223", "title": "Rectangle Area", "difficulty": "Medium"}, {"id": "149", "title": "Max Points on Line", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 17, "topic": "Advanced String - Burrows-Wheeler", "concepts": ["BWT transform", "FM-index"], "resources": ["https://www.geeksforgeeks.org/burrows-wheeler-data-transform-algorithm/"], "weekdayHomework": [{"id": "1044", "title": "Longest Duplicate Substring", "difficulty": "Medium"}, {"id": "1062", "title": "Longest Repeating", "difficulty": "Medium"}, {"id": "1923", "title": "Longest Common Subpath", "difficulty": "Medium"}, {"id": "1316", "title": "Distinct Echo Substrings", "difficulty": "Hard"}, {"id": "1542", "title": "Find Longest Awesome Substring", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "459", "title": "Repeated Substring", "difficulty": "Easy"}, {"id": "686", "title": "Repeated String Match", "difficulty": "Medium"}, {"id": "718", "title": "Longest Repeated Subarray", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 18, "topic": "Advanced Flow - Bipartite Matching", "concepts": ["Hungarian algorithm", "Hopcroft-Karp"], "resources": ["https://www.geeksforgeeks.org/maximum-bipartite-matching/"], "weekdayHomework": [{"id": "765", "title": "Couples Holding Hands", "difficulty": "Medium"}, {"id": "854", "title": "K-Similar Strings", "difficulty": "Medium"}, {"id": "1595", "title": "Min Cost Connect Groups", "difficulty": "Medium"}, {"id": "2172", "title": "Maximum AND Sum of Array", "difficulty": "Hard"}, {"id": "1947", "title": "Maximum Compatibility Score Sum", "difficulty": "Medium"}], "weekendTest": {"problems": [{"id": "785", "title": "Is Bipartite", "difficulty": "Easy"}, {"id": "886", "title": "Possible Bipartition", "difficulty": "Medium"}, {"id": "1349", "title": "Max Students Exam", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 19, "topic": "Advanced Tree - Link-Cut Tree", "concepts": ["Dynamic trees", "Link-cut tree operations"], "resources": ["https://www.geeksforgeeks.org/link-cut-tree-set-1-introduction/"], "weekdayHomework": [{"id": "1483", "title": "Kth Ancestor", "difficulty": "Medium"}, {"id": "1932", "title": "Merge BSTs to Create Single", "difficulty": "Medium"}, {"id": "2689", "title": "Extract Kth Character", "difficulty": "Medium"}, {"id": "2421", "title": "Number of Good Paths", "difficulty": "Hard"}, {"id": "2867", "title": "Count Valid Paths in a Tree", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "1123", "title": "LCA Deepest", "difficulty": "Easy"}, {"id": "2196", "title": "Create Binary Tree", "difficulty": "Medium"}, {"id": "1932", "title": "Merge BSTs", "difficulty": "Medium"}], "timeLimit": "2 days"}},
-    {"weekNumber": 20, "topic": "Contest Strategies and Review", "concepts": ["All advanced patterns", "Speed solving", "Contest tactics"], "resources": ["https://leetcode.com/contest/"], "weekdayHomework": [{"id": "23", "title": "Merge K Sorted Lists", "difficulty": "Medium"}, {"id": "239", "title": "Sliding Window Maximum", "difficulty": "Medium"}, {"id": "297", "title": "Serialize Deserialize Tree", "difficulty": "Medium"}, {"id": "460", "title": "LFU Cache", "difficulty": "Hard"}, {"id": "295", "title": "Find Median from Data Stream", "difficulty": "Hard"}], "weekendTest": {"problems": [{"id": "283", "title": "Move Zeroes", "difficulty": "Easy"}, {"id": "128", "title": "Longest Consecutive Sequence", "difficulty": "Medium"}, {"id": "42", "title": "Trapping Rain Water", "difficulty": "Medium"}], "timeLimit": "2 days"}}
+    {
+      "weekNumber": 1,
+      "topic": "Advanced Graph - Network Flow",
+      "concepts": [
+        "Max flow",
+        "Min cut",
+        "Ford-Fulkerson"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "2045",
+          "title": "Second Minimum Time",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1615",
+          "title": "Maximal Network Rank",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "2493",
+          "title": "Divide Nodes into Max Groups",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1334",
+          "title": "Find City With Smallest Number of Neighbors at Threshold",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "2556",
+          "title": "Disconnect Path in Binary Matrix",
+          "difficulty": "Medium"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "1971",
+            "title": "Find if Path Exists",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "1319",
+            "title": "Operations Network Connected",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "839",
+            "title": "Similar String Groups",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa1-m1",
+          "title": "Network Flow Algorithms",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=LdOnanfc5TM",
+          "description": "Complete guide to max flow and min cut algorithms",
+          "duration": "45 min"
+        },
+        {
+          "id": "wa1-m2",
+          "title": "Ford-Fulkerson Algorithm",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Tl90tNtKvxs",
+          "description": "Understanding Ford-Fulkerson for maximum flow problems",
+          "duration": "28 min"
+        },
+        {
+          "id": "wa1-m3",
+          "title": "Network Flow Tutorial",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/max-flow-problem-introduction/",
+          "description": "Comprehensive network flow problem tutorial"
+        },
+        {
+          "id": "wa1-m4",
+          "title": "Edmonds-Karp Algorithm",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=RppuJYwlcI8",
+          "description": "BFS-based max flow algorithm",
+          "duration": "20 min"
+        },
+        {
+          "id": "wa1-m5",
+          "title": "Min Cut Problems",
+          "type": "article",
+          "url": "https://cp-algorithms.com/graph/min_cost_flow.html",
+          "description": "Solving minimum cut problems in flow networks"
+        }
+      ]
+    },
+    {
+      "weekNumber": 2,
+      "topic": "Advanced Tree - Fenwick/Segment Advanced",
+      "concepts": [
+        "2D Fenwick",
+        "Persistent segment tree"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/two-dimensional-binary-indexed-tree-or-fenwick-tree/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "308",
+          "title": "Range Sum 2D Mutable",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "315",
+          "title": "Count Smaller After Self",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "493",
+          "title": "Reverse Pairs",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1649",
+          "title": "Create Sorted Array through Instructions",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "2158",
+          "title": "Amount of New Area Painted Each Day",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "304",
+            "title": "Range Sum 2D Immutable",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "327",
+            "title": "Count Range Sum",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "699",
+            "title": "Falling Squares",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa2-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 2 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa2-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 2 practice"
+        },
+        {
+          "id": "wa2-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 2 theory"
+        },
+        {
+          "id": "wa2-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 2 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa2-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 2 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 3,
+      "topic": "Advanced DP - Probability DP",
+      "concepts": [
+        "Expected value DP",
+        "Probability calculations"
+      ],
+      "resources": [
+        "https://leetcode.com/tag/dynamic-programming/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "808",
+          "title": "Soup Servings",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "837",
+          "title": "New 21 Game",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1467",
+          "title": "Probability of a Two Boxes",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1227",
+          "title": "Airplane Seat Assignment Probability",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1377",
+          "title": "Frog Position After T Seconds",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "688",
+            "title": "Knight Probability",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "576",
+            "title": "Out of Boundary Paths",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "1230",
+            "title": "Toss Strange Coins",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa3-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 3 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa3-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 3 practice"
+        },
+        {
+          "id": "wa3-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 3 theory"
+        },
+        {
+          "id": "wa3-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 3 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa3-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 3 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 4,
+      "topic": "Advanced DP - Game Theory",
+      "concepts": [
+        "Minimax",
+        "Nim game",
+        "SG function"
+      ],
+      "resources": [
+        "https://leetcode.com/tag/game-theory/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "486",
+          "title": "Predict the Winner",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "877",
+          "title": "Stone Game",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1140",
+          "title": "Stone Game II",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1406",
+          "title": "Stone Game III",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "1510",
+          "title": "Stone Game IV",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "292",
+            "title": "Nim Game",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "464",
+            "title": "Can I Win",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "1025",
+            "title": "Divisor Game",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa4-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 4 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa4-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 4 practice"
+        },
+        {
+          "id": "wa4-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 4 theory"
+        },
+        {
+          "id": "wa4-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 4 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa4-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 4 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 5,
+      "topic": "Suffix Array and LCP",
+      "concepts": [
+        "Suffix array construction",
+        "Longest common prefix"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/suffix-array-set-1-introduction/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "1044",
+          "title": "Longest Duplicate Substring",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1062",
+          "title": "Longest Repeating Substring",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1698",
+          "title": "Distinct Substrings",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1933",
+          "title": "Check if String is Decomposable Into Value-Equal Substrings",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1668",
+          "title": "Maximum Repeating Substring",
+          "difficulty": "Easy"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "14",
+            "title": "Longest Common Prefix",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "718",
+            "title": "Longest Repeated Subarray",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "1923",
+            "title": "Longest Common Subpath",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa5-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 5 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa5-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 5 practice"
+        },
+        {
+          "id": "wa5-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 5 theory"
+        },
+        {
+          "id": "wa5-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 5 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa5-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 5 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 6,
+      "topic": "Aho-Corasick Algorithm",
+      "concepts": [
+        "Multiple pattern matching",
+        "Failure links"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/aho-corasick-algorithm-pattern-searching/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "1268",
+          "title": "Search Suggestions",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "336",
+          "title": "Palindrome Pairs",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "472",
+          "title": "Concatenated Words",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1032",
+          "title": "Stream of Characters",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "676",
+          "title": "Implement Magic Dictionary",
+          "difficulty": "Medium"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "720",
+            "title": "Longest Word",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "212",
+            "title": "Word Search II",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "745",
+            "title": "Prefix and Suffix Search",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa6-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 6 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa6-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 6 practice"
+        },
+        {
+          "id": "wa6-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 6 theory"
+        },
+        {
+          "id": "wa6-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 6 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa6-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 6 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 7,
+      "topic": "Convex Hull",
+      "concepts": [
+        "Graham scan",
+        "Jarvis march"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/convex-hull-set-1-jarviss-algorithm-or-wrapping/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "587",
+          "title": "Erect the Fence",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "812",
+          "title": "Largest Triangle Area",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "469",
+          "title": "Convex Polygon",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "963",
+          "title": "Minimum Area Rectangle II",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1924",
+          "title": "Erect the Fence II",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "883",
+            "title": "Projection Area",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "223",
+            "title": "Rectangle Area",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "892",
+            "title": "Surface Area 3D Shapes",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa7-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 7 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa7-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 7 practice"
+        },
+        {
+          "id": "wa7-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 7 theory"
+        },
+        {
+          "id": "wa7-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 7 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa7-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 7 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 8,
+      "topic": "Heavy-Light Decomposition",
+      "concepts": [
+        "Tree decomposition",
+        "Path queries"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/heavy-light-decomposition-set-1-introduction/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "1483",
+          "title": "Kth Ancestor",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "2509",
+          "title": "Cycle Length Queries",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "2846",
+          "title": "Min Edge Reversals",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1938",
+          "title": "Maximum Genetic Difference Query",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "2277",
+          "title": "Closest Node to Path in Tree",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "1123",
+            "title": "LCA of Deepest Leaves",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "865",
+            "title": "Smallest Subtree Deepest",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "2322",
+            "title": "Minimum Score Tree",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa8-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 8 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa8-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 8 practice"
+        },
+        {
+          "id": "wa8-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 8 theory"
+        },
+        {
+          "id": "wa8-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 8 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa8-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 8 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 9,
+      "topic": "Square Root Decomposition",
+      "concepts": [
+        "Block decomposition",
+        "MO's algorithm"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/square-root-sqrt-decomposition-technique-set-1-introduction/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "307",
+          "title": "Range Sum Query Mutable",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "327",
+          "title": "Count Range Sum",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "315",
+          "title": "Count Smaller",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1521",
+          "title": "Find a Value of a Mysterious Function Closest to Target",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "1707",
+          "title": "Maximum XOR With an Element From Array",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "303",
+            "title": "Range Sum",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "713",
+            "title": "Subarray Product Less K",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "1498",
+            "title": "Subsequences Satisfy Sum",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa9-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 9 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa9-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 9 practice"
+        },
+        {
+          "id": "wa9-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 9 theory"
+        },
+        {
+          "id": "wa9-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 9 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa9-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 9 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 10,
+      "topic": "Centroid Decomposition",
+      "concepts": [
+        "Tree centroid",
+        "Divide and conquer on trees"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/centroid-decomposition-of-tree/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "2458",
+          "title": "Height After Queries",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "2846",
+          "title": "Min Edge Reversals",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "2003",
+          "title": "Smallest Missing Genetic",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1617",
+          "title": "Count Subtrees With Max Distance Between Cities",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "742",
+          "title": "Closest Leaf in a Binary Tree",
+          "difficulty": "Medium"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "1123",
+            "title": "LCA Deepest",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "310",
+            "title": "Min Height Trees",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "979",
+            "title": "Distribute Coins",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa10-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 10 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa10-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 10 practice"
+        },
+        {
+          "id": "wa10-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 10 theory"
+        },
+        {
+          "id": "wa10-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 10 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa10-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 10 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 11,
+      "topic": "Manacher's Algorithm",
+      "concepts": [
+        "Linear palindrome detection",
+        "Longest palindromic substring"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "5",
+          "title": "Longest Palindromic Substring",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "647",
+          "title": "Palindromic Substrings",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "214",
+          "title": "Shortest Palindrome",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1745",
+          "title": "Palindrome Partitioning IV",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "2472",
+          "title": "Maximum Number of Non-overlapping Palindrome Substrings",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "9",
+            "title": "Palindrome Number",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "516",
+            "title": "Longest Palindromic Subsequence",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "1312",
+            "title": "Min Insertion Palindrome",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa11-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 11 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa11-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 11 practice"
+        },
+        {
+          "id": "wa11-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 11 theory"
+        },
+        {
+          "id": "wa11-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 11 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa11-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 11 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 12,
+      "topic": "FFT and Polynomial",
+      "concepts": [
+        "Fast Fourier Transform",
+        "Polynomial multiplication"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/fast-fourier-transformation-poynomial-multiplication/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "43",
+          "title": "Multiply Strings",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1235",
+          "title": "Max Profit Job Scheduling",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1622",
+          "title": "Fancy Sequence",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "2338",
+          "title": "Count the Number of Ideal Arrays",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "1866",
+          "title": "Number of Ways to Rearrange Sticks",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "415",
+            "title": "Add Strings",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "66",
+            "title": "Plus One",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "2013",
+            "title": "Detect Squares",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa12-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 12 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa12-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 12 practice"
+        },
+        {
+          "id": "wa12-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 12 theory"
+        },
+        {
+          "id": "wa12-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 12 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa12-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 12 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 13,
+      "topic": "Matrix Exponentiation",
+      "concepts": [
+        "Fast matrix exponentiation",
+        "Linear recurrence"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/matrix-exponentiation/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "509",
+          "title": "Fibonacci",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1137",
+          "title": "Tribonacci",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1220",
+          "title": "Count Vowels Permutation",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1969",
+          "title": "Minimum Non-Zero Product of Array Elements",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "2851",
+          "title": "String Transformation",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "70",
+            "title": "Climbing Stairs",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "552",
+            "title": "Student Attendance II",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "790",
+            "title": "Domino Tromino",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa13-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 13 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa13-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 13 practice"
+        },
+        {
+          "id": "wa13-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 13 theory"
+        },
+        {
+          "id": "wa13-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 13 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa13-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 13 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 14,
+      "topic": "Advanced Combinatorics",
+      "concepts": [
+        "Lucas theorem",
+        "Catalan numbers",
+        "Stirling numbers"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/combinatorics-gq/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "62",
+          "title": "Unique Paths",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "96",
+          "title": "Unique BSTs",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1569",
+          "title": "Ways Reorder Array",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1916",
+          "title": "Count Ways to Build Rooms in Ant Colony",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "1830",
+          "title": "Minimum Number of Operations to Make String Sorted",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "119",
+            "title": "Pascal Triangle II",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "1863",
+            "title": "Sum XOR Subsets",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "1830",
+            "title": "Min Operations Target",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa14-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 14 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa14-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 14 practice"
+        },
+        {
+          "id": "wa14-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 14 theory"
+        },
+        {
+          "id": "wa14-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 14 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa14-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 14 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 15,
+      "topic": "Persistent Data Structures",
+      "concepts": [
+        "Persistent segment tree",
+        "Persistent array"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/persistent-data-structures/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "1146",
+          "title": "Snapshot Array",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "307",
+          "title": "Range Sum Mutable",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "315",
+          "title": "Count Smaller",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1756",
+          "title": "Design Most Recently Used Queue",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "715",
+          "title": "Range Module",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "303",
+            "title": "Range Sum Immutable",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "327",
+            "title": "Count Range Sum",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "493",
+            "title": "Reverse Pairs",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa15-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 15 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa15-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 15 practice"
+        },
+        {
+          "id": "wa15-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 15 theory"
+        },
+        {
+          "id": "wa15-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 15 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa15-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 15 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 16,
+      "topic": "Advanced Geometry",
+      "concepts": [
+        "Line sweep",
+        "Closest pair",
+        "Voronoi diagram"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/computational-geometry/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "218",
+          "title": "Skyline Problem",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "391",
+          "title": "Perfect Rectangle",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "850",
+          "title": "Rectangle Area II",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1458",
+          "title": "Max Dot Product of Two Subsequences",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "939",
+          "title": "Minimum Area Rectangle",
+          "difficulty": "Medium"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "836",
+            "title": "Rectangle Overlap",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "223",
+            "title": "Rectangle Area",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "149",
+            "title": "Max Points on Line",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa16-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 16 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa16-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 16 practice"
+        },
+        {
+          "id": "wa16-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 16 theory"
+        },
+        {
+          "id": "wa16-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 16 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa16-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 16 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 17,
+      "topic": "Advanced String - Burrows-Wheeler",
+      "concepts": [
+        "BWT transform",
+        "FM-index"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/burrows-wheeler-data-transform-algorithm/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "1044",
+          "title": "Longest Duplicate Substring",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1062",
+          "title": "Longest Repeating",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1923",
+          "title": "Longest Common Subpath",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1316",
+          "title": "Distinct Echo Substrings",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "1542",
+          "title": "Find Longest Awesome Substring",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "459",
+            "title": "Repeated Substring",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "686",
+            "title": "Repeated String Match",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "718",
+            "title": "Longest Repeated Subarray",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa17-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 17 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa17-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 17 practice"
+        },
+        {
+          "id": "wa17-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 17 theory"
+        },
+        {
+          "id": "wa17-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 17 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa17-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 17 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 18,
+      "topic": "Advanced Flow - Bipartite Matching",
+      "concepts": [
+        "Hungarian algorithm",
+        "Hopcroft-Karp"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/maximum-bipartite-matching/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "765",
+          "title": "Couples Holding Hands",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "854",
+          "title": "K-Similar Strings",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1595",
+          "title": "Min Cost Connect Groups",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "2172",
+          "title": "Maximum AND Sum of Array",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "1947",
+          "title": "Maximum Compatibility Score Sum",
+          "difficulty": "Medium"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "785",
+            "title": "Is Bipartite",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "886",
+            "title": "Possible Bipartition",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "1349",
+            "title": "Max Students Exam",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa18-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 18 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa18-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 18 practice"
+        },
+        {
+          "id": "wa18-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 18 theory"
+        },
+        {
+          "id": "wa18-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 18 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa18-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 18 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 19,
+      "topic": "Advanced Tree - Link-Cut Tree",
+      "concepts": [
+        "Dynamic trees",
+        "Link-cut tree operations"
+      ],
+      "resources": [
+        "https://www.geeksforgeeks.org/link-cut-tree-set-1-introduction/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "1483",
+          "title": "Kth Ancestor",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "1932",
+          "title": "Merge BSTs to Create Single",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "2689",
+          "title": "Extract Kth Character",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "2421",
+          "title": "Number of Good Paths",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "2867",
+          "title": "Count Valid Paths in a Tree",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "1123",
+            "title": "LCA Deepest",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "2196",
+            "title": "Create Binary Tree",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "1932",
+            "title": "Merge BSTs",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa19-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 19 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa19-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 19 practice"
+        },
+        {
+          "id": "wa19-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 19 theory"
+        },
+        {
+          "id": "wa19-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 19 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa19-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 19 reference"
+        }
+      ]
+    },
+    {
+      "weekNumber": 20,
+      "topic": "Contest Strategies and Review",
+      "concepts": [
+        "All advanced patterns",
+        "Speed solving",
+        "Contest tactics"
+      ],
+      "resources": [
+        "https://leetcode.com/contest/"
+      ],
+      "weekdayHomework": [
+        {
+          "id": "23",
+          "title": "Merge K Sorted Lists",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "239",
+          "title": "Sliding Window Maximum",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "297",
+          "title": "Serialize Deserialize Tree",
+          "difficulty": "Medium"
+        },
+        {
+          "id": "460",
+          "title": "LFU Cache",
+          "difficulty": "Hard"
+        },
+        {
+          "id": "295",
+          "title": "Find Median from Data Stream",
+          "difficulty": "Hard"
+        }
+      ],
+      "weekendTest": {
+        "problems": [
+          {
+            "id": "283",
+            "title": "Move Zeroes",
+            "difficulty": "Easy"
+          },
+          {
+            "id": "128",
+            "title": "Longest Consecutive Sequence",
+            "difficulty": "Medium"
+          },
+          {
+            "id": "42",
+            "title": "Trapping Rain Water",
+            "difficulty": "Medium"
+          }
+        ],
+        "timeLimit": "2 days"
+      },
+      "materials": [
+        {
+          "id": "wa20-m1",
+          "title": "Advanced Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test",
+          "description": "Week 20 materials",
+          "duration": "30 min"
+        },
+        {
+          "id": "wa20-m2",
+          "title": "Practice Problems",
+          "type": "article",
+          "url": "https://leetcode.com/tag/",
+          "description": "Week 20 practice"
+        },
+        {
+          "id": "wa20-m3",
+          "title": "Theory Guide",
+          "type": "article",
+          "url": "https://www.geeksforgeeks.org/",
+          "description": "Week 20 theory"
+        },
+        {
+          "id": "wa20-m4",
+          "title": "Advanced Concepts",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=test2",
+          "description": "Week 20 advanced",
+          "duration": "25 min"
+        },
+        {
+          "id": "wa20-m5",
+          "title": "Reference Material",
+          "type": "documentation",
+          "url": "https://cp-algorithms.com/",
+          "description": "Week 20 reference"
+        }
+      ]
+    }
   ]
 }
