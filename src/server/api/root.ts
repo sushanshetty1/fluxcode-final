@@ -5,6 +5,7 @@ import { leaderboardRouter } from "~/server/api/routers/leaderboard";
 import { progressRouter } from "~/server/api/routers/progress";
 import { adminRouter } from "~/server/api/routers/admin";
 import { userRouter } from "~/server/api/routers/user";
+import { materialRouter } from "~/server/api/routers/material";
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
 
 /**
@@ -20,6 +21,7 @@ export const appRouter = createTRPCRouter({
   progress: progressRouter,
   admin: adminRouter,
   user: userRouter,
+  material: materialRouter,
 });
 
 // export type definition of API
