@@ -18,7 +18,10 @@
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:email:start": "tsx src/server/cron/test-email.ts start",
+    "test:email:reminder": "tsx src/server/cron/test-email.ts reminder",
+    "test:email:both": "tsx src/server/cron/test-email.ts both"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.3.0",
@@ -73,6 +76,7 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "prisma": "^7.3.0",
     "tailwindcss": "^4.0.15",
+    "tsx": "^4.21.0",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.27.0"
   },
