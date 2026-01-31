@@ -120,71 +120,16 @@ async function fetchByDifficulty(
 
 export async function verifyLeetCodeSolution(
   username: string,
-  problemId: string
+  problemTitle: string
 ): Promise<boolean> {
+  // Convert problem title to titleSlug format
+  const titleSlug = problemTitle
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+    .trim()
+    .replace(/\s+/g, '-'); // Replace spaces with hyphens
 
-  // Convert problemId to title slug by fetching all problems and finding match
-  // This is a workaround since we're storing leetcodeId but need titleSlug
-  const allProblemsQuery = `
-    query problemsetQuestionList {
-      problemsetQuestionList: questionList(
-        categorySlug: ""
-        limit: 3000
-        skip: 0
-        filters: {}
-      ) {
-        questions: data {
-          questionFrontendId
-          title
-          titleSlug
-        }
-      }
-    }
-  `;
-
-  let titleSlug = "";
-  
-  try {
-    const allProblemsResponse = await fetch(LEETCODE_GRAPHQL_ENDPOINT, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: allProblemsQuery,
-      }),
-    });
-
-    if (allProblemsResponse.ok) {
-      const allProblemsData = await allProblemsResponse.json() as {
-        data: {
-          problemsetQuestionList: {
-            questions: Array<{
-              questionFrontendId: string;
-              title: string;
-              titleSlug: string;
-            }>;
-          };
-        };
-      };
-
-      const matchedProblem = allProblemsData.data.problemsetQuestionList.questions.find(
-        (q) => q.questionFrontendId === problemId
-      );
-
-      if (matchedProblem) {
-        titleSlug = matchedProblem.titleSlug;
-      }
-    }
-  } catch (error) {
-    console.error("Error fetching problem data:", error);
-  }
-
-  if (!titleSlug) {
-    throw new Error("Failed to verify LeetCode solution - problem not found");
-  }
-
-  // Now check user's recent submissions
+  // Check user's recent submissions
   const query = `
     query recentAcSubmissions($username: String!, $limit: Int!) {
       recentAcSubmissionList(username: $username, limit: $limit) {
@@ -230,8 +175,11 @@ export async function verifyLeetCodeSolution(
   const submissions = data.data.recentAcSubmissionList;
   
   // Check if the problem's titleSlug is in the user's recent accepted submissions
+  // Match by titleSlug OR by exact title (case-insensitive) as fallback
   const solved = submissions.some(
-    (submission) => submission.titleSlug === titleSlug
+    (submission) => 
+      submission.titleSlug === titleSlug || 
+      submission.title.toLowerCase() === problemTitle.toLowerCase()
   );
 
   return solved;

@@ -154,7 +154,7 @@ export const problemRouter = createTRPCRouter({
 
       const isSolved = await verifyLeetCodeSolution(
         input.leetcodeUsername,
-        problem.leetcodeId
+        problem.title
       );
 
       if (!isSolved) {

@@ -324,8 +324,8 @@ export const progressRouter = createTRPCRouter({
         throw new Error("LeetCode username not found. Please complete onboarding.");
       }
 
-      // Verify with LeetCode API using problem ID (e.g., "1", "26")
-      const isSolved = await verifyLeetCodeSolution(user.leetcodeUsername, input.problemId);
+      // Verify with LeetCode API using problem title
+      const isSolved = await verifyLeetCodeSolution(user.leetcodeUsername, input.problemTitle);
 
       if (!isSolved) {
         throw new Error(`Problem not solved on LeetCode. Please solve "${input.problemTitle}" and try again.`);
