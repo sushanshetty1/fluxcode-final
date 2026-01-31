@@ -181,6 +181,9 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
                 >
                   {problem.difficulty}
                 </Badge>
+                <Badge className="bg-purple-500/20 text-purple-400">
+                  +10 pts
+                </Badge>
                 <a
                   href={`https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
                   target="_blank"
@@ -292,6 +295,9 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
                   }
                 >
                   {problem.difficulty}
+                </Badge>
+                <Badge className="bg-purple-500/20 text-purple-400">
+                  +20 pts
                 </Badge>
                 <a
                   href={`https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
