@@ -2,7 +2,6 @@
   <img src="public/favicon.svg" alt="FluxCode" width="100" />
   
   # FluxCode
-  
   **Master DSA through long-term competitive contests**
   
   [![Next.js](https://img.shields.io/badge/Next.js-15.2-black?logo=next.js)](https://nextjs.org)
