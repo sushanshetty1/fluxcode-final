@@ -56,20 +56,20 @@ export function NavBar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+      <div className="mx-auto max-w-7xl px-3 sm:px-4 lg:px-8">
+        <div className="flex h-14 sm:h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="p-2 rounded-lg bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-              <Code2 className="h-5 w-5 text-primary" />
+          <Link href="/" className="flex items-center gap-1.5 sm:gap-2 group">
+            <div className="p-1.5 sm:p-2 rounded-lg bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+              <Code2 className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
             </div>
-            <span className="text-xl font-bold text-white hover:text-primary transition-colors">
+            <span className="text-base sm:text-xl font-bold text-white hover:text-primary transition-colors">
               FluxCode
             </span>
           </Link>
 
           {/* Nav Items */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-0.5 sm:gap-1">
             {user ? (
               <>
                 {navItems.map((item) => {
@@ -81,7 +81,7 @@ export function NavBar() {
                       key={item.href}
                       href={item.href}
                       className={cn(
-                        "flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium",
+                        "flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-lg transition-all duration-200 text-xs sm:text-sm font-medium",
                         isActive
                           ? "bg-primary/10 text-primary border border-primary/20"
                           : "text-white/60 hover:text-white hover:bg-white/5"
@@ -95,7 +95,7 @@ export function NavBar() {
                 
                 <button
                   onClick={handleSignOut}
-                  className="ml-2 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all duration-200"
+                  className="ml-1 sm:ml-2 flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all duration-200"
                 >
                   <LogOut className="h-4 w-4" />
                   <span className="hidden sm:inline">Sign Out</span>
