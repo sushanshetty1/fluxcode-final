@@ -22,13 +22,13 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 max-w-3xl mx-auto"
+          className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto px-4"
         >
-          <div className="inline-flex items-center justify-center gap-3 mb-6">
-            <MessageSquare className="h-10 w-10 text-primary" />
-            <h1 className="text-4xl md:text-6xl font-bold text-white">Contact Us</h1>
+          <div className="inline-flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <MessageSquare className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white">Contact Us</h1>
           </div>
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl leading-relaxed">
             Have questions or need support? We&apos;re here to help. Reach out to us through any of these channels.
           </p>
         </motion.div>
@@ -38,7 +38,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6"
+          className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 px-4"
         >
           {/* Email Support */}
           <a
