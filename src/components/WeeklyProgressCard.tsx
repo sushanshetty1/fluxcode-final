@@ -2,8 +2,9 @@
 
 import { Card } from "~/components/ui/card";
 import { Badge } from "~/components/ui/badge";
-import { Lock, ChevronDown, ChevronUp } from "lucide-react";
+import { Lock, ChevronDown, ChevronUp, MoreVertical } from "lucide-react";
 import { toast } from "sonner";
+import { useState } from "react";
 
 // Convert problem title to LeetCode URL slug
 function titleToSlug(title: string): string {
@@ -55,6 +56,7 @@ interface WeeklyProgressCardProps {
 
 export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTest = true, currentWeek, onToggleCollapse, onVerify }: WeeklyProgressCardProps) {
   const isWeekendToday = isWeekendDay();
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const successMessages = [
     "Wow, you actually did it! 🎉",
@@ -164,47 +166,107 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
           {week.weekdayHomework.map((problem) => (
             <div
               key={problem.id}
-              className="flex items-center justify-between rounded-lg border border-primary/20 bg-primary/5 px-3 py-2"
+              className="flex items-center justify-between rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 gap-2"
             >
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-white">{problem.title}</span>
+              <div className="flex items-center gap-2 flex-1 min-w-0">
+                <span className="text-sm text-white truncate">{problem.title}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Badge
-                  className={
-                    problem.difficulty === "Easy"
-                      ? "bg-green-500/20 text-green-400"
-                      : problem.difficulty === "Medium"
-                        ? "bg-yellow-500/20 text-yellow-400"
-                        : "bg-red-500/20 text-red-400"
-                  }
-                >
-                  {problem.difficulty}
-                </Badge>
-                <Badge className="bg-purple-500/20 text-purple-400">
-                  +10 pts
-                </Badge>
-                <a
-                  href={`https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Badge className="bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 cursor-pointer">
-                    Link
+              <div className="flex items-center gap-2 shrink-0">
+                {/* Desktop view - all badges visible */}
+                <div className="hidden sm:flex items-center gap-2">
+                  <Badge
+                    className={
+                      problem.difficulty === "Easy"
+                        ? "bg-green-500/20 text-green-400 text-xs"
+                        : problem.difficulty === "Medium"
+                          ? "bg-yellow-500/20 text-yellow-400 text-xs"
+                          : "bg-red-500/20 text-red-400 text-xs"
+                    }
+                  >
+                    {problem.difficulty}
                   </Badge>
-                </a>
-                <button
-                  onClick={() => handleVerify(problem.id, problem.title)}
-                  disabled={!onVerify || problem.solved}
-                  className="cursor-pointer disabled:cursor-not-allowed"
-                >
-                  <Badge className={problem.solved ? "bg-green-500/20 text-green-400" : "bg-purple-500/20 text-purple-400 hover:bg-purple-500/30"}>
-                    {problem.solved ? 'Verified' : 'Verify'}
+                  <Badge className="bg-purple-500/20 text-purple-400 text-xs">
+                    +10 pts
                   </Badge>
-                </button>
-                {problem.solved && (
-                  <span className="text-primary">✓</span>
-                )}
+                  <a
+                    href={`https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Badge className="bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 cursor-pointer text-xs">
+                      Link
+                    </Badge>
+                  </a>
+                  <button
+                    onClick={() => handleVerify(problem.id, problem.title)}
+                    disabled={!onVerify || problem.solved}
+                    className="cursor-pointer disabled:cursor-not-allowed"
+                  >
+                    <Badge className={problem.solved ? "bg-green-500/20 text-green-400 text-xs" : "bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 text-xs"}>
+                      {problem.solved ? 'Verified' : 'Verify'}
+                    </Badge>
+                  </button>
+                  {problem.solved && (
+                    <span className="text-primary">✓</span>
+                  )}
+                </div>
+
+                {/* Mobile view - dropdown menu */}
+                <div className="sm:hidden relative">
+                  <button
+                    onClick={() => setOpenDropdown(openDropdown === problem.id ? null : problem.id)}
+                    className="p-1 hover:bg-white/10 rounded transition-colors"
+                  >
+                    <MoreVertical className="h-4 w-4 text-gray-400" />
+                  </button>
+                  {openDropdown === problem.id && (
+                    <>
+                      <div 
+                        className="fixed inset-0 z-40" 
+                        onClick={() => setOpenDropdown(null)}
+                      />
+                      <div className="absolute right-0 top-full mt-1 z-50 bg-gray-900 border border-white/10 rounded-lg shadow-xl p-2 min-w-40">
+                        <div className="flex items-center gap-2 px-2 py-1.5">
+                          <Badge
+                            className={
+                              problem.difficulty === "Easy"
+                                ? "bg-green-500/20 text-green-400 text-xs"
+                                : problem.difficulty === "Medium"
+                                  ? "bg-yellow-500/20 text-yellow-400 text-xs"
+                                  : "bg-red-500/20 text-red-400 text-xs"
+                            }
+                          >
+                            {problem.difficulty}
+                          </Badge>
+                          <Badge className="bg-purple-500/20 text-purple-400 text-xs">
+                            +10 pts
+                          </Badge>
+                        </div>
+                        <a
+                          href={`https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block px-2 py-1.5 text-sm text-blue-400 hover:bg-white/5 rounded transition-colors"
+                          onClick={() => setOpenDropdown(null)}
+                        >
+                          Open in LeetCode
+                        </a>
+                        <button
+                          onClick={() => {
+                            void handleVerify(problem.id, problem.title);
+                            setOpenDropdown(null);
+                          }}
+                          disabled={!onVerify || problem.solved}
+                          className="w-full text-left px-2 py-1.5 text-sm hover:bg-white/5 rounded transition-colors disabled:opacity-50"
+                        >
+                          <span className={problem.solved ? "text-green-400" : "text-purple-400"}>
+                            {problem.solved ? '✓ Verified' : 'Verify Solution'}
+                          </span>
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           ))}
@@ -279,49 +341,109 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
             return (
               <div
                 key={problem.id}
-                className={`flex items-center justify-between rounded-lg border px-3 py-2 ${getWeekendColor()}`}
+                className={`flex items-center justify-between rounded-lg border px-3 py-2 gap-2 ${getWeekendColor()}`}
               >
-                <div className="flex items-center gap-2">
-                  <span className={`text-sm ${shouldHide ? 'invisible' : 'text-white'}`}>{problem.title}</span>
+                <div className="flex items-center gap-2 flex-1 min-w-0">
+                  <span className={`text-sm ${shouldHide ? 'invisible' : 'text-white truncate'}`}>{problem.title}</span>
                 </div>
-                <div className={`flex items-center gap-2 ${shouldHide ? 'invisible' : ''}`}>
-                <Badge
-                  className={
-                    problem.difficulty === "Easy"
-                      ? "bg-green-500/20 text-green-400"
-                      : problem.difficulty === "Medium"
-                        ? "bg-yellow-500/20 text-yellow-400"
-                        : "bg-red-500/20 text-red-400"
-                  }
-                >
-                  {problem.difficulty}
-                </Badge>
-                <Badge className="bg-purple-500/20 text-purple-400">
-                  +20 pts
-                </Badge>
-                <a
-                  href={`https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Badge className="bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 cursor-pointer">
-                    Link
-                  </Badge>
-                </a>
-                <button
-                  onClick={() => handleVerify(problem.id, problem.title)}
-                  disabled={(!onVerify || problem.solved)}
-                  className="cursor-pointer disabled:cursor-not-allowed"
-                >
-                  <Badge className={problem.solved ? "bg-green-500/20 text-green-400" : "bg-purple-500/20 text-purple-400 hover:bg-purple-500/30"}>
-                    {problem.solved ? 'Verified' : 'Verify'}
-                  </Badge>
-                </button>
-                {problem.solved && (
-                  <span className="text-green-400">✓</span>
-                )}
+                <div className={`flex items-center gap-2 shrink-0 ${shouldHide ? 'invisible' : ''}`}>
+                  {/* Desktop view - all badges visible */}
+                  <div className="hidden sm:flex items-center gap-2">
+                    <Badge
+                      className={
+                        problem.difficulty === "Easy"
+                          ? "bg-green-500/20 text-green-400 text-xs"
+                          : problem.difficulty === "Medium"
+                            ? "bg-yellow-500/20 text-yellow-400 text-xs"
+                            : "bg-red-500/20 text-red-400 text-xs"
+                      }
+                    >
+                      {problem.difficulty}
+                    </Badge>
+                    <Badge className="bg-purple-500/20 text-purple-400 text-xs">
+                      +20 pts
+                    </Badge>
+                    <a
+                      href={`https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Badge className="bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 cursor-pointer text-xs">
+                        Link
+                      </Badge>
+                    </a>
+                    <button
+                      onClick={() => handleVerify(problem.id, problem.title)}
+                      disabled={(!onVerify || problem.solved)}
+                      className="cursor-pointer disabled:cursor-not-allowed"
+                    >
+                      <Badge className={problem.solved ? "bg-green-500/20 text-green-400 text-xs" : "bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 text-xs"}>
+                        {problem.solved ? 'Verified' : 'Verify'}
+                      </Badge>
+                    </button>
+                    {problem.solved && (
+                      <span className="text-green-400">✓</span>
+                    )}
+                  </div>
+
+                  {/* Mobile view - dropdown menu */}
+                  <div className="sm:hidden relative">
+                    <button
+                      onClick={() => setOpenDropdown(openDropdown === problem.id ? null : problem.id)}
+                      className="p-1 hover:bg-white/10 rounded transition-colors"
+                    >
+                      <MoreVertical className="h-4 w-4 text-gray-400" />
+                    </button>
+                    {openDropdown === problem.id && (
+                      <>
+                        <div 
+                          className="fixed inset-0 z-40" 
+                          onClick={() => setOpenDropdown(null)}
+                        />
+                        <div className="absolute right-0 top-full mt-1 z-50 bg-gray-900 border border-white/10 rounded-lg shadow-xl p-2 min-w-40">
+                          <div className="flex items-center gap-2 px-2 py-1.5">
+                            <Badge
+                              className={
+                                problem.difficulty === "Easy"
+                                  ? "bg-green-500/20 text-green-400 text-xs"
+                                  : problem.difficulty === "Medium"
+                                    ? "bg-yellow-500/20 text-yellow-400 text-xs"
+                                    : "bg-red-500/20 text-red-400 text-xs"
+                              }
+                            >
+                              {problem.difficulty}
+                            </Badge>
+                            <Badge className="bg-purple-500/20 text-purple-400 text-xs">
+                              +20 pts
+                            </Badge>
+                          </div>
+                          <a
+                            href={`https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-2 py-1.5 text-sm text-blue-400 hover:bg-white/5 rounded transition-colors"
+                            onClick={() => setOpenDropdown(null)}
+                          >
+                            Open in LeetCode
+                          </a>
+                          <button
+                            onClick={() => {
+                              void handleVerify(problem.id, problem.title);
+                              setOpenDropdown(null);
+                            }}
+                            disabled={(!onVerify || problem.solved)}
+                            className="w-full text-left px-2 py-1.5 text-sm hover:bg-white/5 rounded transition-colors disabled:opacity-50"
+                          >
+                            <span className={problem.solved ? "text-green-400" : "text-purple-400"}>
+                              {problem.solved ? '✓ Verified' : 'Verify Solution'}
+                            </span>
+                          </button>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
             );
           })}
           <div className="flex items-center justify-between text-xs text-white/60">

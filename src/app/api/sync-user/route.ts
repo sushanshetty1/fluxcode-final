@@ -17,13 +17,13 @@ export async function POST() {
         id: user.id,
         email: user.email,
         name: user.user_metadata?.name ?? user.user_metadata?.full_name ?? null,
-        image: user.user_metadata?.avatar_url ?? null,
+        image: user.user_metadata?.avatar_url ?? user.user_metadata?.picture ?? null,
         onboardingCompleted: false,
       },
       update: {
         email: user.email,
         name: user.user_metadata?.name ?? user.user_metadata?.full_name ?? null,
-        image: user.user_metadata?.avatar_url ?? null,
+        image: user.user_metadata?.avatar_url ?? user.user_metadata?.picture ?? null,
       },
     });
 

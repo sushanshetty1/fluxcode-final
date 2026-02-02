@@ -194,15 +194,15 @@ export default function ProfilePage() {
         </motion.div>
 
         {/* Kanban Layout - Three Columns */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-3">
           {/* Column 1: LeetCode Stats */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1 }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
-            <h2 className="text-2xl font-bold text-white">LeetCode Stats</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white">LeetCode Stats</h2>
 
             {/* Total Problems Solved */}
             <Card className="border-purple-500/20 bg-black/50 p-6 backdrop-blur-xl">

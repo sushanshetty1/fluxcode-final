@@ -19,6 +19,34 @@ import {
   Download,
 } from "lucide-react";
 
+interface Problem {
+  id: string;
+  title: string;
+  difficulty: string;
+}
+
+interface WeekendTest {
+  problems: Problem[];
+  timeLimit: string;
+}
+
+interface SyllabusWeek {
+  weekNumber: number;
+  topic: string;
+  concepts: string[];
+  resources: string[];
+  weekdayHomework: Problem[];
+  weekendTest: WeekendTest;
+}
+
+interface Syllabus {
+  level: string;
+  duration: string;
+  totalWeeks: number;
+  description: string;
+  weeks: SyllabusWeek[];
+}
+
 export default function AdminDashboard() {
   const params = useParams();
   const router = useRouter();
@@ -27,7 +55,7 @@ export default function AdminDashboard() {
   const [userId, setUserId] = useState<string | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [expandedParticipants, setExpandedParticipants] = useState<Set<string>>(new Set());
-  const [syllabus, setSyllabus] = useState<any>(null);
+  const [syllabus, setSyllabus] = useState<Syllabus | null>(null);
 
   const { data: contest } = api.contest.getById.useQuery(
     { id: contestId, userId: userId ?? undefined },
@@ -84,7 +112,7 @@ export default function AdminDashboard() {
 
       fetch(`/syllabi/${filename}`)
         .then((res) => res.json())
-        .then((data: any) => setSyllabus(data))
+        .then((data: Syllabus) => setSyllabus(data))
         .catch((err) => console.error("Failed to load syllabus:", err));
     }
   }, [contest?.difficulty]);
@@ -230,31 +258,31 @@ export default function AdminDashboard() {
 
           <Card className="overflow-hidden border-purple-500/20 bg-black/50 backdrop-blur-xl">
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full min-w-225">
                 <thead className="border-b border-white/10">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-400">
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-semibold text-gray-400">
                       Rank
                     </th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-400">
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-semibold text-gray-400">
                       Participant
                     </th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-400">
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-center text-xs sm:text-sm font-semibold text-gray-400">
                       LeetCode Username
                     </th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-400">
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-center text-xs sm:text-sm font-semibold text-gray-400">
                       Streak
                     </th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-400">
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-center text-xs sm:text-sm font-semibold text-gray-400">
                       Problems Today
                     </th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-400">
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-center text-xs sm:text-sm font-semibold text-gray-400">
                       Payment Status
                     </th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-400">
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-center text-xs sm:text-sm font-semibold text-gray-400">
                       Amount Due
                     </th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-400">
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-center text-xs sm:text-sm font-semibold text-gray-400">
                       Progress
                     </th>
                   </tr>
@@ -375,15 +403,15 @@ export default function AdminDashboard() {
                           <tr className="border-b border-white/5 bg-white/5">
                             <td colSpan={8} className="px-6 py-4">
                               <div className="space-y-4">
-                                {syllabus?.weeks?.map((week: any) => {
-                                  const weekHomeworkSolved = week.weekdayHomework.filter((p: any) => 
+                                {syllabus?.weeks?.map((week: SyllabusWeek) => {
+                                  const weekHomeworkSolved = week.weekdayHomework.filter((p: Problem) => 
                                     solvedProblemIds.has(
                                       contest?.topics
                                         .flatMap(t => t.problems)
                                         .find(prob => prob.leetcodeId === p.id)?.id ?? ""
                                     )
                                   ).length;
-                                  const weekWeekendSolved = week.weekendTest.problems.filter((p: any) => 
+                                  const weekWeekendSolved = week.weekendTest.problems.filter((p: Problem) => 
                                     solvedProblemIds.has(
                                       contest?.topics
                                         .flatMap(t => t.problems)
@@ -403,7 +431,7 @@ export default function AdminDashboard() {
                                           Homework: {weekHomeworkSolved}/{week.weekdayHomework.length} solved
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                          {week.weekdayHomework.map((problem: any) => {
+                                          {week.weekdayHomework.map((problem: Problem) => {
                                             const problemId = contest?.topics
                                               .flatMap(t => t.problems)
                                               .find(p => p.leetcodeId === problem.id)?.id;
@@ -432,7 +460,7 @@ export default function AdminDashboard() {
                                           Weekend Test: {weekWeekendSolved}/{week.weekendTest.problems.length} solved
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                          {week.weekendTest.problems.map((problem: any) => {
+                                          {week.weekendTest.problems.map((problem: Problem) => {
                                             const problemId = contest?.topics
                                               .flatMap(t => t.problems)
                                               .find(p => p.leetcodeId === problem.id)?.id;

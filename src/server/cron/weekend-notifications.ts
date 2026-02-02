@@ -59,7 +59,17 @@ export async function notifyWeekendContestStart() {
       
       let syllabus: Syllabus;
       try {
-        syllabus = await import(`~/data/syllabus-${contest.difficulty}.json`);
+        const syllabusMap: Record<string, string> = {
+          'beginner': 'beginner-9months.json',
+          'intermediate': 'intermediate-6months.json',
+          'advanced': 'advanced-5months.json',
+        };
+        const syllabusFile = syllabusMap[contest.difficulty];
+        if (!syllabusFile) {
+          console.error(`Unknown difficulty level: ${contest.difficulty}`);
+          continue;
+        }
+        syllabus = await import(`../../../public/syllabi/${syllabusFile}`);
       } catch (error) {
         console.error(`Failed to load syllabus for contest ${contest.id}:`, error);
         continue;
@@ -186,7 +196,17 @@ export async function notifyWeekendReminder() {
       
       let syllabus: Syllabus;
       try {
-        syllabus = await import(`~/data/syllabus-${contest.difficulty}.json`);
+        const syllabusMap: Record<string, string> = {
+          'beginner': 'beginner-9months.json',
+          'intermediate': 'intermediate-6months.json',
+          'advanced': 'advanced-5months.json',
+        };
+        const syllabusFile = syllabusMap[contest.difficulty];
+        if (!syllabusFile) {
+          console.error(`Unknown difficulty level: ${contest.difficulty}`);
+          continue;
+        }
+        syllabus = await import(`../../../public/syllabi/${syllabusFile}`);
       } catch (error) {
         console.error(`Failed to load syllabus for contest ${contest.id}:`, error);
         continue;
