@@ -105,7 +105,7 @@ function OnboardingInner() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4"
           >
             Welcome to <span className="text-primary">FluxCode</span>
           </motion.h1>
@@ -114,7 +114,7 @@ function OnboardingInner() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-white/60 text-lg"
+            className="text-white/60 text-base sm:text-lg px-4"
           >
             We need a few more details to get you started
           </motion.p>
