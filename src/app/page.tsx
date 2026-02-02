@@ -66,7 +66,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-6xl md:text-8xl font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-white via-white to-white/40 leading-[0.9] drop-shadow-2xl"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-white via-white to-white/40 leading-[0.9] drop-shadow-2xl"
             >
               FLUX<span className="text-primary">CODE</span>
             </motion.h1>
@@ -75,7 +75,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="max-w-2xl text-xl md:text-2xl text-white/70 font-light leading-relaxed text-center tracking-wide"
+              className="max-w-2xl text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 font-light leading-relaxed text-center tracking-wide px-4"
             >
               Master <span className="text-primary font-semibold">data structures & algorithms</span> through 
               long-term contests with AI-powered guidance and real-time competition
@@ -90,17 +90,17 @@ export default function Home() {
             >
               <Link 
                 href="/auth/signin"
-                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-primary rounded-full overflow-hidden hover:scale-105 transition-transform duration-300"
+                className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-primary rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 w-full sm:w-auto"
               >
-                <span className="font-semibold text-black relative z-10 uppercase tracking-wide text-sm">Start Competing</span>
+                <span className="font-semibold text-black relative z-10 uppercase tracking-wide text-xs sm:text-sm">Start Competing</span>
                 <ArrowRight className="h-4 w-4 text-black relative z-10 group-hover:translate-x-1 transition-transform" />
               </Link>
               
               <Link
                 href="/contests"
-                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-full overflow-hidden hover:border-primary/50 transition-all duration-300"
+                className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-white/5 border border-white/10 rounded-full overflow-hidden hover:border-primary/50 transition-all duration-300 w-full sm:w-auto"
               >
-                <span className="font-semibold text-white relative z-10 uppercase tracking-wide text-sm">Browse Contests</span>
+                <span className="font-semibold text-white relative z-10 uppercase tracking-wide text-xs sm:text-sm">Browse Contests</span>
                 <Trophy className="h-4 w-4 text-primary relative z-10" />
               </Link>
             </motion.div>
@@ -118,10 +118,10 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white px-4">
               Why <span className="text-primary">FluxCode</span>?
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto px-4">
               A complete platform designed to accelerate your coding journey
             </p>
           </motion.div>
@@ -171,18 +171,18 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                className="group relative rounded-3xl p-8 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-500 hover:bg-white/10 overflow-hidden"
+                className="group relative rounded-2xl sm:rounded-3xl p-6 sm:p-8 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-500 hover:bg-white/10 overflow-hidden"
               >
                 <div className={`absolute inset-0 bg-linear-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 
                 <div className="relative z-10">
-                  <div className="inline-flex p-3 rounded-2xl bg-primary/10 border border-primary/20 mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="inline-flex p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-primary/10 border border-primary/20 mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-primary transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-white/60 leading-relaxed">
+                  <p className="text-sm sm:text-base text-white/60 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -200,23 +200,23 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative rounded-3xl p-12 bg-linear-to-br from-primary/20 to-accent/20 border border-primary/30 overflow-hidden text-center"
+            className="relative rounded-2xl sm:rounded-3xl p-8 sm:p-12 bg-linear-to-br from-primary/20 to-accent/20 border border-primary/30 overflow-hidden text-center"
           >
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30" />
             
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 px-4">
                 Ready to Level Up Your Coding Skills?
               </h2>
-              <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
+              <p className="text-white/70 text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
                 Join thousands of developers improving their problem-solving abilities
               </p>
               <Link 
                 href="/auth/signin"
-                className="inline-flex items-center gap-3 px-10 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform duration-300 uppercase tracking-wide"
+                className="inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-10 py-3 sm:py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform duration-300 uppercase tracking-wide text-sm sm:text-base"
               >
                 Get Started Free
-                <ArrowRight className="h-5 w-5" />
+                <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
               </Link>
             </div>
           </motion.div>
