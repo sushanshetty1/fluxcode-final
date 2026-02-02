@@ -9,7 +9,6 @@
   [![tRPC](https://img.shields.io/badge/tRPC-11.0-2596be?logo=trpc)](https://trpc.io)
   [![Prisma](https://img.shields.io/badge/Prisma-7.3-2D3748?logo=prisma)](https://prisma.io)
 </div>
-
 ---
 
 ## ✨ Features
