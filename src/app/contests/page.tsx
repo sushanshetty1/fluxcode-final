@@ -55,17 +55,17 @@ export default function Contests() {
             <span className="text-sm font-medium text-primary">Active Competitions</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-white">
             Live <span className="text-primary">Contests</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto mb-8">
+          <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto mb-6 sm:mb-8 px-4">
             Join competitive coding contests and track your progress on the leaderboards
           </p>
 
           {userId && isAdmin && (
             <Link href="/contests/create">
-              <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-6 py-6 rounded-full">
-                <Plus className="h-5 w-5 mr-2 group-hover:rotate-90 transition-transform duration-300" />
+              <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-4 sm:px-6 py-4 sm:py-6 rounded-full text-sm sm:text-base">
+                <Plus className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:rotate-90 transition-transform duration-300" />
                 Create New Contest
               </Button>
             </Link>
@@ -126,24 +126,24 @@ export default function Contests() {
             transition={{ delay: 0.3 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12"
           >
-            <div className="rounded-3xl p-8 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300 group">
-              <Trophy className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-3xl font-bold text-white mb-2">{contests.length}</h3>
-              <p className="text-white/60">Active Contests</p>
+            <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-8 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300 group">
+              <Trophy className="h-8 w-8 sm:h-10 sm:w-10 text-primary mb-3 sm:mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">{contests.length}</h3>
+              <p className="text-white/60 text-sm sm:text-base">Active Contests</p>
             </div>
             
-            <div className="rounded-3xl p-8 bg-white/5 border border-white/10 hover:border-accent/30 transition-all duration-300 group">
-              <Users className="h-10 w-10 text-accent mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-3xl font-bold text-white mb-2">
+            <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-8 bg-white/5 border border-white/10 hover:border-accent/30 transition-all duration-300 group">
+              <Users className="h-8 w-8 sm:h-10 sm:w-10 text-accent mb-3 sm:mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">
                 {contests.reduce((sum, c) => sum + c._count.participants, 0)}
               </h3>
-              <p className="text-white/60">Total Participants</p>
+              <p className="text-white/60 text-sm sm:text-base">Total Participants</p>
             </div>
             
-            <div className="rounded-3xl p-8 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300 group">
-              <Calendar className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-3xl font-bold text-white mb-2">24/7</h3>
-              <p className="text-white/60">Always Active</p>
+            <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-8 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300 group">
+              <Calendar className="h-8 w-8 sm:h-10 sm:w-10 text-primary mb-3 sm:mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">24/7</h3>
+              <p className="text-white/60 text-sm sm:text-base">Always Active</p>
             </div>
           </motion.div>
         )}
