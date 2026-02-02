@@ -64,10 +64,10 @@ export default function Dashboard() {
             <span className="text-sm font-medium text-primary">Your Dashboard</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-white">
             Contest <span className="text-primary">Dashboard</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+          <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto px-4">
             Track your progress across all contests
           </p>
         </motion.div>
@@ -124,26 +124,26 @@ export default function Dashboard() {
             transition={{ delay: 0.3 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
-            <div className="rounded-3xl p-4 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300 group">
-              <Trophy className="h-8 w-8 text-primary mb-2 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold text-white mb-1">{contests.length}</h3>
-              <p className="text-white/60 text-sm">Total Contests</p>
+            <div className="rounded-2xl sm:rounded-3xl p-3 sm:p-4 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300 group">
+              <Trophy className="h-6 w-6 sm:h-8 sm:w-8 text-primary mb-1 sm:mb-2 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">{contests.length}</h3>
+              <p className="text-white/60 text-xs sm:text-sm">Total Contests</p>
             </div>
             
-            <div className="rounded-3xl p-4 bg-white/5 border border-white/10 hover:border-accent/30 transition-all duration-300 group">
-              <TrendingUp className="h-8 w-8 text-accent mb-2 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold text-white mb-1">
+            <div className="rounded-2xl sm:rounded-3xl p-3 sm:p-4 bg-white/5 border border-white/10 hover:border-accent/30 transition-all duration-300 group">
+              <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-accent mb-1 sm:mb-2 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">
                 {contests.filter(c => c.creator.id === userId).length}
               </h3>
-              <p className="text-white/60 text-sm">Contests Created</p>
+              <p className="text-white/60 text-xs sm:text-sm">Contests Created</p>
             </div>
             
-            <div className="rounded-3xl p-4 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300 group">
-              <Users className="h-8 w-8 text-primary mb-2 group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-bold text-white mb-1">
+            <div className="rounded-2xl sm:rounded-3xl p-3 sm:p-4 bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-300 group">
+              <Users className="h-6 w-6 sm:h-8 sm:w-8 text-primary mb-1 sm:mb-2 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">
                 {contests.reduce((sum, c) => sum + c._count.participants, 0)}
               </h3>
-              <p className="text-white/60 text-sm">Total Participants</p>
+              <p className="text-white/60 text-xs sm:text-sm">Total Participants</p>
             </div>
           </motion.div>
         )}
