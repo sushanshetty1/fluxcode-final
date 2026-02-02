@@ -50,11 +50,11 @@ export default function SignIn() {
             </h1>
           </div>
           
-          <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Master DSA Through <span className="text-primary">Competition</span>
           </h2>
           
-          <p className="text-xl text-white/60 mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/60 mb-6 sm:mb-8 leading-relaxed">
             Join long-term contests, compete on leaderboards, and accelerate your coding journey with AI-powered guidance
           </p>
 
@@ -99,9 +99,9 @@ export default function SignIn() {
               </h1>
             </div>
 
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-white mb-3">Welcome Back</h3>
-              <p className="text-white/60">
+            <div className="text-center mb-6 sm:mb-8">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 sm:mb-3">Welcome Back</h3>
+              <p className="text-sm sm:text-base text-white/60">
                 Sign in to continue your coding journey
               </p>
             </div>
