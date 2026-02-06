@@ -64,42 +64,44 @@
       },
       "materials": [
         {
-          "id": "wa1-m1",
-          "title": "Network Flow Algorithms",
+          "id": "w1-m1",
+          "title": "Max Flow Ford Fulkerson | Network Flow | Graph Theory",
           "type": "video",
           "url": "https://www.youtube.com/watch?v=LdOnanfc5TM",
-          "description": "Complete guide to max flow and min cut algorithms",
-          "duration": "45 min"
+          "description": "Tutorial by WilliamFiset",
+          "duration": "13:25"
         },
         {
-          "id": "wa1-m2",
-          "title": "Ford-Fulkerson Algorithm",
+          "id": "w1-m2",
+          "title": "Learn Graphs in 5 minutes 🌐",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=Tl90tNtKvxs",
-          "description": "Understanding Ford-Fulkerson for maximum flow problems",
-          "duration": "28 min"
+          "url": "https://www.youtube.com/watch?v=-VgHk7UMPP4",
+          "description": "Tutorial by Bro Code",
+          "duration": "5:17"
         },
         {
-          "id": "wa1-m3",
-          "title": "Network Flow Tutorial",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/max-flow-problem-introduction/",
-          "description": "Comprehensive network flow problem tutorial"
-        },
-        {
-          "id": "wa1-m4",
-          "title": "Edmonds-Karp Algorithm",
+          "id": "w1-m3",
+          "title": "Graph Algorithms for Technical Interviews - Full Course",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=RppuJYwlcI8",
-          "description": "BFS-based max flow algorithm",
-          "duration": "20 min"
+          "url": "https://www.youtube.com/watch?v=tWVWeAqZ0WU",
+          "description": "Tutorial by freeCodeCamp.org",
+          "duration": "2:12:19"
         },
         {
-          "id": "wa1-m5",
-          "title": "Min Cut Problems",
-          "type": "article",
-          "url": "https://cp-algorithms.com/graph/min_cost_flow.html",
-          "description": "Solving minimum cut problems in flow networks"
+          "id": "w1-m4",
+          "title": "Graph Algorithms Crash Course (with Java)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=dS44jZyj5gU",
+          "description": "Tutorial by freeCodeCamp.org",
+          "duration": "1:41:11"
+        },
+        {
+          "id": "w1-m5",
+          "title": "Lec-40 Ford Fulkerson Algorithm For Max Flow | Hindi | Operation Research",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=NwenwITjMys",
+          "description": "Tutorial by Start Practicing",
+          "duration": "17:33"
         }
       ]
     },
@@ -162,41 +164,44 @@
       },
       "materials": [
         {
-          "id": "wa2-m1",
-          "title": "Advanced Tutorial",
+          "id": "w2-m1",
+          "title": "International Grandmaster Without Knowing Segment Tree!",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 2 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=mB9pyG-Adc4",
+          "description": "Tutorial by Algoritmi Academy",
+          "duration": "1:00"
         },
         {
-          "id": "wa2-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 2 practice"
-        },
-        {
-          "id": "wa2-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 2 theory"
-        },
-        {
-          "id": "wa2-m4",
-          "title": "Advanced Concepts",
+          "id": "w2-m2",
+          "title": "Fenwick Tree or Binary Indexed Tree",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 2 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=CWDQJGaN1gY",
+          "description": "Tutorial by Tushar Roy - Coding Made Simple",
+          "duration": "22:43"
         },
         {
-          "id": "wa2-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 2 reference"
+          "id": "w2-m3",
+          "title": "Tree Implementation in Java | DSA",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=pJf1iVGTmxQ",
+          "description": "Tutorial by Telusko",
+          "duration": "17:03"
+        },
+        {
+          "id": "w2-m4",
+          "title": "Segment Trees Tutorial | Range Queries | Interview Questions",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=ciHThtTVNto",
+          "description": "Tutorial by Kunal Kushwaha",
+          "duration": "1:13:23"
+        },
+        {
+          "id": "w2-m5",
+          "title": "Segment Trees - The Best Introduction in 10 mins",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Ic7OO3Uw6J0",
+          "description": "Tutorial by Rachit",
+          "duration": "11:44"
         }
       ]
     },
@@ -259,41 +264,44 @@
       },
       "materials": [
         {
-          "id": "wa3-m1",
-          "title": "Advanced Tutorial",
+          "id": "w3-m1",
+          "title": "5 steps to solve any Dynamic Programming problem",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 3 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=sWnBVPRA0yQ",
+          "description": "Tutorial by Sahil & Sarra",
+          "duration": "8:43"
         },
         {
-          "id": "wa3-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 3 practice"
-        },
-        {
-          "id": "wa3-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 3 theory"
-        },
-        {
-          "id": "wa3-m4",
-          "title": "Advanced Concepts",
+          "id": "w3-m2",
+          "title": "4 Steps to Solve Any Dynamic Programming (DP) Problem",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 3 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=uUjFL0C-vY0",
+          "description": "Tutorial by Greg Hogg",
+          "duration": "0:57"
         },
         {
-          "id": "wa3-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 3 reference"
+          "id": "w3-m3",
+          "title": "5 Simple Steps for Solving Dynamic Programming Problems",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=aPQY__2H3tE",
+          "description": "Tutorial by Reducible",
+          "duration": "21:27"
+        },
+        {
+          "id": "w3-m4",
+          "title": "DP 1. Introduction to Dynamic Programming | Memoization | Tabulation | Space Opt",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=tyB0ztf0DNY",
+          "description": "Tutorial by take U forward",
+          "duration": "33:51"
+        },
+        {
+          "id": "w3-m5",
+          "title": "4 Principle  of Optimality  - Dynamic Programming introduction",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=5dRGRueKU3M",
+          "description": "Tutorial by Abdul Bari",
+          "duration": "14:52"
         }
       ]
     },
@@ -357,41 +365,44 @@
       },
       "materials": [
         {
-          "id": "wa4-m1",
-          "title": "Advanced Tutorial",
+          "id": "w4-m1",
+          "title": "4 Steps to Solve Any Dynamic Programming (DP) Problem",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 4 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=uUjFL0C-vY0",
+          "description": "Tutorial by Greg Hogg",
+          "duration": "0:57"
         },
         {
-          "id": "wa4-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 4 practice"
-        },
-        {
-          "id": "wa4-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 4 theory"
-        },
-        {
-          "id": "wa4-m4",
-          "title": "Advanced Concepts",
+          "id": "w4-m2",
+          "title": "5 steps to solve any Dynamic Programming problem",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 4 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=sWnBVPRA0yQ",
+          "description": "Tutorial by Sahil & Sarra",
+          "duration": "8:43"
         },
         {
-          "id": "wa4-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 4 reference"
+          "id": "w4-m3",
+          "title": "Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=oBt53YbR9Kk",
+          "description": "Tutorial by freeCodeCamp.org",
+          "duration": "5:10:02"
+        },
+        {
+          "id": "w4-m4",
+          "title": "Data Structure and Algorithm Patterns for LeetCode Interviews – Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Z_c4byLrNBU",
+          "description": "Tutorial by freeCodeCamp.org",
+          "duration": "1:15:03"
+        },
+        {
+          "id": "w4-m5",
+          "title": "DSA is all you need? #tech #coding",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=ux5WuEnYC0g",
+          "description": "Tutorial by Anu Sharma",
+          "duration": "0:06"
         }
       ]
     },
@@ -454,41 +465,44 @@
       },
       "materials": [
         {
-          "id": "wa5-m1",
-          "title": "Advanced Tutorial",
+          "id": "w5-m1",
+          "title": "34. Suffix Array Algorithm (Java)",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 5 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=WIcAMmZMFAI",
+          "description": "Tutorial by Web Fusion with Bharadwaj",
+          "duration": "23:26"
         },
         {
-          "id": "wa5-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 5 practice"
-        },
-        {
-          "id": "wa5-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 5 theory"
-        },
-        {
-          "id": "wa5-m4",
-          "title": "Advanced Concepts",
+          "id": "w5-m2",
+          "title": "Suffix array introduction",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 5 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=zqKlL3ZpTqs",
+          "description": "Tutorial by WilliamFiset",
+          "duration": "3:16"
         },
         {
-          "id": "wa5-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 5 reference"
+          "id": "w5-m3",
+          "title": "Advanced Data Structures: Suffix Arrays",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=IzMxbboPcqQ",
+          "description": "Tutorial by Niema Moshiri",
+          "duration": "6:24"
+        },
+        {
+          "id": "w5-m4",
+          "title": "Mastering Advanced DSA: Tries, Suffix Arrays & Bit Manipulation",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=QSMulpBPDe0",
+          "description": "Tutorial by CodeLucky",
+          "duration": "9:17"
+        },
+        {
+          "id": "w5-m5",
+          "title": "COMP526 6-10 §6.7 LCP array construction & back to suffix trees",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=VpEumOuakOU",
+          "description": "Tutorial by Sebastian Wild (Lectures)",
+          "duration": "21:49"
         }
       ]
     },
@@ -551,41 +565,44 @@
       },
       "materials": [
         {
-          "id": "wa6-m1",
-          "title": "Advanced Tutorial",
+          "id": "w6-m1",
+          "title": "Advanced Data Structures: Aho-Corasick Automaton",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 6 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=O7_w001f58c",
+          "description": "Tutorial by Niema Moshiri",
+          "duration": "9:55"
         },
         {
-          "id": "wa6-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 6 practice"
-        },
-        {
-          "id": "wa6-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 6 theory"
-        },
-        {
-          "id": "wa6-m4",
-          "title": "Advanced Concepts",
+          "id": "w6-m2",
+          "title": "32. Aho–Corasick Algorithm (Java)",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 6 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=OGqZNcKpECE",
+          "description": "Tutorial by Web Fusion with Bharadwaj",
+          "duration": "29:08"
         },
         {
-          "id": "wa6-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 6 reference"
+          "id": "w6-m3",
+          "title": "Aho-Corasick Algorithm",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=alG4qAJdd4o",
+          "description": "Tutorial by Jaisuraj Bantupalli",
+          "duration": "10:30"
+        },
+        {
+          "id": "w6-m4",
+          "title": "Aho Corasick Algorithm",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=jO_g6mieB6s",
+          "description": "Tutorial by Naga Jahnavi K",
+          "duration": "41:08"
+        },
+        {
+          "id": "w6-m5",
+          "title": "Aho-Corasick Algorithm Explained: Multiple Pattern Matching Made Easy",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=aSee8B4rJ7g",
+          "description": "Tutorial by CodeLucky",
+          "duration": "3:42"
         }
       ]
     },
@@ -648,41 +665,44 @@
       },
       "materials": [
         {
-          "id": "wa7-m1",
-          "title": "Advanced Tutorial",
+          "id": "w7-m1",
+          "title": "Convex Hull Algorithm - Graham Scan and Jarvis March tutorial",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 7 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=B2AJoQSZf4M",
+          "description": "Tutorial by Stable Sort",
+          "duration": "7:24"
         },
         {
-          "id": "wa7-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 7 practice"
-        },
-        {
-          "id": "wa7-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 7 theory"
-        },
-        {
-          "id": "wa7-m4",
-          "title": "Advanced Concepts",
+          "id": "w7-m2",
+          "title": "Convex Hull | Basics | Lecture-1",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 7 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=Ze6lppsly2U",
+          "description": "Tutorial by Techdose",
+          "duration": "9:05"
         },
         {
-          "id": "wa7-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 7 reference"
+          "id": "w7-m3",
+          "title": "The Quickhull Algorithm",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=pz9dNV3r8SQ",
+          "description": "Tutorial by Comp Sci",
+          "duration": "3:38"
+        },
+        {
+          "id": "w7-m4",
+          "title": "Convex Hull - DC Algorithm - Divide & Conquer | Design & Analysis of Algorithms ",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Q-6Vm_eLsto",
+          "description": "Tutorial by Syed Mohiuddin",
+          "duration": "9:54"
+        },
+        {
+          "id": "w7-m5",
+          "title": "Leetcode : Erect The Fence (Jarvis Convex Hull)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=6H8Tyvh6vJQ",
+          "description": "Tutorial by Shivank Goel",
+          "duration": "14:53"
         }
       ]
     },
@@ -745,41 +765,44 @@
       },
       "materials": [
         {
-          "id": "wa8-m1",
-          "title": "Advanced Tutorial",
+          "id": "w8-m1",
+          "title": "Heavy light decomposition: The hardest competitive programming algorithm",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 8 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=1PvT2d9lgqY",
+          "description": "Tutorial by Gaurav Sen",
+          "duration": "16:36"
         },
         {
-          "id": "wa8-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 8 practice"
-        },
-        {
-          "id": "wa8-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 8 theory"
-        },
-        {
-          "id": "wa8-m4",
-          "title": "Advanced Concepts",
+          "id": "w8-m2",
+          "title": "84. DSU on Trees Algorithm (Java)",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 8 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=k67-mQQyFcg",
+          "description": "Tutorial by Web Fusion with Bharadwaj",
+          "duration": "21:32"
         },
         {
-          "id": "wa8-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 8 reference"
+          "id": "w8-m3",
+          "title": "Hybrid Tutorial #-1: Heavy-Light Decomposition",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=_G_LMuLWMaI",
+          "description": "Tutorial by Colin Galen",
+          "duration": "40:25"
+        },
+        {
+          "id": "w8-m4",
+          "title": "Heavy Light Decomposition | Competitive Programming | Anshu Garg",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=zr5WrxtuEvI",
+          "description": "Tutorial by Club of Programmers, IIT BHU Varanasi",
+          "duration": "19:50"
+        },
+        {
+          "id": "w8-m5",
+          "title": "82. Heavy-Light Decomposition Algorithm (Java)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=wRaSRrKOtS4",
+          "description": "Tutorial by Web Fusion with Bharadwaj",
+          "duration": "37:52"
         }
       ]
     },
@@ -842,41 +865,44 @@
       },
       "materials": [
         {
-          "id": "wa9-m1",
-          "title": "Advanced Tutorial",
+          "id": "w9-m1",
+          "title": "Square root decomposition topic summary | Competitive Programming | Vivek Gupta ",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 9 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=Uqyn-3w7yIU",
+          "description": "Tutorial by Vivek Gupta",
+          "duration": "37:38"
         },
         {
-          "id": "wa9-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 9 practice"
-        },
-        {
-          "id": "wa9-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 9 theory"
-        },
-        {
-          "id": "wa9-m4",
-          "title": "Advanced Concepts",
+          "id": "w9-m2",
+          "title": "Easily Solve Range Query Interview Problems with Square Root Decomposition/Mo's ",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 9 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=U4YmISZViSs",
+          "description": "Tutorial by Kunal Kushwaha",
+          "duration": "39:17"
         },
         {
-          "id": "wa9-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 9 reference"
+          "id": "w9-m3",
+          "title": "[Tutorial] SquareRoot Decomposition in Competitive Programming",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Cwjb5JImm7k",
+          "description": "Tutorial by Rachit",
+          "duration": "4:37"
+        },
+        {
+          "id": "w9-m4",
+          "title": "Mo's Algorithm - Square Root Decomposition | Lecture 42.3",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=0Cu9Kg7RJYg",
+          "description": "Tutorial by Apna College",
+          "duration": "19:06"
+        },
+        {
+          "id": "w9-m5",
+          "title": "Mo's Algorithm: DQUERY from SPOJ",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=hqaRYgsLpUI",
+          "description": "Tutorial by Gaurav Sen",
+          "duration": "19:05"
         }
       ]
     },
@@ -939,41 +965,44 @@
       },
       "materials": [
         {
-          "id": "wa10-m1",
-          "title": "Advanced Tutorial",
+          "id": "w10-m1",
+          "title": "83. Centroid Decomposition Algorithm (Java)",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 10 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=LvxKQ7BDxbA",
+          "description": "Tutorial by Web Fusion with Bharadwaj",
+          "duration": "24:02"
         },
         {
-          "id": "wa10-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 10 practice"
-        },
-        {
-          "id": "wa10-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 10 theory"
-        },
-        {
-          "id": "wa10-m4",
-          "title": "Advanced Concepts",
+          "id": "w10-m2",
+          "title": "Centroid Decomposition",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 10 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=XjDq1pud98M",
+          "description": "Tutorial by Programming Club IIITH",
+          "duration": "1:42:07"
         },
         {
-          "id": "wa10-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 10 reference"
+          "id": "w10-m3",
+          "title": "Centroid Decomposition - Summary",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=mUR1Ao6g9-g",
+          "description": "Tutorial by Mitko Nikov",
+          "duration": "58:31"
+        },
+        {
+          "id": "w10-m4",
+          "title": "What is Centroid Decomposition? #coding",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=_hU1Ykb4UkI",
+          "description": "Tutorial by Mitko Nikov",
+          "duration": "1:01"
+        },
+        {
+          "id": "w10-m5",
+          "title": "What is Centroid Decomposition?",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=-Lgda-6_AiY",
+          "description": "Tutorial by Gaurav Sen",
+          "duration": "32:39"
         }
       ]
     },
@@ -1036,41 +1065,44 @@
       },
       "materials": [
         {
-          "id": "wa11-m1",
-          "title": "Advanced Tutorial",
+          "id": "w11-m1",
+          "title": "Longest Palindromic Substring Manacher's Algorithm",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 11 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=V-sEwsca1ak",
+          "description": "Tutorial by Tushar Roy - Coding Made Simple",
+          "duration": "16:46"
         },
         {
-          "id": "wa11-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 11 practice"
-        },
-        {
-          "id": "wa11-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 11 theory"
-        },
-        {
-          "id": "wa11-m4",
-          "title": "Advanced Concepts",
+          "id": "w11-m2",
+          "title": "Manacher Algorithm for Strings | Understanding, Proof and Implementation | Palin",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 11 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=ei7qghJEj4Y",
+          "description": "Tutorial by Vivek Gupta",
+          "duration": "38:05"
         },
         {
-          "id": "wa11-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 11 reference"
+          "id": "w11-m3",
+          "title": "Longest Palindromic Substring O(N) Manacher's Algorithm | Leetcode - 5",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=IvakBbsAhUU",
+          "description": "Tutorial by Algorithms Made Easy",
+          "duration": "15:58"
+        },
+        {
+          "id": "w11-m4",
+          "title": "Longest Palindromic Substring O(N) Manacher's Algorithm",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=nbTSfrEfo6M",
+          "description": "Tutorial by IDeserve",
+          "duration": "23:49"
+        },
+        {
+          "id": "w11-m5",
+          "title": "Manacher's Algorithm | Longest Palindromic Substring",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=YVZttWzvyw8",
+          "description": "Tutorial by Fluent Algorithms",
+          "duration": "21:47"
         }
       ]
     },
@@ -1133,41 +1165,44 @@
       },
       "materials": [
         {
-          "id": "wa12-m1",
-          "title": "Advanced Tutorial",
+          "id": "w12-m1",
+          "title": "The Fast Fourier Transform (FFT): Most Ingenious Algorithm Ever?",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 12 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=h7apO7q16V0",
+          "description": "Tutorial by Reducible",
+          "duration": "28:23"
         },
         {
-          "id": "wa12-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 12 practice"
-        },
-        {
-          "id": "wa12-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 12 theory"
-        },
-        {
-          "id": "wa12-m4",
-          "title": "Advanced Concepts",
+          "id": "w12-m2",
+          "title": "43. Fast Fourier Transformation (FFT) in Hindi - DAA",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 12 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=y7XGl04yYi8",
+          "description": "Tutorial by Bindas Code",
+          "duration": "8:32"
         },
         {
-          "id": "wa12-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 12 reference"
+          "id": "w12-m3",
+          "title": "Data Structures and Algorithms (DSA) in Java 2024",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=4_HOnhB64Dg",
+          "description": "Tutorial by Telusko",
+          "duration": "4:54:17"
+        },
+        {
+          "id": "w12-m4",
+          "title": "Java Data Structures Tutorial",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=8MmMm2-kJV8",
+          "description": "Tutorial by Amigoscode",
+          "duration": "1:39:50"
+        },
+        {
+          "id": "w12-m5",
+          "title": "3. Divide & Conquer: FFT",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=iTMn0Kt18tg",
+          "description": "Tutorial by MIT OpenCourseWare",
+          "duration": "1:20:52"
         }
       ]
     },
@@ -1230,41 +1265,44 @@
       },
       "materials": [
         {
-          "id": "wa13-m1",
-          "title": "Advanced Tutorial",
+          "id": "w13-m1",
+          "title": "62. Matrix Exponentiation Algorithm (Java)",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 13 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=7mNgk4wu4cQ",
+          "description": "Tutorial by Web Fusion with Bharadwaj",
+          "duration": "19:23"
         },
         {
-          "id": "wa13-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 13 practice"
-        },
-        {
-          "id": "wa13-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 13 theory"
-        },
-        {
-          "id": "wa13-m4",
-          "title": "Advanced Concepts",
+          "id": "w13-m2",
+          "title": "Matrix Exponentiation | Problem of the Day: 01/07/22 | Yash Dwivedi",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 13 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=bBPzWYDKPBE",
+          "description": "Tutorial by GeeksforGeeks Practice",
+          "duration": "12:21"
         },
         {
-          "id": "wa13-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 13 reference"
+          "id": "w13-m3",
+          "title": "Solving the Fibonacci Sequence with Matrix Exponentiation",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=EEb6JP3NXBI",
+          "description": "Tutorial by Gaurav Sen",
+          "duration": "20:20"
+        },
+        {
+          "id": "w13-m4",
+          "title": "Matrix Exponentiation + Fibonacci in log(N)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=eMXNWcbw75E",
+          "description": "Tutorial by Errichto Algorithms",
+          "duration": "31:23"
+        },
+        {
+          "id": "w13-m5",
+          "title": "Unlucky 13 - Using Matrix Exponentiation!",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=NMDoKqifQ40",
+          "description": "Tutorial by HackerEarth",
+          "duration": "11:12"
         }
       ]
     },
@@ -1328,41 +1366,44 @@
       },
       "materials": [
         {
-          "id": "wa14-m1",
-          "title": "Advanced Tutorial",
+          "id": "w14-m1",
+          "title": "Data Structures and Algorithms Mega Course – Master Technical Interviews in 49 H",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 14 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=xwI5OBEnsZU",
+          "description": "Tutorial by freeCodeCamp.org and Destination FAANG",
+          "duration": "48:50:20"
         },
         {
-          "id": "wa14-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 14 practice"
-        },
-        {
-          "id": "wa14-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 14 theory"
-        },
-        {
-          "id": "wa14-m4",
-          "title": "Advanced Concepts",
+          "id": "w14-m2",
+          "title": "Java Data Structures Tutorial",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 14 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=8MmMm2-kJV8",
+          "description": "Tutorial by Amigoscode",
+          "duration": "1:39:50"
         },
         {
-          "id": "wa14-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 14 reference"
+          "id": "w14-m3",
+          "title": "Data Structures and Algorithms (DSA) in Java 2024",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=4_HOnhB64Dg",
+          "description": "Tutorial by Telusko",
+          "duration": "4:54:17"
+        },
+        {
+          "id": "w14-m4",
+          "title": "How to effectively learn Algorithms",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=R5IB1ugud1Q",
+          "description": "Tutorial by NeetCode",
+          "duration": "1:00"
+        },
+        {
+          "id": "w14-m5",
+          "title": "Top 5 Data Structures for interviews",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Ie8ast4ZEao",
+          "description": "Tutorial by Sahil & Sarra",
+          "duration": "0:46"
         }
       ]
     },
@@ -1425,41 +1466,44 @@
       },
       "materials": [
         {
-          "id": "wa15-m1",
-          "title": "Advanced Tutorial",
+          "id": "w15-m1",
+          "title": "Functional data structures in Java by Oleg Šelajev",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 15 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=NWV5IrEg3c0",
+          "description": "Tutorial by Devoxx",
+          "duration": "48:11"
         },
         {
-          "id": "wa15-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 15 practice"
-        },
-        {
-          "id": "wa15-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 15 theory"
-        },
-        {
-          "id": "wa15-m4",
-          "title": "Advanced Concepts",
+          "id": "w15-m2",
+          "title": "Top 5 Data Structures for interviews",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 15 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=Ie8ast4ZEao",
+          "description": "Tutorial by Sahil & Sarra",
+          "duration": "0:46"
         },
         {
-          "id": "wa15-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 15 reference"
+          "id": "w15-m3",
+          "title": "Data Structures and Algorithms (DSA) in Java 2024",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=4_HOnhB64Dg",
+          "description": "Tutorial by Telusko",
+          "duration": "4:54:17"
+        },
+        {
+          "id": "w15-m4",
+          "title": "Oleg Šelajev - Functional data structures in Java",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=dvLftR7disA",
+          "description": "Tutorial by RigaDevDays",
+          "duration": "52:05"
+        },
+        {
+          "id": "w15-m5",
+          "title": "DSA is all you need? #tech #coding",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=ux5WuEnYC0g",
+          "description": "Tutorial by Anu Sharma",
+          "duration": "0:06"
         }
       ]
     },
@@ -1523,41 +1567,44 @@
       },
       "materials": [
         {
-          "id": "wa16-m1",
-          "title": "Advanced Tutorial",
+          "id": "w16-m1",
+          "title": "Data Structures and Algorithms Mega Course – Master Technical Interviews in 49 H",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 16 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=xwI5OBEnsZU",
+          "description": "Tutorial by freeCodeCamp.org and Destination FAANG",
+          "duration": "48:50:20"
         },
         {
-          "id": "wa16-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 16 practice"
-        },
-        {
-          "id": "wa16-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 16 theory"
-        },
-        {
-          "id": "wa16-m4",
-          "title": "Advanced Concepts",
+          "id": "w16-m2",
+          "title": "Data Structures and Algorithms (DSA) in Java 2024",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 16 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=4_HOnhB64Dg",
+          "description": "Tutorial by Telusko",
+          "duration": "4:54:17"
         },
         {
-          "id": "wa16-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 16 reference"
+          "id": "w16-m3",
+          "title": "The Best Book To Learn Algorithms From For Computer Science",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=NgoXCJk_o7I",
+          "description": "Tutorial by Siddhant Dubey",
+          "duration": "0:19"
+        },
+        {
+          "id": "w16-m4",
+          "title": "Top 5 Data Structures for interviews",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Ie8ast4ZEao",
+          "description": "Tutorial by Sahil & Sarra",
+          "duration": "0:46"
+        },
+        {
+          "id": "w16-m5",
+          "title": "Complete Data Structures and Algorithm Masterclass | DSA Course [With FREE Sourc",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=cD2pbCulF74",
+          "description": "Tutorial by EmbarkX | Learn Programming",
+          "duration": "7:39:05"
         }
       ]
     },
@@ -1620,41 +1667,44 @@
       },
       "materials": [
         {
-          "id": "wa17-m1",
-          "title": "Advanced Tutorial",
+          "id": "w17-m1",
+          "title": "Advanced Data Structures: Pattern Matching Using the BWT",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 17 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=uKreghMwLLE",
+          "description": "Tutorial by Niema Moshiri",
+          "duration": "8:10"
         },
         {
-          "id": "wa17-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 17 practice"
-        },
-        {
-          "id": "wa17-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 17 theory"
-        },
-        {
-          "id": "wa17-m4",
-          "title": "Advanced Concepts",
+          "id": "w17-m2",
+          "title": "Burrows-Wheeler Transform (Java)",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 17 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=h-J2_NIDvLw",
+          "description": "Tutorial by Sonny",
+          "duration": "4:50"
         },
         {
-          "id": "wa17-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 17 reference"
+          "id": "w17-m3",
+          "title": "Advanced Data Structures: Burrows-Wheeler Transform (BWT)",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Lc-ACiJIrnM",
+          "description": "Tutorial by Niema Moshiri",
+          "duration": "7:26"
+        },
+        {
+          "id": "w17-m4",
+          "title": "Burrow Wheeler Transform made simple",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=0qMGAsrYS0g",
+          "description": "Tutorial by Made Simple",
+          "duration": "5:27"
+        },
+        {
+          "id": "w17-m5",
+          "title": "Advanced Data Structures: Inverting the BWT",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=ni_w-rdItG8",
+          "description": "Tutorial by Niema Moshiri",
+          "duration": "5:12"
         }
       ]
     },
@@ -1717,41 +1767,44 @@
       },
       "materials": [
         {
-          "id": "wa18-m1",
-          "title": "Advanced Tutorial",
+          "id": "w18-m1",
+          "title": "2.11.7 Bipartite Matching",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 18 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=HZLKDC9OSaQ",
+          "description": "Tutorial by MIT OpenCourseWare",
+          "duration": "4:02"
         },
         {
-          "id": "wa18-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 18 practice"
-        },
-        {
-          "id": "wa18-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 18 theory"
-        },
-        {
-          "id": "wa18-m4",
-          "title": "Advanced Concepts",
+          "id": "w18-m2",
+          "title": "Bipartite Matching : Apr 2 Live Session",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 18 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=UwEOr_F9nMc",
+          "description": "Tutorial by NCF Algorithms",
+          "duration": "11:42"
         },
         {
-          "id": "wa18-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 18 reference"
+          "id": "w18-m3",
+          "title": "Problem of The Day: 09/02/2023 | Maximum Bipartite Matching | Siddharth Harza",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=LpRaOYy8Ogw",
+          "description": "Tutorial by GeeksforGeeks Practice",
+          "duration": "36:12"
+        },
+        {
+          "id": "w18-m4",
+          "title": "AALG5: Flow networks, maximum bipartite matching example",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=x2BdRml5lmc",
+          "description": "Tutorial by Simonas Šaltenis",
+          "duration": "11:07"
+        },
+        {
+          "id": "w18-m5",
+          "title": "Maximum Flow Applications: Bipartite Matching",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=4_QEQ0n0gG4",
+          "description": "Tutorial by Thomas Meeks",
+          "duration": "9:39"
         }
       ]
     },
@@ -1814,41 +1867,44 @@
       },
       "materials": [
         {
-          "id": "wa19-m1",
-          "title": "Advanced Tutorial",
+          "id": "w19-m1",
+          "title": "Tree Implementation in Java | DSA",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 19 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=pJf1iVGTmxQ",
+          "description": "Tutorial by Telusko",
+          "duration": "17:03"
         },
         {
-          "id": "wa19-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 19 practice"
-        },
-        {
-          "id": "wa19-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 19 theory"
-        },
-        {
-          "id": "wa19-m4",
-          "title": "Advanced Concepts",
+          "id": "w19-m2",
+          "title": "Tree data structures in 2 minutes 🌳",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 19 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=Etpc_-br5rI",
+          "description": "Tutorial by Bro Code",
+          "duration": "2:55"
         },
         {
-          "id": "wa19-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 19 reference"
+          "id": "w19-m3",
+          "title": "Tree full course for technical interviews",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=BLE6FwwmlUQ",
+          "description": "Tutorial by Destination FAANG",
+          "duration": "4:29:59"
+        },
+        {
+          "id": "w19-m4",
+          "title": "A&DS S02E11. Link-Cut Tree",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=GifegXMjiiA",
+          "description": "Tutorial by Pavel Mavrin",
+          "duration": "1:21:03"
+        },
+        {
+          "id": "w19-m5",
+          "title": "Dynamic Graphs I - Advanced data structures",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=cyx63EI_jbo",
+          "description": "Tutorial by Kumar Banglore",
+          "duration": "1:14:22"
         }
       ]
     },
@@ -1912,41 +1968,44 @@
       },
       "materials": [
         {
-          "id": "wa20-m1",
-          "title": "Advanced Tutorial",
+          "id": "w20-m1",
+          "title": "Fastest Way to Learn DSA in Java | Full Roadmap",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test",
-          "description": "Week 20 materials",
-          "duration": "30 min"
+          "url": "https://www.youtube.com/watch?v=p-8YpVkG3aI",
+          "description": "Tutorial by Harshit Trehan",
+          "duration": "8:17"
         },
         {
-          "id": "wa20-m2",
-          "title": "Practice Problems",
-          "type": "article",
-          "url": "https://leetcode.com/tag/",
-          "description": "Week 20 practice"
-        },
-        {
-          "id": "wa20-m3",
-          "title": "Theory Guide",
-          "type": "article",
-          "url": "https://www.geeksforgeeks.org/",
-          "description": "Week 20 theory"
-        },
-        {
-          "id": "wa20-m4",
-          "title": "Advanced Concepts",
+          "id": "w20-m2",
+          "title": "Data Structures and Algorithms (DSA) in Java 2024",
           "type": "video",
-          "url": "https://www.youtube.com/watch?v=test2",
-          "description": "Week 20 advanced",
-          "duration": "25 min"
+          "url": "https://www.youtube.com/watch?v=4_HOnhB64Dg",
+          "description": "Tutorial by Telusko",
+          "duration": "4:54:17"
         },
         {
-          "id": "wa20-m5",
-          "title": "Reference Material",
-          "type": "documentation",
-          "url": "https://cp-algorithms.com/",
-          "description": "Week 20 reference"
+          "id": "w20-m3",
+          "title": "Fastest way to learn Data Structures and Algorithms",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=tNrNLoCqzco",
+          "description": "Tutorial by Sahil & Sarra",
+          "duration": "8:42"
+        },
+        {
+          "id": "w20-m4",
+          "title": "Data Structures and Algorithms Mega Course – Master Technical Interviews in 49 H",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=xwI5OBEnsZU",
+          "description": "Tutorial by freeCodeCamp.org and Destination FAANG",
+          "duration": "48:50:20"
+        },
+        {
+          "id": "w20-m5",
+          "title": "How I Mastered Data Structures and Algorithms",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=F-ao3Q6I2Fc",
+          "description": "Tutorial by Ashish Pratap Singh",
+          "duration": "10:45"
         }
       ]
     }
