@@ -5,6 +5,12 @@ let transporterInstance: nodemailer.Transporter | null = null;
 
 function getTransporter() {
   if (!transporterInstance && env.SMTP_HOST && env.SMTP_PORT && env.SMTP_USER && env.SMTP_PASSWORD) {
+    console.log("✅ Creating email transporter with config:", {
+      host: env.SMTP_HOST,
+      port: env.SMTP_PORT,
+      user: env.SMTP_USER,
+      hasPassword: !!env.SMTP_PASSWORD
+    });
     transporterInstance = nodemailer.createTransport({
       host: env.SMTP_HOST,
       port: parseInt(env.SMTP_PORT),
@@ -13,6 +19,13 @@ function getTransporter() {
         user: env.SMTP_USER,
         pass: env.SMTP_PASSWORD,
       },
+    });
+  } else if (!transporterInstance) {
+    console.error("❌ Cannot create email transporter - missing config:", {
+      hasHost: !!env.SMTP_HOST,
+      hasPort: !!env.SMTP_PORT,
+      hasUser: !!env.SMTP_USER,
+      hasPassword: !!env.SMTP_PASSWORD
     });
   }
   return transporterInstance;

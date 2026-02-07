@@ -6,7 +6,8 @@ import { sendWeekendContestStart, sendWeekendReminderIncomplete } from "~/server
  * Should be run every Saturday at midnight IST (start of weekend contest)
  */
 export async function notifyWeekendContestStart() {
-  console.log("Running weekend contest start notifications...");
+  console.log("\n=== Running weekend contest start notifications ===");
+  console.log("Timestamp:", new Date().toISOString());
   
   try {
     // Get all active contests
@@ -23,9 +24,11 @@ export async function notifyWeekendContestStart() {
       },
     });
 
+    console.log(`Found ${contests.length} active contest(s)`);
+
     if (contests.length === 0) {
-      console.log("No active contests found");
-      console.log("Weekend contest start notifications completed");
+      console.log("⚠️ No active contests found - no notifications to send");
+      console.log("=== Weekend contest start notifications completed ===\n");
       return;
     }
 
@@ -47,7 +50,7 @@ export async function notifyWeekendContestStart() {
 
       // Get the syllabus for this contest
       interface SyllabusWeek {
-        week: number;
+        weekNumber: number;
         weekendTest?: {
           topicName: string;
           problems: Array<{ title: string; difficulty: string }>;
@@ -76,7 +79,7 @@ export async function notifyWeekendContestStart() {
       }
 
       // Find current week's weekend test
-      const currentWeekData = syllabus.weeks.find((w) => w.week === currentWeekNumber);
+      const currentWeekData = syllabus.weeks.find((w) => w.weekNumber === currentWeekNumber);
       if (!currentWeekData?.weekendTest) {
         console.log(`No weekend test found for contest ${contest.id}, week ${currentWeekNumber}`);
         continue;
@@ -88,9 +91,14 @@ export async function notifyWeekendContestStart() {
       }));
 
       // Send notification to all paid participants
+      console.log(`\nProcessing ${contest.participants.length} participants for contest ${contest.id}:`);
+      let sentCount = 0;
+      let skippedCount = 0;
+      
       for (const participant of contest.participants) {
         if (participant.paymentStatus === "paid" && participant.user.email) {
           try {
+            console.log(`  📧 Sending to ${participant.user.email} (${participant.user.name})...`);
             await sendWeekendContestStart(participant.user.email, {
               name: participant.user.name ?? "Participant",
               contestName: contest.name,
@@ -98,18 +106,22 @@ export async function notifyWeekendContestStart() {
               problems: weekendProblems,
               contestUrl: `${process.env.NEXTAUTH_URL}/contest/${contest.id}`,
             });
+            sentCount++;
           } catch (error) {
-            console.error(`Failed to send weekend start email to ${participant.user.email}:`, error);
+            console.error(`  ❌ Failed to send to ${participant.user.email}:`, error);
           }
+        } else {
+          skippedCount++;
+          console.log(`  ⏭️ Skipped ${participant.user.email ?? 'no email'} (payment: ${participant.paymentStatus})`);
         }
       }
 
-      console.log(`Sent weekend contest start notifications for contest ${contest.id}, week ${currentWeekNumber}`);
+      console.log(`\n✅ Contest ${contest.id}, week ${currentWeekNumber}: Sent ${sentCount} emails, skipped ${skippedCount}`);
     }
 
-    console.log("Weekend contest start notifications completed");
+    console.log("\n=== Weekend contest start notifications completed successfully ===\n");
   } catch (error) {
-    console.error("Error in notifyWeekendContestStart:", error);
+    console.error("\n❌ Error in notifyWeekendContestStart:", error);
     throw error;
   }
 }
@@ -184,7 +196,7 @@ export async function notifyWeekendReminder() {
 
       // Get the syllabus for this contest
       interface SyllabusWeek {
-        week: number;
+        weekNumber: number;
         weekendTest?: {
           topicName: string;
           problems: Array<{ title: string; difficulty: string }>;
@@ -213,7 +225,7 @@ export async function notifyWeekendReminder() {
       }
 
       // Find current week's weekend test
-      const currentWeekData = syllabus.weeks.find((w) => w.week === currentWeekNumber);
+      const currentWeekData = syllabus.weeks.find((w) => w.weekNumber === currentWeekNumber);
       if (!currentWeekData?.weekendTest) {
         console.log(`No weekend test found for contest ${contest.id}, week ${currentWeekNumber}`);
         continue;

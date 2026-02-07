@@ -5,6 +5,15 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  webpack: (config, { isServer }) => {
+    // Exclude Python venv and scripts from webpack processing
+    config.watchOptions = {
+      ...config.watchOptions,
+      ignored: ['**/venv/**', '**/scripts/**', '**/node_modules/**'],
+    };
+    return config;
+  },
+};
 
 export default config;
