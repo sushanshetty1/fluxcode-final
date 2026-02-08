@@ -283,6 +283,67 @@ export const contestRouter = createTRPCRouter({
   getLeaderboard: publicProcedure
     .input(z.object({ contestId: z.string() }))
     .query(async ({ ctx, input }) => {
+      // Get contest info to calculate current week
+      const contest = await ctx.db.contest.findUnique({
+        where: { id: input.contestId },
+        select: {
+          difficulty: true,
+          startDate: true,
+        },
+      });
+
+      if (!contest) {
+        return [];
+      }
+
+      // Calculate current week number
+      const now = new Date();
+      const startDate = new Date(contest.startDate);
+      const weeksSinceStart = Math.floor(
+        (now.getTime() - startDate.getTime()) / (7 * 24 * 60 * 60 * 1000)
+      );
+      const currentWeekNumber = weeksSinceStart + 1;
+
+      // Check if currently weekend (Saturday=6, Sunday=0) or weekday
+      const dayOfWeek = now.getDay();
+      const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+
+      // Load syllabus to get problem IDs for current week
+      let relevantProblemIds: string[] = [];
+      try {
+        const syllabusMap: Record<string, string> = {
+          'beginner': 'beginner-9months.json',
+          'intermediate': 'intermediate-6months.json',
+          'advanced': 'advanced-5months.json',
+        };
+        const syllabusFile = syllabusMap[contest.difficulty];
+        
+        if (syllabusFile) {
+          const syllabus = await import(`../../../../public/syllabi/${syllabusFile}`) as {
+            weeks: Array<{
+              weekNumber: number;
+              weekdayHomework?: Array<{ id: string }>;
+              weekendTest?: {
+                problems: Array<{ id: string }>;
+              };
+            }>;
+          };
+          
+          const currentWeekData = syllabus.weeks.find((w) => w.weekNumber === currentWeekNumber);
+          if (currentWeekData) {
+            if (isWeekend && currentWeekData.weekendTest) {
+              // During weekend, show weekend contest problems
+              relevantProblemIds = currentWeekData.weekendTest.problems.map(p => p.id);
+            } else if (!isWeekend && currentWeekData.weekdayHomework) {
+              // During weekdays, show homework problems
+              relevantProblemIds = currentWeekData.weekdayHomework.map(p => p.id);
+            }
+          }
+        }
+      } catch (error) {
+        console.error("Failed to load syllabus for problems:", error);
+      }
+
       // Batch fetch all participants
       const participants = await ctx.db.contestParticipant.findMany({
         where: { contestId: input.contestId },
@@ -307,10 +368,16 @@ export const contestRouter = createTRPCRouter({
 
       const userIds = participants.map(p => p.userId);
 
-      // Get today's date range (midnight to midnight)
-      const now = new Date();
-      const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      const todayEnd = new Date(todayStart.getTime() + 24 * 60 * 60 * 1000);
+      // Get current week's Monday as start of week
+      const getMondayOfWeek = (date: Date) => {
+        const d = new Date(date);
+        const day = d.getDay();
+        const diff = d.getDate() - day + (day === 0 ? -6 : 1); // Adjust when day is Sunday
+        return new Date(d.setDate(diff));
+      };
+
+      const weekStart = getMondayOfWeek(now);
+      weekStart.setHours(0, 0, 0, 0);
 
       // Batch fetch all streaks for these users
       const streaks = await ctx.db.streak.findMany({
@@ -321,20 +388,25 @@ export const contestRouter = createTRPCRouter({
         },
       });
 
-      // Batch fetch today's progress for all users
-      const todayProgress = await ctx.db.userProgress.findMany({
+      // Batch fetch progress for relevant problems
+      // For weekdays: get homework problems solved since Monday
+      // For weekends: get all weekend problems solved (total)
+      const relevantProgress = relevantProblemIds.length > 0 ? await ctx.db.userProgress.findMany({
         where: {
           userId: { in: userIds },
-          completedAt: {
-            gte: todayStart,
-            lt: todayEnd,
-          },
           completed: true,
           problem: {
+            leetcodeId: { in: relevantProblemIds },
             topic: {
               contestId: input.contestId,
             },
           },
+          ...(isWeekend ? {} : {
+            // For weekdays, only count problems solved this week
+            completedAt: {
+              gte: weekStart,
+            },
+          }),
         },
         select: {
           userId: true,
@@ -344,15 +416,18 @@ export const contestRouter = createTRPCRouter({
             },
           },
         },
-      });
+      }) : [];
 
       // Build maps for O(1) lookups
       const streakMap = new Map(streaks.map(s => [s.userId, s.currentStreak]));
       const progressMap = new Map<string, string[]>();
       
-      for (const progress of todayProgress) {
+      // Add relevant problems
+      for (const progress of relevantProgress) {
         const existing = progressMap.get(progress.userId) ?? [];
-        existing.push(progress.problem.leetcodeId);
+        if (!existing.includes(progress.problem.leetcodeId)) {
+          existing.push(progress.problem.leetcodeId);
+        }
         progressMap.set(progress.userId, existing);
       }
 

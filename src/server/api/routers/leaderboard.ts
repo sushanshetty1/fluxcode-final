@@ -5,6 +5,55 @@ export const leaderboardRouter = createTRPCRouter({
   getByContest: publicProcedure
     .input(z.object({ contestId: z.string() }))
     .query(async ({ ctx, input }) => {
+      const contest = await ctx.db.contest.findUnique({
+        where: { id: input.contestId },
+        select: {
+          difficulty: true,
+          startDate: true,
+        },
+      });
+
+      if (!contest) {
+        throw new Error("Contest not found");
+      }
+
+      // Calculate current week number
+      const now = new Date();
+      const startDate = new Date(contest.startDate);
+      const weeksSinceStart = Math.floor(
+        (now.getTime() - startDate.getTime()) / (7 * 24 * 60 * 60 * 1000)
+      );
+      const currentWeekNumber = weeksSinceStart + 1;
+
+      // Load syllabus to get weekend problem IDs
+      let weekendProblemIds: string[] = [];
+      try {
+        const syllabusMap: Record<string, string> = {
+          'beginner': 'beginner-9months.json',
+          'intermediate': 'intermediate-6months.json',
+          'advanced': 'advanced-5months.json',
+        };
+        const syllabusFile = syllabusMap[contest.difficulty];
+        
+        if (syllabusFile) {
+          const syllabus = await import(`../../../../public/syllabi/${syllabusFile}`) as {
+            weeks: Array<{
+              weekNumber: number;
+              weekendTest?: {
+                problems: Array<{ id: string }>;
+              };
+            }>;
+          };
+          
+          const currentWeekData = syllabus.weeks.find((w) => w.weekNumber === currentWeekNumber);
+          if (currentWeekData?.weekendTest) {
+            weekendProblemIds = currentWeekData.weekendTest.problems.map(p => p.id);
+          }
+        }
+      } catch (error) {
+        console.error("Failed to load syllabus for weekend problems:", error);
+      }
+
       const participants = await ctx.db.contestParticipant.findMany({
         where: {
           contestId: input.contestId,
@@ -26,6 +75,13 @@ export const leaderboardRouter = createTRPCRouter({
       });
 
       const leaderboard = participants.map((participant) => {
+        // Count only weekend problems if we have weekend problem IDs
+        const weekendSolved = weekendProblemIds.length > 0
+          ? participant.user.progress.filter(p => 
+              weekendProblemIds.includes(p.problem.leetcodeId)
+            ).length
+          : 0;
+
         const totalSolved = participant.user.progress.length;
 
         const topicProgress = participant.user.progress.reduce((acc, p) => {
@@ -47,7 +103,8 @@ export const leaderboardRouter = createTRPCRouter({
           image: participant.user.image,
           leetcodeUsername: participant.user.leetcodeUsername,
           linkedinUsername: participant.user.linkedinUsername,
-          totalSolved,
+          totalSolved: weekendSolved, // Show weekend problems solved instead of total
+          weekendSolved, // Keep this for reference
           topicProgress,
           averageTime,
           currentStreak: streak?.currentStreak ?? 0,
