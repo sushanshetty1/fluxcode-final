@@ -131,22 +131,8 @@ export async function notifyWeekendContestStart() {
  * Should be run every Sunday at 6 PM IST
  */
 export async function notifyWeekendReminder() {
-  console.log("Running weekend reminder notifications (6 PM Sunday)...");
-  
-  // Optional: Skip specific dates (uncomment and modify as needed)
-  // const today = new Date();
-  // const skipDates = [
-  //   new Date('2026-02-02'), // Skip February 2, 2026
-  //   new Date('2026-02-09'), // Skip February 9, 2026
-  // ];
-  // if (skipDates.some(skipDate => 
-  //   today.getFullYear() === skipDate.getFullYear() &&
-  //   today.getMonth() === skipDate.getMonth() &&
-  //   today.getDate() === skipDate.getDate()
-  // )) {
-  //   console.log("Skipping reminder for today (manually configured skip date)");
-  //   return;
-  // }
+  console.log("\n=== Running weekend reminder notifications (6 PM Sunday) ===");
+  console.log("Timestamp:", new Date().toISOString());
   
   try {
     // Get all active contests
@@ -172,9 +158,11 @@ export async function notifyWeekendReminder() {
       },
     });
 
+    console.log(`Found ${contests.length} active contest(s)`);
+
     if (contests.length === 0) {
-      console.log("No active contests found");
-      console.log("All weekend reminder notifications completed");
+      console.log("⚠️ No active contests found - no reminders to send");
+      console.log("=== All weekend reminder notifications completed ===\n");
       return;
     }
 
@@ -197,9 +185,10 @@ export async function notifyWeekendReminder() {
       // Get the syllabus for this contest
       interface SyllabusWeek {
         weekNumber: number;
+        topic: string;
         weekendTest?: {
-          topicName: string;
-          problems: Array<{ title: string; difficulty: string }>;
+          problems: Array<{ id: string; title: string; difficulty: string }>;
+          timeLimit: string;
         };
       }
       interface Syllabus {
@@ -231,31 +220,61 @@ export async function notifyWeekendReminder() {
         continue;
       }
 
-      // TypeScript type narrowing - we know weekendTest exists after the check
+      // Get weekend test info
       const weekendTest = currentWeekData.weekendTest;
+      const topicName = currentWeekData.topic;
+      const weekendProblemIds = weekendTest.problems.map(p => p.id);
+      
+      console.log(`\n📊 Checking reminders for contest ${contest.id}, week ${currentWeekNumber}:`);
+      console.log(`   Weekend topic: ${topicName}`);
+      console.log(`   Weekend problem IDs: ${weekendProblemIds.join(', ')}`);
+      console.log(`   Available topics: ${contest.topics.map(t => t.name).join(', ')}`);
 
-      // Find the weekend test topic for this week
-      const weekendTopic = contest.topics.find(
-        (t) => t.name === weekendTest.topicName
-      );
+      // Find problems matching the weekend test problem IDs across all topics
+      const weekendProblems: Array<{ id: string; title: string; difficulty: string; leetcodeId: string; progress: Array<{ userId: string; completed: boolean }> }> = [];
+      
+      for (const topic of contest.topics) {
+        const matchingProblems = topic.problems.filter(p => weekendProblemIds.includes(p.leetcodeId));
+        weekendProblems.push(...matchingProblems);
+      }
 
-      if (!weekendTopic) {
-        console.log(`Weekend topic not found for contest ${contest.id}, week ${currentWeekNumber}`);
+      if (weekendProblems.length === 0) {
+        console.log(`⚠️ No weekend test problems found in contest`);
+        console.log(`   Looking for LeetCode IDs: ${weekendProblemIds.join(', ')}`);
         continue;
       }
 
+      console.log(`   Found ${weekendProblems.length}/${weekendProblemIds.length} weekend problems`);
+      console.log(`   Total participants: ${contest.participants.length}`);
+
+      let remindersSent = 0;
+      let participantsSkipped = 0;
+
       // Check each paid participant's progress
       for (const participant of contest.participants) {
-        if (participant.paymentStatus !== "PAID" || !participant.user.email) continue;
+        const isPaid = participant.paymentStatus === "paid";
+        
+        if (!isPaid) {
+          participantsSkipped++;
+          console.log(`   ⏭️  Skipped ${participant.user.email} - payment: ${participant.paymentStatus}`);
+          continue;
+        }
+        
+        if (!participant.user.email) {
+          participantsSkipped++;
+          console.log(`   ⏭️  Skipped user ${participant.userId} - no email`);
+          continue;
+        }
 
         // Count solved weekend problems for this participant
-        const weekendProblems = weekendTopic.problems;
         const solvedProblems = weekendProblems.filter((problem) =>
           problem.progress.some((p) => p.userId === participant.userId && p.completed)
         );
 
         const solvedCount = solvedProblems.length;
         const totalProblems = weekendProblems.length;
+
+        console.log(`   👤 ${participant.user.name} (${participant.user.email}): ${solvedCount}/${totalProblems} solved`);
 
         // Only send reminder if they haven't solved at least 2/3 problems
         if (solvedCount < 2) {
@@ -276,21 +295,22 @@ export async function notifyWeekendReminder() {
               unsolvedProblems,
               contestUrl: `${process.env.NEXTAUTH_URL}/contest/${contest.id}`,
             });
-            console.log(
-              `Sent reminder to ${participant.user.email} - ${solvedCount}/${totalProblems} solved`
-            );
+            remindersSent++;
+            console.log(`      📧 Sent reminder - needs ${2 - solvedCount} more problem(s)`);
           } catch (error) {
-            console.error(`Failed to send reminder email to ${participant.user.email}:`, error);
+            console.error(`      ❌ Failed to send reminder:`, error);
           }
+        } else {
+          console.log(`      ✅ No reminder needed - solved ${solvedCount}/3`);
         }
       }
 
-      console.log(`Weekend reminder notifications completed for contest ${contest.id}, week ${currentWeekNumber}`);
+      console.log(`\n✅ Contest ${contest.id}: Sent ${remindersSent} reminders, skipped ${participantsSkipped}`);
     }
 
-    console.log("All weekend reminder notifications completed");
+    console.log("\n=== All weekend reminder notifications completed successfully ===\n");
   } catch (error) {
-    console.error("Error in notifyWeekendReminder:", error);
+    console.error("\n❌ Error in notifyWeekendReminder:", error);
     throw error;
   }
 }
