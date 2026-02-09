@@ -28,6 +28,7 @@ interface WeekProblem {
   id: string;
   title: string;
   difficulty: string;
+  url?: string;
   solved?: boolean;
 }
 
@@ -189,7 +190,7 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
                     +10 pts
                   </Badge>
                   <a
-                    href={`https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
+                    href={problem.url || `https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -243,7 +244,7 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
                           </Badge>
                         </div>
                         <a
-                          href={`https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
+                          href={problem.url || `https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="block px-2 py-1.5 text-sm text-blue-400 hover:bg-white/5 rounded transition-colors"
@@ -364,7 +365,7 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
                       +20 pts
                     </Badge>
                     <a
-                      href={`https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
+                      href={problem.url || `https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -418,7 +419,7 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
                             </Badge>
                           </div>
                           <a
-                            href={`https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
+                            href={problem.url || `https://leetcode.com/problems/${titleToSlug(problem.title)}/`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="block px-2 py-1.5 text-sm text-blue-400 hover:bg-white/5 rounded transition-colors"

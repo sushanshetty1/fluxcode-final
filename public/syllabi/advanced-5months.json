@@ -19,27 +19,37 @@
         {
           "id": "2045",
           "title": "Second Minimum Time",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/second-minimum-time-to-reach-destination/",
+          "titleSlug": "second-minimum-time-to-reach-destination"
         },
         {
           "id": "1615",
           "title": "Maximal Network Rank",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/maximal-network-rank/",
+          "titleSlug": "maximal-network-rank"
         },
         {
           "id": "2493",
           "title": "Divide Nodes into Max Groups",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/divide-nodes-into-the-maximum-number-of-groups/",
+          "titleSlug": "divide-nodes-into-the-maximum-number-of-groups"
         },
         {
           "id": "1334",
           "title": "Find City With Smallest Number of Neighbors at Threshold",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/",
+          "titleSlug": "find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance"
         },
         {
           "id": "2556",
           "title": "Disconnect Path in Binary Matrix",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/disconnect-path-in-a-binary-matrix-by-at-most-one-flip/",
+          "titleSlug": "disconnect-path-in-a-binary-matrix-by-at-most-one-flip"
         }
       ],
       "weekendTest": {
@@ -47,17 +57,23 @@
           {
             "id": "1971",
             "title": "Find if Path Exists",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/find-if-path-exists-in-graph/",
+            "titleSlug": "find-if-path-exists-in-graph"
           },
           {
             "id": "1319",
             "title": "Operations Network Connected",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+            "titleSlug": "number-of-operations-to-make-network-connected"
           },
           {
             "id": "839",
             "title": "Similar String Groups",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/similar-string-groups/",
+            "titleSlug": "similar-string-groups"
           }
         ],
         "timeLimit": "2 days"
@@ -119,27 +135,37 @@
         {
           "id": "308",
           "title": "Range Sum 2D Mutable",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/range-sum-query-2d-mutable/",
+          "titleSlug": "range-sum-query-2d-mutable"
         },
         {
           "id": "315",
           "title": "Count Smaller After Self",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
+          "titleSlug": "count-of-smaller-numbers-after-self"
         },
         {
           "id": "493",
           "title": "Reverse Pairs",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/reverse-pairs/",
+          "titleSlug": "reverse-pairs"
         },
         {
           "id": "1649",
           "title": "Create Sorted Array through Instructions",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/create-sorted-array-through-instructions/",
+          "titleSlug": "create-sorted-array-through-instructions"
         },
         {
           "id": "2158",
           "title": "Amount of New Area Painted Each Day",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/amount-of-new-area-painted-each-day/",
+          "titleSlug": "amount-of-new-area-painted-each-day"
         }
       ],
       "weekendTest": {
@@ -147,17 +173,23 @@
           {
             "id": "304",
             "title": "Range Sum 2D Immutable",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/range-sum-query-2d-immutable/",
+            "titleSlug": "range-sum-query-2d-immutable"
           },
           {
             "id": "327",
             "title": "Count Range Sum",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/count-of-range-sum/",
+            "titleSlug": "count-of-range-sum"
           },
           {
             "id": "699",
             "title": "Falling Squares",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/falling-squares/",
+            "titleSlug": "falling-squares"
           }
         ],
         "timeLimit": "2 days"
@@ -219,27 +251,37 @@
         {
           "id": "808",
           "title": "Soup Servings",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/soup-servings/",
+          "titleSlug": "soup-servings"
         },
         {
           "id": "837",
           "title": "New 21 Game",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/new-21-game/",
+          "titleSlug": "new-21-game"
         },
         {
           "id": "1467",
           "title": "Probability of a Two Boxes",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/probability-of-a-two-boxes-having-the-same-number-of-distinct-balls/",
+          "titleSlug": "probability-of-a-two-boxes-having-the-same-number-of-distinct-balls"
         },
         {
           "id": "1227",
           "title": "Airplane Seat Assignment Probability",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/airplane-seat-assignment-probability/",
+          "titleSlug": "airplane-seat-assignment-probability"
         },
         {
           "id": "1377",
           "title": "Frog Position After T Seconds",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/frog-position-after-t-seconds/",
+          "titleSlug": "frog-position-after-t-seconds"
         }
       ],
       "weekendTest": {
@@ -247,17 +289,23 @@
           {
             "id": "688",
             "title": "Knight Probability",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/knight-probability-in-chessboard/",
+            "titleSlug": "knight-probability-in-chessboard"
           },
           {
             "id": "576",
             "title": "Out of Boundary Paths",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/out-of-boundary-paths/",
+            "titleSlug": "out-of-boundary-paths"
           },
           {
             "id": "1230",
             "title": "Toss Strange Coins",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/toss-strange-coins/",
+            "titleSlug": "toss-strange-coins"
           }
         ],
         "timeLimit": "2 days"
@@ -320,27 +368,37 @@
         {
           "id": "486",
           "title": "Predict the Winner",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/predict-the-winner/",
+          "titleSlug": "predict-the-winner"
         },
         {
           "id": "877",
           "title": "Stone Game",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/stone-game/",
+          "titleSlug": "stone-game"
         },
         {
           "id": "1140",
           "title": "Stone Game II",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/stone-game-ii/",
+          "titleSlug": "stone-game-ii"
         },
         {
           "id": "1406",
           "title": "Stone Game III",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/stone-game-iii/",
+          "titleSlug": "stone-game-iii"
         },
         {
           "id": "1510",
           "title": "Stone Game IV",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/stone-game-iv/",
+          "titleSlug": "stone-game-iv"
         }
       ],
       "weekendTest": {
@@ -348,17 +406,23 @@
           {
             "id": "292",
             "title": "Nim Game",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/nim-game/",
+            "titleSlug": "nim-game"
           },
           {
             "id": "464",
             "title": "Can I Win",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/can-i-win/",
+            "titleSlug": "can-i-win"
           },
           {
             "id": "1025",
             "title": "Divisor Game",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/divisor-game/",
+            "titleSlug": "divisor-game"
           }
         ],
         "timeLimit": "2 days"
@@ -420,27 +484,37 @@
         {
           "id": "1044",
           "title": "Longest Duplicate Substring",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/longest-duplicate-substring/",
+          "titleSlug": "longest-duplicate-substring"
         },
         {
           "id": "1062",
           "title": "Longest Repeating Substring",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/longest-repeating-substring/",
+          "titleSlug": "longest-repeating-substring"
         },
         {
           "id": "1698",
           "title": "Distinct Substrings",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/number-of-distinct-substrings-in-a-string/",
+          "titleSlug": "number-of-distinct-substrings-in-a-string"
         },
         {
           "id": "1933",
           "title": "Check if String is Decomposable Into Value-Equal Substrings",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/check-if-string-is-decomposable-into-value-equal-substrings/",
+          "titleSlug": "check-if-string-is-decomposable-into-value-equal-substrings"
         },
         {
           "id": "1668",
           "title": "Maximum Repeating Substring",
-          "difficulty": "Easy"
+          "difficulty": "Easy",
+          "url": "https://leetcode.com/problems/maximum-repeating-substring/",
+          "titleSlug": "maximum-repeating-substring"
         }
       ],
       "weekendTest": {
@@ -448,17 +522,23 @@
           {
             "id": "14",
             "title": "Longest Common Prefix",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/longest-common-prefix/",
+            "titleSlug": "longest-common-prefix"
           },
           {
             "id": "718",
             "title": "Longest Repeated Subarray",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
+            "titleSlug": "maximum-length-of-repeated-subarray"
           },
           {
             "id": "1923",
             "title": "Longest Common Subpath",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/longest-common-subpath/",
+            "titleSlug": "longest-common-subpath"
           }
         ],
         "timeLimit": "2 days"
@@ -520,27 +600,37 @@
         {
           "id": "1268",
           "title": "Search Suggestions",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/search-suggestions-system/",
+          "titleSlug": "search-suggestions-system"
         },
         {
           "id": "336",
           "title": "Palindrome Pairs",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/palindrome-pairs/",
+          "titleSlug": "palindrome-pairs"
         },
         {
           "id": "472",
           "title": "Concatenated Words",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/concatenated-words/",
+          "titleSlug": "concatenated-words"
         },
         {
           "id": "1032",
           "title": "Stream of Characters",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/stream-of-characters/",
+          "titleSlug": "stream-of-characters"
         },
         {
           "id": "676",
           "title": "Implement Magic Dictionary",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/implement-magic-dictionary/",
+          "titleSlug": "implement-magic-dictionary"
         }
       ],
       "weekendTest": {
@@ -548,17 +638,23 @@
           {
             "id": "720",
             "title": "Longest Word",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/longest-word-in-dictionary/",
+            "titleSlug": "longest-word-in-dictionary"
           },
           {
             "id": "212",
             "title": "Word Search II",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/word-search-ii/",
+            "titleSlug": "word-search-ii"
           },
           {
             "id": "745",
             "title": "Prefix and Suffix Search",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/prefix-and-suffix-search/",
+            "titleSlug": "prefix-and-suffix-search"
           }
         ],
         "timeLimit": "2 days"
@@ -620,27 +716,37 @@
         {
           "id": "587",
           "title": "Erect the Fence",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/erect-the-fence/",
+          "titleSlug": "erect-the-fence"
         },
         {
           "id": "812",
           "title": "Largest Triangle Area",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/largest-triangle-area/",
+          "titleSlug": "largest-triangle-area"
         },
         {
           "id": "469",
           "title": "Convex Polygon",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/convex-polygon/",
+          "titleSlug": "convex-polygon"
         },
         {
           "id": "963",
           "title": "Minimum Area Rectangle II",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/minimum-area-rectangle-ii/",
+          "titleSlug": "minimum-area-rectangle-ii"
         },
         {
           "id": "1924",
           "title": "Erect the Fence II",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/erect-the-fence-ii/",
+          "titleSlug": "erect-the-fence-ii"
         }
       ],
       "weekendTest": {
@@ -648,17 +754,23 @@
           {
             "id": "883",
             "title": "Projection Area",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/projection-area-of-3d-shapes/",
+            "titleSlug": "projection-area-of-3d-shapes"
           },
           {
             "id": "223",
             "title": "Rectangle Area",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/rectangle-area/",
+            "titleSlug": "rectangle-area"
           },
           {
             "id": "892",
             "title": "Surface Area 3D Shapes",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/surface-area-of-3d-shapes/",
+            "titleSlug": "surface-area-of-3d-shapes"
           }
         ],
         "timeLimit": "2 days"
@@ -720,27 +832,37 @@
         {
           "id": "1483",
           "title": "Kth Ancestor",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/kth-ancestor-of-a-tree-node/",
+          "titleSlug": "kth-ancestor-of-a-tree-node"
         },
         {
           "id": "2509",
           "title": "Cycle Length Queries",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/cycle-length-queries-in-a-tree/",
+          "titleSlug": "cycle-length-queries-in-a-tree"
         },
         {
           "id": "2846",
           "title": "Min Edge Reversals",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/minimum-edge-weight-equilibrium-queries-in-a-tree/",
+          "titleSlug": "minimum-edge-weight-equilibrium-queries-in-a-tree"
         },
         {
           "id": "1938",
           "title": "Maximum Genetic Difference Query",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/maximum-genetic-difference-query/",
+          "titleSlug": "maximum-genetic-difference-query"
         },
         {
           "id": "2277",
           "title": "Closest Node to Path in Tree",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/closest-node-to-path-in-tree/",
+          "titleSlug": "closest-node-to-path-in-tree"
         }
       ],
       "weekendTest": {
@@ -748,17 +870,23 @@
           {
             "id": "1123",
             "title": "LCA of Deepest Leaves",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/",
+            "titleSlug": "lowest-common-ancestor-of-deepest-leaves"
           },
           {
             "id": "865",
             "title": "Smallest Subtree Deepest",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/",
+            "titleSlug": "smallest-subtree-with-all-the-deepest-nodes"
           },
           {
             "id": "2322",
             "title": "Minimum Score Tree",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/minimum-score-after-removals-on-a-tree/",
+            "titleSlug": "minimum-score-after-removals-on-a-tree"
           }
         ],
         "timeLimit": "2 days"
@@ -820,27 +948,37 @@
         {
           "id": "307",
           "title": "Range Sum Query Mutable",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/range-sum-query-mutable/",
+          "titleSlug": "range-sum-query-mutable"
         },
         {
           "id": "327",
           "title": "Count Range Sum",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/count-of-range-sum/",
+          "titleSlug": "count-of-range-sum"
         },
         {
           "id": "315",
           "title": "Count Smaller",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
+          "titleSlug": "count-of-smaller-numbers-after-self"
         },
         {
           "id": "1521",
           "title": "Find a Value of a Mysterious Function Closest to Target",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/find-a-value-of-a-mysterious-function-closest-to-target/",
+          "titleSlug": "find-a-value-of-a-mysterious-function-closest-to-target"
         },
         {
           "id": "1707",
           "title": "Maximum XOR With an Element From Array",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/maximum-xor-with-an-element-from-array/",
+          "titleSlug": "maximum-xor-with-an-element-from-array"
         }
       ],
       "weekendTest": {
@@ -848,17 +986,23 @@
           {
             "id": "303",
             "title": "Range Sum",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/range-sum-query-immutable/",
+            "titleSlug": "range-sum-query-immutable"
           },
           {
             "id": "713",
             "title": "Subarray Product Less K",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/subarray-product-less-than-k/",
+            "titleSlug": "subarray-product-less-than-k"
           },
           {
             "id": "1498",
             "title": "Subsequences Satisfy Sum",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/",
+            "titleSlug": "number-of-subsequences-that-satisfy-the-given-sum-condition"
           }
         ],
         "timeLimit": "2 days"
@@ -920,27 +1064,37 @@
         {
           "id": "2458",
           "title": "Height After Queries",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/height-of-binary-tree-after-subtree-removal-queries/",
+          "titleSlug": "height-of-binary-tree-after-subtree-removal-queries"
         },
         {
           "id": "2846",
           "title": "Min Edge Reversals",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/minimum-edge-weight-equilibrium-queries-in-a-tree/",
+          "titleSlug": "minimum-edge-weight-equilibrium-queries-in-a-tree"
         },
         {
           "id": "2003",
           "title": "Smallest Missing Genetic",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/smallest-missing-genetic-value-in-each-subtree/",
+          "titleSlug": "smallest-missing-genetic-value-in-each-subtree"
         },
         {
           "id": "1617",
           "title": "Count Subtrees With Max Distance Between Cities",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/count-subtrees-with-max-distance-between-cities/",
+          "titleSlug": "count-subtrees-with-max-distance-between-cities"
         },
         {
           "id": "742",
           "title": "Closest Leaf in a Binary Tree",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/closest-leaf-in-a-binary-tree/",
+          "titleSlug": "closest-leaf-in-a-binary-tree"
         }
       ],
       "weekendTest": {
@@ -948,17 +1102,23 @@
           {
             "id": "1123",
             "title": "LCA Deepest",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/",
+            "titleSlug": "lowest-common-ancestor-of-deepest-leaves"
           },
           {
             "id": "310",
             "title": "Min Height Trees",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/minimum-height-trees/",
+            "titleSlug": "minimum-height-trees"
           },
           {
             "id": "979",
             "title": "Distribute Coins",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/distribute-coins-in-binary-tree/",
+            "titleSlug": "distribute-coins-in-binary-tree"
           }
         ],
         "timeLimit": "2 days"
@@ -1020,27 +1180,37 @@
         {
           "id": "5",
           "title": "Longest Palindromic Substring",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/longest-palindromic-substring/",
+          "titleSlug": "longest-palindromic-substring"
         },
         {
           "id": "647",
           "title": "Palindromic Substrings",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/palindromic-substrings/",
+          "titleSlug": "palindromic-substrings"
         },
         {
           "id": "214",
           "title": "Shortest Palindrome",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/shortest-palindrome/",
+          "titleSlug": "shortest-palindrome"
         },
         {
           "id": "1745",
           "title": "Palindrome Partitioning IV",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/palindrome-partitioning-iv/",
+          "titleSlug": "palindrome-partitioning-iv"
         },
         {
           "id": "2472",
           "title": "Maximum Number of Non-overlapping Palindrome Substrings",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/maximum-number-of-non-overlapping-palindrome-substrings/",
+          "titleSlug": "maximum-number-of-non-overlapping-palindrome-substrings"
         }
       ],
       "weekendTest": {
@@ -1048,17 +1218,23 @@
           {
             "id": "9",
             "title": "Palindrome Number",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/palindrome-number/",
+            "titleSlug": "palindrome-number"
           },
           {
             "id": "516",
             "title": "Longest Palindromic Subsequence",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/longest-palindromic-subsequence/",
+            "titleSlug": "longest-palindromic-subsequence"
           },
           {
             "id": "1312",
             "title": "Min Insertion Palindrome",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/",
+            "titleSlug": "minimum-insertion-steps-to-make-a-string-palindrome"
           }
         ],
         "timeLimit": "2 days"
@@ -1120,27 +1296,37 @@
         {
           "id": "43",
           "title": "Multiply Strings",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/multiply-strings/",
+          "titleSlug": "multiply-strings"
         },
         {
           "id": "1235",
           "title": "Max Profit Job Scheduling",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
+          "titleSlug": "maximum-profit-in-job-scheduling"
         },
         {
           "id": "1622",
           "title": "Fancy Sequence",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/fancy-sequence/",
+          "titleSlug": "fancy-sequence"
         },
         {
           "id": "2338",
           "title": "Count the Number of Ideal Arrays",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/count-the-number-of-ideal-arrays/",
+          "titleSlug": "count-the-number-of-ideal-arrays"
         },
         {
           "id": "1866",
           "title": "Number of Ways to Rearrange Sticks",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/number-of-ways-to-rearrange-sticks-with-k-sticks-visible/",
+          "titleSlug": "number-of-ways-to-rearrange-sticks-with-k-sticks-visible"
         }
       ],
       "weekendTest": {
@@ -1148,17 +1334,23 @@
           {
             "id": "415",
             "title": "Add Strings",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/add-strings/",
+            "titleSlug": "add-strings"
           },
           {
             "id": "66",
             "title": "Plus One",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/plus-one/",
+            "titleSlug": "plus-one"
           },
           {
             "id": "2013",
             "title": "Detect Squares",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/detect-squares/",
+            "titleSlug": "detect-squares"
           }
         ],
         "timeLimit": "2 days"
@@ -1220,27 +1412,37 @@
         {
           "id": "509",
           "title": "Fibonacci",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/fibonacci-number/",
+          "titleSlug": "fibonacci-number"
         },
         {
           "id": "1137",
           "title": "Tribonacci",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/n-th-tribonacci-number/",
+          "titleSlug": "n-th-tribonacci-number"
         },
         {
           "id": "1220",
           "title": "Count Vowels Permutation",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/count-vowels-permutation/",
+          "titleSlug": "count-vowels-permutation"
         },
         {
           "id": "1969",
           "title": "Minimum Non-Zero Product of Array Elements",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/minimum-non-zero-product-of-the-array-elements/",
+          "titleSlug": "minimum-non-zero-product-of-the-array-elements"
         },
         {
           "id": "2851",
           "title": "String Transformation",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/string-transformation/",
+          "titleSlug": "string-transformation"
         }
       ],
       "weekendTest": {
@@ -1248,17 +1450,23 @@
           {
             "id": "70",
             "title": "Climbing Stairs",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/climbing-stairs/",
+            "titleSlug": "climbing-stairs"
           },
           {
             "id": "552",
             "title": "Student Attendance II",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/student-attendance-record-ii/",
+            "titleSlug": "student-attendance-record-ii"
           },
           {
             "id": "790",
             "title": "Domino Tromino",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/domino-and-tromino-tiling/",
+            "titleSlug": "domino-and-tromino-tiling"
           }
         ],
         "timeLimit": "2 days"
@@ -1321,27 +1529,37 @@
         {
           "id": "62",
           "title": "Unique Paths",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/unique-paths/",
+          "titleSlug": "unique-paths"
         },
         {
           "id": "96",
           "title": "Unique BSTs",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/unique-binary-search-trees/",
+          "titleSlug": "unique-binary-search-trees"
         },
         {
           "id": "1569",
           "title": "Ways Reorder Array",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/",
+          "titleSlug": "number-of-ways-to-reorder-array-to-get-same-bst"
         },
         {
           "id": "1916",
           "title": "Count Ways to Build Rooms in Ant Colony",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/count-ways-to-build-rooms-in-an-ant-colony/",
+          "titleSlug": "count-ways-to-build-rooms-in-an-ant-colony"
         },
         {
           "id": "1830",
           "title": "Minimum Number of Operations to Make String Sorted",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/minimum-number-of-operations-to-make-string-sorted/",
+          "titleSlug": "minimum-number-of-operations-to-make-string-sorted"
         }
       ],
       "weekendTest": {
@@ -1349,17 +1567,23 @@
           {
             "id": "119",
             "title": "Pascal Triangle II",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/pascals-triangle-ii/",
+            "titleSlug": "pascals-triangle-ii"
           },
           {
             "id": "1863",
             "title": "Sum XOR Subsets",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/sum-of-all-subset-xor-totals/",
+            "titleSlug": "sum-of-all-subset-xor-totals"
           },
           {
             "id": "1830",
             "title": "Min Operations Target",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/minimum-number-of-operations-to-make-string-sorted/",
+            "titleSlug": "minimum-number-of-operations-to-make-string-sorted"
           }
         ],
         "timeLimit": "2 days"
@@ -1421,27 +1645,37 @@
         {
           "id": "1146",
           "title": "Snapshot Array",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/snapshot-array/",
+          "titleSlug": "snapshot-array"
         },
         {
           "id": "307",
           "title": "Range Sum Mutable",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/range-sum-query-mutable/",
+          "titleSlug": "range-sum-query-mutable"
         },
         {
           "id": "315",
           "title": "Count Smaller",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
+          "titleSlug": "count-of-smaller-numbers-after-self"
         },
         {
           "id": "1756",
           "title": "Design Most Recently Used Queue",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/design-most-recently-used-queue/",
+          "titleSlug": "design-most-recently-used-queue"
         },
         {
           "id": "715",
           "title": "Range Module",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/range-module/",
+          "titleSlug": "range-module"
         }
       ],
       "weekendTest": {
@@ -1449,17 +1683,23 @@
           {
             "id": "303",
             "title": "Range Sum Immutable",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/range-sum-query-immutable/",
+            "titleSlug": "range-sum-query-immutable"
           },
           {
             "id": "327",
             "title": "Count Range Sum",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/count-of-range-sum/",
+            "titleSlug": "count-of-range-sum"
           },
           {
             "id": "493",
             "title": "Reverse Pairs",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/reverse-pairs/",
+            "titleSlug": "reverse-pairs"
           }
         ],
         "timeLimit": "2 days"
@@ -1522,27 +1762,37 @@
         {
           "id": "218",
           "title": "Skyline Problem",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/the-skyline-problem/",
+          "titleSlug": "the-skyline-problem"
         },
         {
           "id": "391",
           "title": "Perfect Rectangle",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/perfect-rectangle/",
+          "titleSlug": "perfect-rectangle"
         },
         {
           "id": "850",
           "title": "Rectangle Area II",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/rectangle-area-ii/",
+          "titleSlug": "rectangle-area-ii"
         },
         {
           "id": "1458",
           "title": "Max Dot Product of Two Subsequences",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/max-dot-product-of-two-subsequences/",
+          "titleSlug": "max-dot-product-of-two-subsequences"
         },
         {
           "id": "939",
           "title": "Minimum Area Rectangle",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/minimum-area-rectangle/",
+          "titleSlug": "minimum-area-rectangle"
         }
       ],
       "weekendTest": {
@@ -1550,17 +1800,23 @@
           {
             "id": "836",
             "title": "Rectangle Overlap",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/rectangle-overlap/",
+            "titleSlug": "rectangle-overlap"
           },
           {
             "id": "223",
             "title": "Rectangle Area",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/rectangle-area/",
+            "titleSlug": "rectangle-area"
           },
           {
             "id": "149",
             "title": "Max Points on Line",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/max-points-on-a-line/",
+            "titleSlug": "max-points-on-a-line"
           }
         ],
         "timeLimit": "2 days"
@@ -1622,27 +1878,37 @@
         {
           "id": "1044",
           "title": "Longest Duplicate Substring",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/longest-duplicate-substring/",
+          "titleSlug": "longest-duplicate-substring"
         },
         {
           "id": "1062",
           "title": "Longest Repeating",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/longest-repeating-substring/",
+          "titleSlug": "longest-repeating-substring"
         },
         {
           "id": "1923",
           "title": "Longest Common Subpath",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/longest-common-subpath/",
+          "titleSlug": "longest-common-subpath"
         },
         {
           "id": "1316",
           "title": "Distinct Echo Substrings",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/distinct-echo-substrings/",
+          "titleSlug": "distinct-echo-substrings"
         },
         {
           "id": "1542",
           "title": "Find Longest Awesome Substring",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/find-longest-awesome-substring/",
+          "titleSlug": "find-longest-awesome-substring"
         }
       ],
       "weekendTest": {
@@ -1650,17 +1916,23 @@
           {
             "id": "459",
             "title": "Repeated Substring",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/repeated-substring-pattern/",
+            "titleSlug": "repeated-substring-pattern"
           },
           {
             "id": "686",
             "title": "Repeated String Match",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/repeated-string-match/",
+            "titleSlug": "repeated-string-match"
           },
           {
             "id": "718",
             "title": "Longest Repeated Subarray",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
+            "titleSlug": "maximum-length-of-repeated-subarray"
           }
         ],
         "timeLimit": "2 days"
@@ -1722,27 +1994,37 @@
         {
           "id": "765",
           "title": "Couples Holding Hands",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/couples-holding-hands/",
+          "titleSlug": "couples-holding-hands"
         },
         {
           "id": "854",
           "title": "K-Similar Strings",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/k-similar-strings/",
+          "titleSlug": "k-similar-strings"
         },
         {
           "id": "1595",
           "title": "Min Cost Connect Groups",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/",
+          "titleSlug": "minimum-cost-to-connect-two-groups-of-points"
         },
         {
           "id": "2172",
           "title": "Maximum AND Sum of Array",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/maximum-and-sum-of-array/",
+          "titleSlug": "maximum-and-sum-of-array"
         },
         {
           "id": "1947",
           "title": "Maximum Compatibility Score Sum",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/maximum-compatibility-score-sum/",
+          "titleSlug": "maximum-compatibility-score-sum"
         }
       ],
       "weekendTest": {
@@ -1750,17 +2032,23 @@
           {
             "id": "785",
             "title": "Is Bipartite",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/is-graph-bipartite/",
+            "titleSlug": "is-graph-bipartite"
           },
           {
             "id": "886",
             "title": "Possible Bipartition",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/possible-bipartition/",
+            "titleSlug": "possible-bipartition"
           },
           {
             "id": "1349",
             "title": "Max Students Exam",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/maximum-students-taking-exam/",
+            "titleSlug": "maximum-students-taking-exam"
           }
         ],
         "timeLimit": "2 days"
@@ -1822,27 +2110,37 @@
         {
           "id": "1483",
           "title": "Kth Ancestor",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/kth-ancestor-of-a-tree-node/",
+          "titleSlug": "kth-ancestor-of-a-tree-node"
         },
         {
           "id": "1932",
           "title": "Merge BSTs to Create Single",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/merge-bsts-to-create-single-bst/",
+          "titleSlug": "merge-bsts-to-create-single-bst"
         },
         {
           "id": "2689",
           "title": "Extract Kth Character",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/extract-kth-character-from-the-rope-tree/",
+          "titleSlug": "extract-kth-character-from-the-rope-tree"
         },
         {
           "id": "2421",
           "title": "Number of Good Paths",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/number-of-good-paths/",
+          "titleSlug": "number-of-good-paths"
         },
         {
           "id": "2867",
           "title": "Count Valid Paths in a Tree",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/count-valid-paths-in-a-tree/",
+          "titleSlug": "count-valid-paths-in-a-tree"
         }
       ],
       "weekendTest": {
@@ -1850,17 +2148,23 @@
           {
             "id": "1123",
             "title": "LCA Deepest",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/",
+            "titleSlug": "lowest-common-ancestor-of-deepest-leaves"
           },
           {
             "id": "2196",
             "title": "Create Binary Tree",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/create-binary-tree-from-descriptions/",
+            "titleSlug": "create-binary-tree-from-descriptions"
           },
           {
             "id": "1932",
             "title": "Merge BSTs",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/merge-bsts-to-create-single-bst/",
+            "titleSlug": "merge-bsts-to-create-single-bst"
           }
         ],
         "timeLimit": "2 days"
@@ -1923,27 +2227,37 @@
         {
           "id": "23",
           "title": "Merge K Sorted Lists",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/merge-k-sorted-lists/",
+          "titleSlug": "merge-k-sorted-lists"
         },
         {
           "id": "239",
           "title": "Sliding Window Maximum",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/sliding-window-maximum/",
+          "titleSlug": "sliding-window-maximum"
         },
         {
           "id": "297",
           "title": "Serialize Deserialize Tree",
-          "difficulty": "Medium"
+          "difficulty": "Medium",
+          "url": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+          "titleSlug": "serialize-and-deserialize-binary-tree"
         },
         {
           "id": "460",
           "title": "LFU Cache",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/lfu-cache/",
+          "titleSlug": "lfu-cache"
         },
         {
           "id": "295",
           "title": "Find Median from Data Stream",
-          "difficulty": "Hard"
+          "difficulty": "Hard",
+          "url": "https://leetcode.com/problems/find-median-from-data-stream/",
+          "titleSlug": "find-median-from-data-stream"
         }
       ],
       "weekendTest": {
@@ -1951,17 +2265,23 @@
           {
             "id": "283",
             "title": "Move Zeroes",
-            "difficulty": "Easy"
+            "difficulty": "Easy",
+            "url": "https://leetcode.com/problems/move-zeroes/",
+            "titleSlug": "move-zeroes"
           },
           {
             "id": "128",
             "title": "Longest Consecutive Sequence",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
+            "titleSlug": "longest-consecutive-sequence"
           },
           {
             "id": "42",
             "title": "Trapping Rain Water",
-            "difficulty": "Medium"
+            "difficulty": "Medium",
+            "url": "https://leetcode.com/problems/trapping-rain-water/",
+            "titleSlug": "trapping-rain-water"
           }
         ],
         "timeLimit": "2 days"
