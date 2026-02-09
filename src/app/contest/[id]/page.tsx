@@ -351,16 +351,20 @@ export default function ContestDashboard() {
       // Convert to IST for comparison
       const sundayEndIST = new Date(sunday.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
       
-      // Check if any weekend problem was completed after the deadline
+      // Count how many weekend problems were solved DURING the deadline
+      let solvedDuringDeadline = 0;
       for (const problemId of weekendProblemIds) {
         const progress = userProgressMap.get(problemId);
         if (progress?.completed && progress.completedAt) {
           const completedAtIST = new Date(new Date(progress.completedAt).toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
-          if (completedAtIST > sundayEndIST) {
-            solvedAfterDeadline = true;
-            break;
+          if (completedAtIST <= sundayEndIST) {
+            solvedDuringDeadline++;
           }
         }
+      }
+    
+      if (solvedDuringDeadline < 2) {
+        solvedAfterDeadline = true;
       }
     }
 
