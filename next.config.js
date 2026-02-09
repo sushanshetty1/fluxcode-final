@@ -12,7 +12,22 @@ const config = {
       ...config.watchOptions,
       ignored: ['**/venv/**', '**/scripts/**', '**/node_modules/**'],
     };
+    
+    // Exclude venv and scripts from module resolution
+    config.module.exprContextCritical = false;
+    config.module.unknownContextCritical = false;
+    
     return config;
+  },
+  
+  // Exclude venv and scripts directories from type checking and linting
+  eslint: {
+    ignoreDuringBuilds: false,
+    dirs: ['src']
+  },
+  
+  typescript: {
+    ignoreBuildErrors: false,
   },
 };
 

@@ -42,5 +42,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
+# python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
 # idea files
 .idea
