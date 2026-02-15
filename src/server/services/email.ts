@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import type SMTPTransport from "nodemailer/lib/smtp-transport";
 import { env } from "~/env";
 
 function getTransporter() {
@@ -20,8 +21,7 @@ function getTransporter() {
     hasPassword: !!env.SMTP_PASSWORD
   });
   
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return nodemailer.createTransport({
+  const transportOptions: SMTPTransport.Options = {
     host: env.SMTP_HOST,
     port: parseInt(env.SMTP_PORT),
     secure: false, // Use TLS
@@ -29,11 +29,12 @@ function getTransporter() {
       user: env.SMTP_USER,
       pass: env.SMTP_PASSWORD,
     },
-    pool: false, // Disable connection pooling to avoid socket issues
     connectionTimeout: 10000, // 10 seconds
     greetingTimeout: 10000,
     socketTimeout: 30000, // 30 seconds
-  });
+  };
+  
+  return nodemailer.createTransport(transportOptions);
 }
 
 export async function sendWeeklySummary(
