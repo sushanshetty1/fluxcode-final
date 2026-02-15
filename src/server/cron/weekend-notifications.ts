@@ -96,7 +96,17 @@ export async function notifyWeekendContestStart() {
       let skippedCount = 0;
       
       // Helper function to retry email sending
-      const sendEmailWithRetry = async (email: string, data: any, maxRetries = 3) => {
+      const sendEmailWithRetry = async (
+        email: string, 
+        data: {
+          name: string;
+          contestName: string;
+          weekNumber: number;
+          problems: Array<{ title: string; difficulty: string }>;
+          contestUrl: string;
+        }, 
+        maxRetries = 3
+      ) => {
         for (let attempt = 1; attempt <= maxRetries; attempt++) {
           try {
             await sendWeekendContestStart(email, data);
@@ -277,7 +287,19 @@ export async function notifyWeekendReminder() {
       let participantsSkipped = 0;
 
       // Helper function to retry email sending
-      const sendReminderWithRetry = async (email: string, data: any, maxRetries = 3) => {
+      const sendReminderWithRetry = async (
+        email: string, 
+        data: {
+          name: string;
+          contestName: string;
+          weekNumber: number;
+          solvedCount: number;
+          totalProblems: number;
+          unsolvedProblems: Array<{ title: string; difficulty: string }>;
+          contestUrl: string;
+        }, 
+        maxRetries = 3
+      ) => {
         for (let attempt = 1; attempt <= maxRetries; attempt++) {
           try {
             await sendWeekendReminderIncomplete(email, data);
