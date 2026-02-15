@@ -1,34 +1,42 @@
 import nodemailer from "nodemailer";
 import { env } from "~/env";
 
-let transporterInstance: nodemailer.Transporter | null = null;
-
 function getTransporter() {
-  if (!transporterInstance && env.SMTP_HOST && env.SMTP_PORT && env.SMTP_USER && env.SMTP_PASSWORD) {
-    console.log("✅ Creating email transporter with config:", {
-      host: env.SMTP_HOST,
-      port: env.SMTP_PORT,
-      user: env.SMTP_USER,
-      hasPassword: !!env.SMTP_PASSWORD
-    });
-    transporterInstance = nodemailer.createTransport({
-      host: env.SMTP_HOST,
-      port: parseInt(env.SMTP_PORT),
-      secure: false,
-      auth: {
-        user: env.SMTP_USER,
-        pass: env.SMTP_PASSWORD,
-      },
-    });
-  } else if (!transporterInstance) {
+  if (!env.SMTP_HOST || !env.SMTP_PORT || !env.SMTP_USER || !env.SMTP_PASSWORD) {
     console.error("❌ Cannot create email transporter - missing config:", {
       hasHost: !!env.SMTP_HOST,
       hasPort: !!env.SMTP_PORT,
       hasUser: !!env.SMTP_USER,
       hasPassword: !!env.SMTP_PASSWORD
     });
+    return null;
   }
-  return transporterInstance;
+
+  // Create a new transporter for each email to avoid connection pool issues
+  console.log("✅ Creating email transporter with config:", {
+    host: env.SMTP_HOST,
+    port: env.SMTP_PORT,
+    user: env.SMTP_USER,
+    hasPassword: !!env.SMTP_PASSWORD
+  });
+  
+  return nodemailer.createTransport({
+    host: env.SMTP_HOST,
+    port: parseInt(env.SMTP_PORT),
+    secure: false, // Use TLS
+    auth: {
+      user: env.SMTP_USER,
+      pass: env.SMTP_PASSWORD,
+    },
+    pool: false, // Disable connection pooling to avoid socket issues
+    maxConnections: 1,
+    maxMessages: 1,
+    rateDelta: 1000, // 1 second between messages
+    rateLimit: 1, // 1 message per rateDelta
+    connectionTimeout: 10000, // 10 seconds
+    greetingTimeout: 10000,
+    socketTimeout: 30000, // 30 seconds
+  });
 }
 
 export async function sendWeeklySummary(
@@ -475,6 +483,10 @@ export async function sendWeekendContestStart(
     console.log(`Sent weekend contest start notification to ${email}`);
   } catch (error) {
     console.error("Error sending weekend contest start notification:", error);
+    throw error; // Re-throw to allow retry logic in caller
+  } finally {
+    // Close the transporter connection
+    transporter.close();
   }
 }
 
@@ -790,5 +802,9 @@ export async function sendWeekendReminderIncomplete(
     console.log(`Sent weekend reminder to ${email} - ${data.solvedCount}/${data.totalProblems} solved`);
   } catch (error) {
     console.error("Error sending weekend reminder:", error);
+    throw error; // Re-throw to allow retry logic in caller
+  } finally {
+    // Close the transporter connection
+    transporter.close();
   }
 }

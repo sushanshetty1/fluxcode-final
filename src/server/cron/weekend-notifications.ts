@@ -95,20 +95,46 @@ export async function notifyWeekendContestStart() {
       let sentCount = 0;
       let skippedCount = 0;
       
+      // Helper function to retry email sending
+      const sendEmailWithRetry = async (email: string, data: any, maxRetries = 3) => {
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+          try {
+            await sendWeekendContestStart(email, data);
+            return true; // Success
+          } catch (error) {
+            console.error(`  ❌ Attempt ${attempt}/${maxRetries} failed for ${email}:`, error);
+            if (attempt < maxRetries) {
+              // Wait before retrying (exponential backoff)
+              const delay = Math.min(1000 * Math.pow(2, attempt), 10000);
+              console.log(`  ⏳ Waiting ${delay}ms before retry...`);
+              await new Promise(resolve => setTimeout(resolve, delay));
+            }
+          }
+        }
+        return false; // Failed after all retries
+      };
+      
       for (const participant of contest.participants) {
         if (participant.paymentStatus === "paid" && participant.user.email) {
-          try {
-            console.log(`  📧 Sending to ${participant.user.email} (${participant.user.name})...`);
-            await sendWeekendContestStart(participant.user.email, {
+          console.log(`  📧 Sending to ${participant.user.email} (${participant.user.name})...`);
+          const success = await sendEmailWithRetry(
+            participant.user.email,
+            {
               name: participant.user.name ?? "Participant",
               contestName: contest.name,
               weekNumber: currentWeekNumber,
               problems: weekendProblems,
               contestUrl: `${process.env.NEXTAUTH_URL}/contest/${contest.id}`,
-            });
+            }
+          );
+          
+          if (success) {
             sentCount++;
-          } catch (error) {
-            console.error(`  ❌ Failed to send to ${participant.user.email}:`, error);
+            // Add a small delay between successful sends to avoid rate limiting
+            await new Promise(resolve => setTimeout(resolve, 1500));
+          } else {
+            skippedCount++;
+            console.error(`  ⚠️ Skipped ${participant.user.email} after all retries failed`);
           }
         } else {
           skippedCount++;
@@ -250,6 +276,25 @@ export async function notifyWeekendReminder() {
       let remindersSent = 0;
       let participantsSkipped = 0;
 
+      // Helper function to retry email sending
+      const sendReminderWithRetry = async (email: string, data: any, maxRetries = 3) => {
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+          try {
+            await sendWeekendReminderIncomplete(email, data);
+            return true; // Success
+          } catch (error) {
+            console.error(`      ❌ Attempt ${attempt}/${maxRetries} failed:`, error);
+            if (attempt < maxRetries) {
+              // Wait before retrying (exponential backoff)
+              const delay = Math.min(1000 * Math.pow(2, attempt), 10000);
+              console.log(`      ⏳ Waiting ${delay}ms before retry...`);
+              await new Promise(resolve => setTimeout(resolve, delay));
+            }
+          }
+        }
+        return false; // Failed after all retries
+      };
+
       // Check each paid participant's progress
       for (const participant of contest.participants) {
         const isPaid = participant.paymentStatus === "paid";
@@ -285,8 +330,9 @@ export async function notifyWeekendReminder() {
               difficulty: p.difficulty,
             }));
 
-          try {
-            await sendWeekendReminderIncomplete(participant.user.email, {
+          const success = await sendReminderWithRetry(
+            participant.user.email,
+            {
               name: participant.user.name ?? "Participant",
               contestName: contest.name,
               weekNumber: currentWeekNumber,
@@ -294,11 +340,17 @@ export async function notifyWeekendReminder() {
               totalProblems,
               unsolvedProblems,
               contestUrl: `${process.env.NEXTAUTH_URL}/contest/${contest.id}`,
-            });
+            }
+          );
+          
+          if (success) {
             remindersSent++;
             console.log(`      📧 Sent reminder - needs ${2 - solvedCount} more problem(s)`);
-          } catch (error) {
-            console.error(`      ❌ Failed to send reminder:`, error);
+            // Add a small delay between successful sends to avoid rate limiting
+            await new Promise(resolve => setTimeout(resolve, 1500));
+          } else {
+            participantsSkipped++;
+            console.log(`      ⚠️ Failed to send reminder after all retries`);
           }
         } else {
           console.log(`      ✅ No reminder needed - solved ${solvedCount}/3`);
