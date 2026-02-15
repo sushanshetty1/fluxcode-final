@@ -120,10 +120,11 @@ async function fetchByDifficulty(
 
 export async function verifyLeetCodeSolution(
   username: string,
-  problemTitle: string
+  problemTitle: string,
+  titleSlug?: string
 ): Promise<boolean> {
-  // Convert problem title to titleSlug format
-  const titleSlug = problemTitle
+  // Use provided titleSlug if available, otherwise convert from title
+  const problemSlug = titleSlug ?? problemTitle
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
     .trim()
@@ -178,7 +179,7 @@ export async function verifyLeetCodeSolution(
   // Match by titleSlug OR by exact title (case-insensitive) as fallback
   const solved = submissions.some(
     (submission) => 
-      submission.titleSlug === titleSlug || 
+      submission.titleSlug === problemSlug || 
       submission.title.toLowerCase() === problemTitle.toLowerCase()
   );
 

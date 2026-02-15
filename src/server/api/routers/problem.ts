@@ -152,9 +152,14 @@ export const problemRouter = createTRPCRouter({
         throw new Error("Problem not found");
       }
 
+      // Extract titleSlug from hyperlink (e.g., https://leetcode.com/problems/two-sum/ -> two-sum)
+      const titleSlugMatch = problem.hyperlink.match(/\/problems\/([^\/]+)\/?$/);
+      const titleSlug = titleSlugMatch?.[1];
+
       const isSolved = await verifyLeetCodeSolution(
         input.leetcodeUsername,
-        problem.title
+        problem.title,
+        titleSlug
       );
 
       if (!isSolved) {

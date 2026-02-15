@@ -311,6 +311,7 @@ export const progressRouter = createTRPCRouter({
         contestId: z.string(),
         problemId: z.string(), // LeetCode problem ID from syllabus (e.g., "1", "26")
         problemTitle: z.string(), // Problem title for display
+        titleSlug: z.string().optional(), // Actual LeetCode titleSlug from JSON
       })
     )
     .mutation(async ({ ctx, input }) => {
@@ -324,8 +325,8 @@ export const progressRouter = createTRPCRouter({
         throw new Error("LeetCode username not found. Please complete onboarding.");
       }
 
-      // Verify with LeetCode API using problem title
-      const isSolved = await verifyLeetCodeSolution(user.leetcodeUsername, input.problemTitle);
+      // Verify with LeetCode API using titleSlug if available, otherwise problem title
+      const isSolved = await verifyLeetCodeSolution(user.leetcodeUsername, input.problemTitle, input.titleSlug);
 
       if (!isSolved) {
         throw new Error(`Problem not solved on LeetCode. Please solve "${input.problemTitle}" and try again.`);

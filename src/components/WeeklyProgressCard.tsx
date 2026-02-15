@@ -29,6 +29,7 @@ interface WeekProblem {
   title: string;
   difficulty: string;
   url?: string;
+  titleSlug?: string;
   solved?: boolean;
 }
 
@@ -52,7 +53,7 @@ interface WeeklyProgressCardProps {
   showWeekendTest?: boolean; // New prop to control weekend test visibility
   currentWeek?: number; // Current week number to determine if lock should show
   onToggleCollapse?: () => void;
-  onVerify?: (problemId: string, problemTitle: string) => Promise<void>;
+  onVerify?: (problemId: string, problemTitle: string, titleSlug?: string) => Promise<void>;
 }
 
 export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTest = true, currentWeek, onToggleCollapse, onVerify }: WeeklyProgressCardProps) {
@@ -81,11 +82,11 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
     "Task failed successfully ❌",
   ];
 
-  const handleVerify = async (problemId: string, problemTitle: string) => {
+  const handleVerify = async (problemId: string, problemTitle: string, titleSlug?: string) => {
     if (!onVerify) return;
     
     try {
-      await onVerify(problemId, problemTitle);
+      await onVerify(problemId, problemTitle, titleSlug);
       const randomSuccess = successMessages[Math.floor(Math.random() * successMessages.length)];
       toast.success(randomSuccess, {
         description: `${problemTitle} verified! Your progress has been updated.`,
@@ -199,7 +200,7 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
                     </Badge>
                   </a>
                   <button
-                    onClick={() => handleVerify(problem.id, problem.title)}
+                    onClick={() => handleVerify(problem.id, problem.title, problem.titleSlug)}
                     disabled={!onVerify || problem.solved}
                     className="cursor-pointer disabled:cursor-not-allowed"
                   >
@@ -254,7 +255,7 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
                         </a>
                         <button
                           onClick={() => {
-                            void handleVerify(problem.id, problem.title);
+                            void handleVerify(problem.id, problem.title, problem.titleSlug);
                             setOpenDropdown(null);
                           }}
                           disabled={!onVerify || problem.solved}
@@ -374,7 +375,7 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
                       </Badge>
                     </a>
                     <button
-                      onClick={() => handleVerify(problem.id, problem.title)}
+                      onClick={() => handleVerify(problem.id, problem.title, problem.titleSlug)}
                       disabled={(!onVerify || problem.solved)}
                       className="cursor-pointer disabled:cursor-not-allowed"
                     >
@@ -429,7 +430,7 @@ export function WeeklyProgressCard({ week, isWeekend, isCollapsed, showWeekendTe
                           </a>
                           <button
                             onClick={() => {
-                              void handleVerify(problem.id, problem.title);
+                              void handleVerify(problem.id, problem.title, problem.titleSlug);
                               setOpenDropdown(null);
                             }}
                             disabled={(!onVerify || problem.solved)}

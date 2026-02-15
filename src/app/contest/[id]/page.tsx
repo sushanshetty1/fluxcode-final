@@ -591,13 +591,14 @@ export default function ContestDashboard() {
                       return next;
                     });
                   }}
-                  onVerify={async (problemId: string, problemTitle: string) => {
+                  onVerify={async (problemId: string, problemTitle: string, titleSlug?: string) => {
                     if (!userId) return;
                     await markProblemCompleted.mutateAsync({
                       userId,
                       contestId: contest.id,
                       problemId,
                       problemTitle,
+                      titleSlug,
                     });
                   }}
                 />
